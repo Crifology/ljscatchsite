@@ -18,7 +18,7 @@
         }
 
         html {
-            font-size: 165%;
+            font-size: 125%;
         }
 
         * {
@@ -287,8 +287,34 @@
 
         /* Responsive Media Queries */
         @media (max-width: 768px) {
+            .nav-container {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                row-gap: 0.75rem;
+                padding: 0.75rem 1rem;
+            }
+
+            .logoMainPage {
+                grid-column: 1 / -1;
+                justify-self: center;
+                gap: 0.75rem;
+                font-size: 1.25rem;
+            }
+
+            .logoMainPage img {
+                width: 72px;
+                height: 72px;
+            }
+
             .menu-label {
                 display: block; /* Show hamburger button */
+                grid-column: 1;
+                align-self: center;
+            }
+
+            .nav-actions {
+                grid-column: 2;
+                justify-self: end;
             }
 
             .nav-links {
@@ -312,7 +338,7 @@
 
             .nav-links a {
                 display: block;
-                padding: 1.5rem;
+                padding: 1rem;
                 border-bottom: 1px solid rgba(6, 182, 212, 0.1);
             }
 
@@ -322,7 +348,12 @@
 
             /* Display menu when checkbox is checked */
             .menu-checkbox:checked ~ .nav-actions .nav-links {
-                max-height: 300px;
+                /* Keep every link reachable on short tablet and phone screens. */
+                max-height: calc(100dvh - 9rem);
+                overflow-y: auto;
+                overscroll-behavior: contain;
+                -webkit-overflow-scrolling: touch;
+                touch-action: pan-y;
             }
 
             .hero h1 {
