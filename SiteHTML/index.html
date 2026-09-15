@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
     <title>LJ's Catch Official Website</title>
     <style>
         :root {
@@ -14,6 +17,10 @@
             --card-bg: rgba(255, 255, 255, 0.16);
         }
 
+        html {
+            font-size: 165%;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -21,10 +28,21 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Bubblegum Sans', cursive;
             background-color: var(--deep-ocean);
             color: var(--text-light);
             line-height: 1.6;
+        }
+
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Responsive Navigation Menu */
@@ -41,6 +59,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
             max-width: 1200px;
             margin: 0 auto;
             padding: 1rem 2rem;
@@ -49,16 +68,21 @@
         .logoMainPage {
             display: inline-flex;
             align-items: center;
-            gap: 0.65rem;
+            gap: 1.3rem;
             font-size: 1.5rem;
             font-weight: 700;
             color: #075d73;
             text-decoration: none;
+            transition: filter 0.2s ease;
+        }
+
+        .logoMainPage:hover {
+            filter: drop-shadow(0 3px 3px rgba(8, 74, 94, 0.28));
         }
 
         .logoMainPage img {
-            width: 52px;
-            height: 52px;
+            width: 104px;
+            height: 104px;
             object-fit: contain;
             border: 2px solid var(--seafoam);
             border-radius: 50%;
@@ -70,15 +94,46 @@
             list-style: none;
         }
 
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.4rem;
+        }
+
         .nav-links a {
             color: #123f50;
             text-decoration: none;
             font-weight: 600;
-            transition: color 0.3s;
+            transition: color 0.2s, text-shadow 0.2s, transform 0.2s;
         }
 
         .nav-links a:hover {
             color: #06758b;
+            text-shadow: 0 2px 3px rgba(8, 74, 94, 0.22);
+        }
+
+        .nav-links a.home-link,
+        .nav-links a.home-link:hover {
+            color: #876400;
+        }
+
+        .store-link {
+            display: inline-block;
+            padding: 0.4rem 0.9rem;
+            color: #123f50;
+            font-weight: 600;
+            text-decoration: none;
+            background-color: #c8f0ed;
+            border: 2px solid #123f50;
+            border-radius: 999px;
+            transition: color 0.2s, transform 0.2s;
+        }
+
+        .store-link:hover {
+            color: #123f50;
+            background-color: #c8f0ed;
+            text-shadow: none;
+            transform: scale(1.05);
         }
 
         /* Mobile Menu Toggle (Pure CSS) */
@@ -116,6 +171,7 @@
             color: var(--text-light);
             text-shadow: 0 3px 8px rgba(8, 74, 94, 0.35);
             margin-bottom: 1rem;
+            animation: fade-in-up 0.5s ease-out both;
         }
 
         .hero p {
@@ -123,6 +179,7 @@
             color: var(--sand);
             max-width: 600px;
             margin-bottom: 2rem;
+            animation: fade-in-up 0.5s 0.12s ease-out both;
         }
 
         .hero-btn {
@@ -133,10 +190,11 @@
             text-decoration: none;
             font-weight: 700;
             transition: transform 0.2s, box-shadow 0.2s;
+            animation: fade-in-up 0.5s 0.24s ease-out both;
         }
 
         .hero-btn:hover {
-            transform: translateY(-2px);
+            transform: translateY(-2px) scale(1.05);
             box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4);
         }
 
@@ -161,6 +219,7 @@
             color: #126782;
             margin-bottom: 3rem;
             font-size: 2rem;
+            animation: fade-in-up 0.5s 0.32s ease-out both;
         }
 
         .card-grid {
@@ -180,7 +239,12 @@
             display: flex;
             flex-direction: column;
             transition: transform 0.3s, border-color 0.3s;
+            animation: fade-in-up 0.5s ease-out both;
         }
+
+        .card:nth-child(1) { animation-delay: 0.42s; }
+        .card:nth-child(2) { animation-delay: 0.54s; }
+        .card:nth-child(3) { animation-delay: 0.66s; }
 
         .card:hover {
             transform: translateY(-5px);
@@ -209,6 +273,7 @@
 
         .card-link:hover {
             text-decoration: underline;
+            text-shadow: 0 2px 3px rgba(8, 74, 94, 0.22);
         }
 
         footer {
@@ -251,13 +316,25 @@
                 border-bottom: 1px solid rgba(6, 182, 212, 0.1);
             }
 
+            .store-link {
+                flex-shrink: 0;
+            }
+
             /* Display menu when checkbox is checked */
-            .menu-checkbox:checked ~ .nav-links {
+            .menu-checkbox:checked ~ .nav-actions .nav-links {
                 max-height: 300px;
             }
 
             .hero h1 {
                 font-size: 2.5rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
             }
         }
     </style>
@@ -274,12 +351,15 @@
             <input type="checkbox" id="menu-toggle" class="menu-checkbox">
             <label for="menu-toggle" class="menu-label">&#9776;</label>
             
-            <ul class="nav-links">
-                <li><a href="#explore">Explore</a></li>
-                <li><a href="#conservation">Conservation</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
+            <div class="nav-actions">
+                <ul class="nav-links">
+                    <li><a class="home-link" href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a class="store-link" href="https://ljscatch.myshopify.com" target="_blank" rel="noopener noreferrer">Visit Our Store</a>
+            </div>
         </div>
     </header>
 
