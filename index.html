@@ -148,7 +148,7 @@
 
         /* Hero Banner */
         .hero {
-            background-image: url(./assets/photos/ljPoseSunset.png);
+            background-image: linear-gradient(to bottom, rgba(8, 74, 94, 0.12), rgba(8, 45, 61, 0.62)), url(./assets/photos/ljPoseSunset.png);
             position: relative;
             height: 110vh;
             min-height: 400px;
@@ -165,9 +165,22 @@
             background-position: center;
         }
 
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: min(92%, 960px);
+            padding: 2rem;
+            background: rgba(8, 57, 75, 0.78);
+            border: 1px solid rgba(229, 244, 244, 0.32);
+            border-radius: 28px;
+        }
+
         .hero h1 {
             font-size: 3.5rem;
             color: var(--text-light);
+            max-width: 900px;
+            text-align: center;
             text-shadow: 0 3px 8px rgba(8, 74, 94, 0.35);
             margin-bottom: 1rem;
             animation: fade-in-up 0.5s ease-out both;
@@ -177,6 +190,7 @@
             font-size: 1.25rem;
             color: var(--sand);
             max-width: 600px;
+            text-align: center;
             margin-bottom: 2rem;
             animation: fade-in-up 0.5s 0.12s ease-out both;
         }
@@ -261,6 +275,15 @@
             font-size: 0.95rem;
             margin-bottom: 1.5rem;
             flex-grow: 1;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 180px;
+            margin-bottom: 1.5rem;
+            object-fit: cover;
+            border: 1px solid #a9dfe0;
+            border-radius: 10px;
         }
 
         .card-link {
@@ -393,10 +416,12 @@
     </header>
 
     <section class="hero">
+        <div class="hero-content">
         <p>Welcome to LJ's Catch!</p>
         <h1>Where Every Cast Tells a Story</h1>
         <p>Your family-friendly fishing adventure - making memories as big as the bass!</p>
         <a class="store-link" href="https://ljscatch.myshopify.com" target="_blank" rel="noopener noreferrer">Visit Our Store</a>
+        </div>
     </section>
 
     <main id="explore">
@@ -408,6 +433,7 @@
             <div class="card">
                 <h3>About LJ</h3>
                 <p>Come Meet LJ and His Crew - See What You Have Similar in Common!</p>
+                <img class="card-image" src="assets/photos/ljPoseSunset.png" alt="LJ enjoying time outdoors by the water">
                 <a href="about.html" class="card-link">Click Here &rarr;</a>
             </div>
 
@@ -415,6 +441,7 @@
             <div class="card">
                 <h3>Recent Catches</h3>
                 <p>Check Out Some of the Fish LJ's Reeling In!  Or Some Views and Setup Rigs He's Using.</p>
+                <img class="card-image" src="assets/photos/gallerypics/ljAndLargemouth.jpg" alt="LJ holding a largemouth bass">
                 <a href="gallery.html" class="card-link">Click Here &rarr;</a>
             </div>
 
@@ -422,6 +449,7 @@
             <div class="card">
                 <h3>Contact Us</h3>
                 <p>Feel Free to Drop Us an Email Using This Link Below - Ask Questions, Comment on The Site, or Give Us Pointers/Feedback on What We Can Do to Catch More Keepers!</p>
+                <img class="card-image" src="assets/photos/LJsCatchStandardIcon.png" alt="LJ's Catch logo">
                 <a href="contact.html" class="card-link">Click Here &rarr;</a>
             </div>
             </div>
@@ -429,7 +457,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Oceanic Initiative. Inspired by the blue planet.</p>
+        <p>&copy; 2026 LJ's Catch. Inspired by our love for fishing.</p>
     </footer>
 
 </body>
