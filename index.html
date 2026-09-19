@@ -412,6 +412,14 @@
                 scroll-behavior: auto !important;
             }
         }
+        .footer-social { display:flex; flex-wrap:wrap; justify-content:center; gap:.5rem 1.5rem; margin-top:.75rem; }
+        .footer-social a { display:inline-flex; align-items:center; gap:.4rem; color:inherit; text-underline-offset:.2em; } .footer-social img { width:1.2em; height:1.2em; flex-shrink:0; }
+        .footer-social a:hover { text-decoration-thickness:2px; }
+        .footer-social a:focus-visible { outline:2px solid currentColor; outline-offset:4px; }
+        .hero .store-link { display:inline-flex; align-items:center; gap:.4rem; }
+        .hero .store-link img { width:1.2em; height:1.2em; flex-shrink:0; }
+        header .store-link { display:inline-flex; align-items:center; gap:.4rem; }
+        header .store-link img { width:1.2em; height:1.2em; flex-shrink:0; }
     </style>
 </head>
 <body>
@@ -432,7 +440,7 @@
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-                <a class="store-link" href="https://ljscatch.myshopify.com" target="_blank" rel="noopener noreferrer">Visit Our Store</a>
+                <a class="store-link" href="https://ljscatch.myshopify.com" target="_blank" rel="noopener noreferrer"><img src="assets/icons/shopify.svg" alt="" width="24" height="24">Visit Our Store</a>
             </div>
         </div>
     </header>
@@ -442,7 +450,7 @@
         <p>Welcome to LJ's Catch!</p>
         <h1>Where Every Cast Tells a Story</h1>
         <p>Your family-friendly fishing adventure - making memories as big as the bass!</p>
-        <a class="store-link" href="https://www.youtube.com/@LJsCatch" target="_blank" rel="noopener noreferrer">Experience the Catch!</a>
+        <a class="store-link" href="https://www.youtube.com/@LJsCatch" target="_blank" rel="noopener noreferrer"><img src="assets/icons/youtube.svg" alt="" width="24" height="24">Experience the Catch!</a>
         </div>
     </section>
 
@@ -480,6 +488,10 @@
 
     <footer>
         <p>&copy; 2026 LJ's Catch. Inspired by our love for fishing.</p>
+        <nav class="footer-social" aria-label="Social media">
+            <a href="https://www.instagram.com/ljscatch/" target="_blank" rel="noopener noreferrer"><img src="assets/icons/instagram.svg" alt="" width="24" height="24">Instagram</a>
+            <a href="https://www.youtube.com/@LJsCatch" target="_blank" rel="noopener noreferrer"><img src="assets/icons/youtube.svg" alt="" width="24" height="24">YouTube</a>
+        </nav>
     </footer>
 
 </body>
