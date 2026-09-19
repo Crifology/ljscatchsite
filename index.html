@@ -243,6 +243,7 @@
         }
 
         .card {
+            text-decoration: none;
             background: #edf9fa;
             border: 1px solid #a9dfe0;
             border-radius: 12px;
@@ -252,16 +253,22 @@
             display: flex;
             flex-direction: column;
             transition: transform 0.3s, border-color 0.3s;
-            animation: fade-in-up 0.5s ease-out both;
+            animation: fade-in-up 0.5s ease-out backwards;
         }
 
         .card:nth-child(1) { animation-delay: 0.42s; }
         .card:nth-child(2) { animation-delay: 0.54s; }
         .card:nth-child(3) { animation-delay: 0.66s; }
 
-        .card:hover {
-            transform: translateY(-5px);
+        .card:hover,
+        .card:focus-visible {
+            transform: translateY(-5px) scale(1.03);
             border-color: var(--seafoam);
+        }
+
+        .card:focus-visible {
+            outline: 3px solid #126782;
+            outline-offset: 4px;
         }
 
         .card h3 {
@@ -293,7 +300,8 @@
             font-size: 0.9rem;
         }
 
-        .card-link:hover {
+        .card:hover .card-link,
+        .card:focus-visible .card-link {
             text-decoration: underline;
             text-shadow: 0 2px 3px rgba(8, 74, 94, 0.22);
         }
@@ -460,28 +468,28 @@
             
             <div class="card-grid">
             <!-- Card 1 -->
-            <div class="card">
+            <a href="about.html" class="card">
                 <h3>About LJ</h3>
                 <p>Come Meet LJ and His Crew - See What You Have Similar in Common!</p>
                 <img class="card-image" src="assets/photos/ljPoseSunset.png" alt="LJ enjoying time outdoors by the water">
-                <a href="about.html" class="card-link">Click Here &rarr;</a>
-            </div>
+                <span class="card-link">Click Here &rarr;</span>
+            </a>
 
             <!-- Card 2 -->
-            <div class="card">
+            <a href="gallery.html" class="card">
                 <h3>Recent Catches</h3>
                 <p>Check Out Some of the Fish LJ's Reeling In!  Or Some Views and Setup Rigs He's Using.</p>
                 <img class="card-image" src="assets/photos/gallerypics/ljAndLargemouth.jpg" alt="LJ holding a largemouth bass">
-                <a href="gallery.html" class="card-link">Click Here &rarr;</a>
-            </div>
+                <span class="card-link">Click Here &rarr;</span>
+            </a>
 
             <!-- Card 3 -->
-            <div class="card">
+            <a href="contact.html" class="card">
                 <h3>Contact Us</h3>
                 <p>Feel Free to Drop Us an Email Using This Link Below - Ask Questions, Comment on The Site, or Give Us Pointers/Feedback on What We Can Do to Catch More Keepers!</p>
                 <img class="card-image" src="assets/photos/LJsCatchStandardIcon.png" alt="LJ's Catch logo">
-                <a href="contact.html" class="card-link">Click Here &rarr;</a>
-            </div>
+                <span class="card-link">Click Here &rarr;</span>
+            </a>
             </div>
         </section>
     </main>
