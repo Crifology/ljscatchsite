@@ -25,7 +25,8 @@
   }
   async function request(address, ttl = 300000) {
     const url = new URL(address);
-    if (url.protocol !== 'https:' || !['api.inaturalist.org','nas.er.usgs.gov'].includes(url.hostname)) throw new Error('Unsupported provider');
+    const massGIS = url.origin === 'https://services1.arcgis.com' && /^\/hGdibHYSPO59RG1h\/arcgis\/rest\/services\/Massachusetts_Water_Features\/FeatureServer\/(7|8)\/query$/.test(url.pathname);
+    if (url.protocol !== 'https:' || (!['api.inaturalist.org','nas.er.usgs.gov'].includes(url.hostname) && !massGIS)) throw new Error('Unsupported provider');
     const hit = cache.get(address);
     if (hit && Date.now() - hit.at < ttl) return hit.data;
     if (pending.has(address)) return pending.get(address);

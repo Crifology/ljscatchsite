@@ -33,8 +33,10 @@ tools: `tile.openstreetmap.org` is the basemap, `unpkg.com` supplies Leaflet, an
 Referer through hosting configuration. Never spoof it, disable browser security,
 rotate proxies, or add cache-busting tile URLs to work around a provider block.
 
-The tracker has Last 24 Hours, Last Week (7 days), and Last Month (30 days)
-filters. iNaturalist supplies community angling reports. The optional USGS NAS
+The tracker defaults to Boston-area Massachusetts locations within 50 km of
+downtown Boston, with Massachusetts and United States options. It has Last 24
+Hours, Last Week (7 days), Last Month (30 days), and Latest available (any date)
+filters. The archive is explicitly historical; it does not imply recent activity. iNaturalist supplies community angling reports. The optional USGS NAS
 source supplies clearly labeled introduced-fish sightings, not confirmed catches.
 Both use documented public APIs; no website scraping is implemented.
 
@@ -42,7 +44,11 @@ The 24-hour view requires a real observation timestamp, so date-only USGS record
 are excluded. Each source has separate availability/count reporting. Requests are
 cached for five minutes, queued per provider, and backed off after failures.
 Contributor and photo credits appear in the detail window. Exact water/site names
-are shown when supplied by the source. No missing times or water names are guessed.
+are shown when supplied by the source. Massachusetts reports also query the
+official MassGIS water service on selection. The nearest named mapped water
+within 1 km is highlighted and labeled as an estimate, never a confirmed catch
+site. Timestamped Massachusetts reports display in America/New_York time;
+date-only values remain date-only.
 
 Read [TRACKER-SOURCES.md](TRACKER-SOURCES.md) for the permission review, additional
 APIs researched, source limitations, date semantics, and hosting/traffic limits.
@@ -52,4 +58,5 @@ second observation API, not a claim of comprehensive live catch coverage.
 Run the dependency-free checks with `node --test tests/tracker.test.cjs`.
 Files: `assets/tracker-data.js` contains provider adapters and time filtering;
 `assets/tracker-network.js` handles caching, request pacing and documented USGS
-JSONP; `assets/tracker.js` controls the map, list, and detail dialog.
+JSONP; `assets/tracker-water.js` queries MassGIS and measures geometry distances;
+`assets/tracker.js` controls the map, list, and detail dialog.

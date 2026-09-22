@@ -5,7 +5,9 @@
   const licenses = new Set(['cc0', 'cc-by', 'cc-by-sa']);
   const cache = new Map();
   const data = window.TrackerData;
-  let reports = [], selection = 0, map, markers;
+  let reports = [], selection = 0, map, markers, waterLayer;
+  const selectedRegion = () => $('region')?.value || 'us';
+  const overview = () => { const area = data.regions[selectedRegion()]; map?.setView(area.center, area.zoom); };
   const dialog = $('fish-dialog');
   const nameOf = o => o.taxon?.preferred_common_name || o.taxon?.name || 'Unidentified fish';
   async function json(url) {
@@ -14,7 +16,7 @@
   function dateLabel(o) {
     if (o.time_observed_at) {
       const date = new Date(o.time_observed_at);
-      if (!Number.isNaN(date.valueOf())) return date.toLocaleString(undefined, {timeZone:'UTC', timeZoneName:'short'});
+      if (!Number.isNaN(date.valueOf())) return date.toLocaleString(undefined, {timeZone:selectedRegion() === 'us' ? 'UTC' : 'America/New_York', timeZoneName:'short'});
     }
     return `${o.observed_on || 'Date not provided'} · exact time not provided`;
   }
@@ -70,15 +72,33 @@
       $('photo-credit').append(credit);
     } catch { if (token === selection) $('fish-photo').textContent = 'No reusable species photo available.'; }
   }
+  async function nearestWater(o, node, token) {
+    try {
+      const result = await window.TrackerWater.lookup(o.geojson.coordinates, json);
+      if (token !== selection) return;
+      if (!result) { node.textContent = 'No named mapped water found within 1 km. Exact catch water is unconfirmed.'; return; }
+      node.textContent = `${result.name} - ${result.meters === 0 ? 'reported point is on or within the mapped water' : `approximately ${Math.max(10, Math.round(result.meters / 10) * 10)} m from the reported point`}. Nearest named mapped water within 1 km; catch site unconfirmed.`;
+      if (map && window.L) {
+        const geometry = result.geometry;
+        const latlngs = (geometry.rings || geometry.paths).map(path => path.map(([lng,lat]) => [lat,lng]));
+        waterLayer = (geometry.rings ? L.polygon(latlngs, {color:'#06758b',weight:3,fillOpacity:.15}) : L.polyline(latlngs, {color:'#06758b',weight:4})).addTo(map);
+      }
+    } catch { if (token === selection) node.textContent = 'Water lookup unavailable. The reported location is still shown; exact catch water is unconfirmed.'; }
+  }
   function openReport(o) {
     const token = ++selection;
+    if (waterLayer) { map?.removeLayer(waterLayer); waterLayer = null; }
     $('fish-name').textContent = nameOf(o);
     $('scientific-name').textContent = o.taxon?.name || '';
     $('fish-details').replaceChildren();
     detail(o.source === 'USGS NAS' ? 'Last seen (reported date)' : 'Caught / last seen (reported observation)', dateLabel(o));
     detail('Reported location', o.place_guess || 'Location name not supplied');
     detail('Location accuracy', o.accuracyText || (o.positional_accuracy ? `Approximately ${o.positional_accuracy} m, as reported by the source.` : 'Accuracy not supplied; pin is a reported position.'));
-    detail('Water / site', o.reportedWater || 'Exact water body not supplied separately. See the reported location and map.');
+    detail('Reported water / site', o.reportedWater || o.place_guess || 'Not supplied');
+    if (data.inRegion(o, 'massachusetts')) {
+      const water = detail('Nearest named water (MassGIS estimate)', 'Looking up nearby mapped waters...');
+      nearestWater(o, water, token);
+    }
     const method = (o.ofvs || []).find(f => f.field_id === 17274)?.value;
     detail('Report type', method || o.kind);
     detail('Source / contributor / data license', `${o.source} · ${o.credit}`);
@@ -90,7 +110,9 @@
   function render() {
     const term = $('search').value.trim().toLowerCase();
     const visible = data.select(reports, data.windowFor($('period').value)).filter(o => `${nameOf(o)} ${o.taxon?.name} ${o.place_guess || ''}`.toLowerCase().includes(term));
-    markers?.clearLayers(); $('report-list').replaceChildren(); $('count').textContent = visible.length;
+    markers?.clearLayers();
+    if (waterLayer) { map?.removeLayer(waterLayer); waterLayer = null; }
+    $('report-list').replaceChildren(); $('count').textContent = visible.length;
     for (const o of visible) {
       const [lng, lat] = o.geojson.coordinates;
       if (markers) L.marker([lat,lng], {title:`${nameOf(o)} — ${o.place_guess || 'View report'}`, alt:nameOf(o)}).addTo(markers).on('click', () => openReport(o));
@@ -100,18 +122,19 @@
       button.onclick = () => { map?.setView([lat,lng], 10); openReport(o); };
       $('report-list').append(button);
     }
-    if (!visible.length) $('report-list').textContent = 'No matching reports. Try a wider date range or another search.';
+    if (!visible.length) $('report-list').textContent = 'No matching reports in this area and period. Try Latest available (any date), another area, or a different search. Historical reports are not recent catches.';
   }
   async function load() {
-    $('refresh').disabled = true; $('period').disabled = true; $('include-sightings').disabled = true;
+    $('refresh').disabled = true; $('period').disabled = true; $('include-sightings').disabled = true; $('region').disabled = true;
     $('status').textContent = 'Loading reports for the selected period...';
     $('source-status').replaceChildren();
     reports = []; render();
+    const region = selectedRegion();
     const window = data.windowFor($('period').value);
     const providers = [{name:'iNaturalist angling reports', fetch:data.fetchInaturalist}];
     if ($('include-sightings').checked) providers.push({name:'USGS NAS fish sightings', fetch:data.fetchUSGS});
     try {
-      const results = await Promise.allSettled(providers.map(p => p.fetch(window, json)));
+      const results = await Promise.allSettled(providers.map(p => p.fetch(window, json, region)));
       let failures = 0;
       results.forEach((result, i) => {
         const line = document.createElement('li');
@@ -127,10 +150,10 @@
         $('source-status').append(line);
       });
       reports = data.select(reports, window); render();
-      $('status').textContent = `${reports.length} reports in this period. ${failures ? `${failures} source(s) unavailable. ` : ''}Responses are cached for 5 minutes.${map ? '' : ' Map unavailable; select a report from the list.'}`;
+      $('status').textContent = `${reports.length} reports for ${data.regions[region].label} in ${window.days ? 'this period' : 'the archive (any date)'}. ${failures ? `${failures} source(s) unavailable. ` : ''}Responses are cached for 5 minutes.${map ? '' : ' Map unavailable; select a report from the list.'}`;
       if (failures === providers.length) $('report-list').textContent = 'The selected sources are unavailable. Try Refresh reports again later.';
     } finally {
-      $('refresh').disabled = false; $('period').disabled = false; $('include-sightings').disabled = false;
+      $('refresh').disabled = false; $('period').disabled = false; $('include-sightings').disabled = false; $('region').disabled = false;
     }
   }
   $('close-dialog').onclick = () => dialog.close();
@@ -138,6 +161,7 @@
   dialog.addEventListener('click', e => { if (e.target === dialog) { const r = dialog.getBoundingClientRect(); if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dialog.close(); } });
   $('search').addEventListener('input', render);
   $('refresh').onclick = load; $('period').onchange = load; $('include-sightings').onchange = load;
+  $('region').onchange = () => { overview(); return load(); };
   const mapStatus = $('map-status');
   const webOrigin = ['http:', 'https:'].includes(window.location?.protocol);
   if (!webOrigin) {
@@ -146,7 +170,7 @@
     $('catch-map').textContent = 'Open the localhost preview to display the map.';
     $('reset-map').disabled = true;
   } else if (window.L) {
-    map = L.map('catch-map', {scrollWheelZoom:false}).setView([39,-98],4);
+    map = L.map('catch-map', {scrollWheelZoom:false}).setView(data.regions[selectedRegion()].center,data.regions[selectedRegion()].zoom);
     const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom:18,
       // Send the real page origin, never a forged Referer or a cache-busting URL.
@@ -163,7 +187,7 @@
     });
     tiles.addTo(map);
     markers = L.layerGroup().addTo(map);
-    $('reset-map').onclick = () => map.setView([39,-98],4);
+    $('reset-map').onclick = overview;
   } else {
     $('catch-map').textContent = 'Map unavailable. Use the report list to explore catches.';
     mapStatus.hidden = false;

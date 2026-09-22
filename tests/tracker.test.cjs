@@ -3,6 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
 const D = require('../assets/tracker-data.js');
+const W = require('../assets/tracker-water.js');
 const now = Date.parse('2026-09-21T18:00:00Z');
 const observation = (extra = {}) => ({id:1, taxon:{id:123,name:'Test fish'}, license_code:'cc-by',
   geojson:{coordinates:[-80,30]}, observed_on:'2026-09-21', time_observed_at:'2026-09-21T12:00:00-04:00', ...extra});
@@ -61,6 +62,38 @@ test('iNaturalist queries actual dates, US geography, open data licenses and fla
   const r=await D.fetchInaturalist(D.windowFor('7',now),async value=>{url=new URL(value);return {results:[observation()],total_results:201};});
   assert.equal(url.searchParams.get('place_id'),'1');assert.equal(url.searchParams.get('license'),'cc0,cc-by,cc-by-sa');
   assert.ok(url.searchParams.has('d1'));assert.equal(r.limited,true);
+});
+test('Boston requires a Massachusetts record within 50 km; nationwide stays available', () => {
+  const local=D.inaturalist(observation({place_ids:[1,2],geojson:{coordinates:[-71.0589,42.3601]}}));
+  assert.ok(D.inRegion(local,'boston'));
+  assert.ok(!D.inRegion({...local,place_ids:[1]},'boston'));
+  assert.ok(!D.inRegion({...local,geojson:{coordinates:[-73.25,42.45]}},'boston'));
+  assert.ok(D.inRegion({...local,geojson:{coordinates:[-73.25,42.45]}},'massachusetts'));
+  assert.ok(D.inRegion(D.usgs(sighting({state:'Massachusetts',decimalLongitude:-71.06,decimalLatitude:42.36})),'boston'));
+});
+test('Boston query limits the upstream request and archive does not manufacture recent dates', async () => {
+  let url;
+  const old=observation({place_ids:[1,2],geojson:{coordinates:[-71.0589,42.3601]},observed_on:'2017-07-21',time_observed_at:null});
+  const r=await D.fetchInaturalist(D.windowFor('all',now),async u=>{url=new URL(u);return {results:[old],total_results:1};},'boston');
+  assert.equal(url.searchParams.get('place_id'),'2');assert.equal(url.searchParams.get('radius'),'50');
+  assert.equal(url.searchParams.has('d1'),false);
+  assert.equal(D.select(r.reports,D.windowFor('all',now)).length,1);
+  assert.equal(D.select(r.reports,D.windowFor('30',now)).length,0);
+});
+test('nearest-water distance uses boundaries, containment and polygon holes, not centroids', () => {
+  const square={rings:[[[-.01,-.01],[.01,-.01],[.01,.01],[-.01,.01],[-.01,-.01]]]};
+  assert.equal(W.distance([0,0],square),0);
+  const hole={rings:[...square.rings,[[-.001,-.001],[-.001,.001],[.001,.001],[.001,-.001],[-.001,-.001]]]};
+  assert.ok(W.distance([0,0],hole)>100);
+  const result=W.nearest([0,0],[{attributes:{NAME:'Far river'},geometry:{paths:[[[.005,-.01],[.005,.01]]]}},{attributes:{NAME:'Near pond'},geometry:square}]);
+  assert.equal(result.name,'Near pond');assert.equal(result.meters,0);
+  assert.equal(W.nearest([0,0],[{attributes:{NAME:'Far'},geometry:{paths:[[[1,1],[2,2]]]}}]),null);
+});
+test('water lookup is bounded and fails honestly on incomplete service results', async () => {
+  const urls=[];
+  assert.equal(await W.lookup([-71.06,42.36],async u=>{urls.push(new URL(u));return {features:[]};}),null);
+  assert.equal(urls.length,2);assert.ok(urls.every(u=>u.searchParams.get('distance')==='1000' && u.searchParams.get('resultRecordCount')==='100'));
+  await assert.rejects(W.lookup([-71.06,42.36],async()=>({features:[],exceededTransferLimit:true})),/Too many/);
 });
 test('network caches and deduplicates identical in-flight requests', async () => {
   let calls=0;

@@ -5,6 +5,45 @@ limits checked for this implementation; it is not a guarantee about future terms
 or the accuracy/ownership of every third-party submission. Recheck before changing
 usage, adding a provider, or substantially increasing traffic.
 
+## Boston / Massachusetts update
+
+The tracker defaults to Massachusetts locations within 50 km of 42.3601,
+-71.0589 (downtown Boston), with statewide and nationwide options. iNaturalist
+uses verified Massachusetts place ID 2 plus a radius filter; returned place IDs
+and distances are checked too. USGS uses `state=MA` plus the radius check.
+The area is never silently widened when no reports match.
+
+The tested openly licensed Boston angling sample contained three records from
+July 2017, not recent catches. **Latest available (any date)** allows historical
+angling reports without changing the recent filters. USGS is skipped in archive
+mode to avoid unbounded historical queries. Last Month remains the default. No
+additional source with verified permitted reuse of recent Boston catch details
+was established in this review.
+
+### Nearest Massachusetts water
+
+Added the official [Massachusetts Water Features service](https://www.arcgis.com/home/item.html?id=b46543d768f7427ea5b3de583d0e8c13).
+Its item metadata explicitly permits public use of the service. The
+[MassGIS data-use policy](https://www.mass.gov/info-details/learn-about-massgis-data)
+permits redistribution and commercial integration. Display the requested credit:
+MassGIS (Bureau of Geographic Information), Commonwealth of Massachusetts EOTSS.
+
+On selection of a Massachusetts report, query layers 8 (water polygons) and 7
+(linear waters) within 1,000 metres of its already-public coordinate, capped at
+100 named features per layer. Water classification codes exclude islands,
+wetlands and facilities. The existing request queue provides pacing and caching.
+No API key, private service, scraper, proxy or Overpass dependency is used.
+
+Measure approximate ground distance to geometry, including polygon containment
+and holes, rather than centroids. Highlight the nearest returned named water;
+keep the catch pin at its reported coordinate. This is the **nearest named mapped
+water within 1 km**, not a verified catch site or coverage of unnamed waters.
+Offshore locations may have no result. A failed layer or truncated query returns
+an unavailable message instead of an unsupported nearest-water claim.
+
+Timestamped Massachusetts reports display in America/New_York time (EST/EDT).
+Date-only reports remain date-only; no time or catch date is invented.
+
 ## Connected APIs
 
 | Provider | What the tracker uses | Permission and restrictions | Coverage limitations |
