@@ -61,5 +61,20 @@
     if (!bounds.every(Number.isFinite) || west < -180 || east > 180 || west >= east || south < -90 || north > 90 || south >= north) throw Error('Choose an area within the map bounds');
     return bounds.map(n => n.toFixed(4)).join(',');
   }
-  return {regions,https,normalize,filter,boundsQuery};
+  function fishResults(features,term='',type='',bounds=null) {
+    const query=term.trim().toLowerCase(), groups=new Map();
+    const waters=features.filter(({properties:p})=> {
+      const [lng,lat]=p.pin;
+      return (!type || p.kind===type) && (!bounds || lng>=bounds[0]&&lng<=bounds[2]&&lat>=bounds[1]&&lat<=bounds[3]);
+    });
+    for(const feature of waters)for(const species of feature.properties.species){
+      if(![species.commonName,species.scientificName].join(' ').toLowerCase().includes(query))continue;
+      const key=species.scientificName.trim().toLowerCase();
+      if(!groups.has(key))groups.set(key,{...species,waters:[]});
+      groups.get(key).waters.push(feature);
+    }
+    const all=[...groups.values()].sort((a,b)=>a.commonName.localeCompare(b.commonName));
+    return {total:all.length,species:all.slice(0,20),waters:[...new Set(all.flatMap(s=>s.waters))]};
+  }
+  return {regions,https,normalize,filter,boundsQuery,fishResults};
 });

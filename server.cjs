@@ -4,8 +4,9 @@ const fs = require('node:fs');
 const path = require('node:path');
 const {createUSGSService} = require('./usgs-fish-service.cjs');
 const {createStockingService} = require('./stocking-service.cjs');
+const {createDatabaseService} = require('./fish-database-service.cjs');
 const ROOT = __dirname;
-const MIME = {'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.md':'text/plain; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.webp':'image/webp','.ico':'image/x-icon'};
+const MIME = {'.json':'application/json; charset=utf-8','.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.md':'text/plain; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.webp':'image/webp','.ico':'image/x-icon'};
 function createFishService({fetcher=fetch,now=Date.now,pause=ms=>new Promise(r=>setTimeout(r,ms)),readBudget,writeBudget}) {
   const cache=new Map(),pending=new Map();
   let queue=Promise.resolve(),next=0,blocked=0;
@@ -55,7 +56,7 @@ function createFishService({fetcher=fetch,now=Date.now,pause=ms=>new Promise(r=>
     try{return await task;}finally{pending.delete(key);}
   };
 }
-function createServer({fishService,usgsService=createUSGSService(),stockingService=createStockingService()}={}) {
+function createServer({fishService,usgsService=createUSGSService(),stockingService=createStockingService(),databaseService=createDatabaseService()}={}) {
   if(!fishService) {
     const folder=path.join(ROOT,'.tracker-cache'),file=path.join(folder,'budget.json');
     fs.mkdirSync(folder,{recursive:true});
@@ -68,10 +69,10 @@ function createServer({fishService,usgsService=createUSGSService(),stockingServi
     res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('Referrer-Policy','strict-origin-when-cross-origin');
     if(!['GET','HEAD'].includes(req.method)){res.writeHead(405);return res.end();}
     let url;try{url=new URL(req.url,'http://localhost');}catch{res.writeHead(400);return res.end();}
-    if(['/api/fish-observations','/api/usgs-fish','/api/stocking'].includes(url.pathname)) {
+    if(['/api/fish-observations','/api/usgs-fish','/api/stocking','/api/fish-database'].includes(url.pathname)) {
       if(req.method==='HEAD'){res.writeHead(405);return res.end();}
       try {
-        const service=url.pathname==='/api/stocking'?stockingService:url.pathname==='/api/usgs-fish'?usgsService:fishService;
+        const service=url.pathname==='/api/fish-database'?databaseService:url.pathname==='/api/stocking'?stockingService:url.pathname==='/api/usgs-fish'?usgsService:fishService;
         const result=await service(url.searchParams);
         res.setHeader('Content-Type','application/json');res.setHeader('Cache-Control',result.status===200?'public, max-age=300':'no-store');
         if(result.retry)res.setHeader('Retry-After',String(result.retry));
@@ -80,7 +81,7 @@ function createServer({fishService,usgsService=createUSGSService(),stockingServi
     }
     let name;try{name=decodeURIComponent(url.pathname==='/'?'/index.html':url.pathname);}catch{res.writeHead(400);return res.end();}
     const file=path.resolve(ROOT,'.'+name),ext=path.extname(file).toLowerCase();
-    if(!file.startsWith(ROOT+path.sep)||name.split(/[\\/]/).some(p=>p.startsWith('.'))||!MIME[ext]||!(name.startsWith('/assets/')||/^\/[\w-]+\.(html|md)$/.test(name))) {res.writeHead(404);return res.end();}
+    if(!file.startsWith(ROOT+path.sep)||name.split(/[\\/]/).some(p=>p.startsWith('.'))||!MIME[ext]||!(name.startsWith('/assets/')||/^\/database\/(?:[A-Z]{2}|index)\.json$/.test(name)||/^\/[\w-]+\.(html|md)$/.test(name))) {res.writeHead(404);return res.end();}
     fs.stat(file,(err,stat)=>{
       if(err||!stat.isFile()){res.writeHead(404);return res.end();}
       res.writeHead(200,{'Content-Type':MIME[ext],'Content-Length':stat.size,'Cache-Control':'public, max-age=60'});

@@ -1,9 +1,9 @@
 /* Approximate state overview centers; never used to infer a stocking location. */
 (function(root,factory){
-  const api=factory();
+  const api=factory(typeof module==='object'&&module.exports ? require('./water-state-bounds.js') : root.WaterStateBounds);
   if(typeof module==='object'&&module.exports)module.exports=api;
   else root.WaterLocation=api;
-})(typeof window==='undefined'?globalThis:window,function(){
+})(typeof window==='undefined'?globalThis:window,function(boundaries){
   'use strict';
   const rows=[
     ['AL','Alabama',32.8,-86.8,6],['AK','Alaska',64,-152,4],['AZ','Arizona',34.2,-111.7,6],
@@ -24,7 +24,7 @@
     ['VT','Vermont',44,-72.7,7],['VA','Virginia',37.5,-79,7],['WA','Washington',47.4,-120.7,6],
     ['WV','West Virginia',38.6,-80.6,7],['WI','Wisconsin',44.6,-89.7,6],['WY','Wyoming',43,-107.5,6]
   ];
-  const states=Object.fromEntries(rows.map(([code,label,lat,lng,zoom])=>[code,{label,center:[lat,lng],zoom}]));
+  const states=Object.fromEntries(rows.map(([code,label,lat,lng,zoom])=>[code,{label,center:[lat,lng],zoom,...boundaries?.[label]}]));
   function stateFrom(data){
     if(data?.success!==true||data.country_code!=='US')return null;
     const code=typeof data.region_code==='string'?data.region_code.toUpperCase():'';

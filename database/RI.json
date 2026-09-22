@@ -1,0 +1,1575 @@
+{
+  "schemaVersion": 1,
+  "state": {
+    "code": "RI",
+    "name": "Rhode Island"
+  },
+  "generatedAt": "2026-09-22T23:04:35.192Z",
+  "coverage": {
+    "scope": "Introduced fish reported as established in USGS NAS; historical records, not a complete species inventory.",
+    "locationMethod": "Original reported water locality and public coordinates; names are not canonical waterbody identifiers.",
+    "status": "complete",
+    "complete": true,
+    "queries": [
+      "https://nas.er.usgs.gov/api/v2/occurrence/search?group=Fishes&state=RI&spatialAcc=Accurate&status=established&limit=1000&offset=0"
+    ],
+    "error": null,
+    "sourceRecords": 84,
+    "acceptedRecords": 41,
+    "rejectedRecords": 43
+  },
+  "sources": [
+    {
+      "id": "usgs-nas",
+      "label": "USGS Nonindigenous Aquatic Species",
+      "license": "Public domain",
+      "url": "https://nas.er.usgs.gov/",
+      "documentation": "https://nas.er.usgs.gov/api/documentation.aspx"
+    }
+  ],
+  "counts": {
+    "waters": 25,
+    "species": 6,
+    "waterSpeciesPairs": 39,
+    "evidence": 41
+  },
+  "waters": [
+    {
+      "id": "ri-c0fbd4f281ba7ad5",
+      "name": "Atlantic Ocean, Rhode Island, Fort Wetherill State Park",
+      "kind": "Coastal",
+      "state": "RI",
+      "county": "Newport",
+      "coordinates": [
+        -71.3612,
+        41.479
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "lionfish",
+          "scientificName": "Pterois volitans/miles",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 243903,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=243903",
+              "year": 2006,
+              "reportedDate": "2006-8-25",
+              "recordType": "Literature",
+              "coordinates": [
+                -71.3612,
+                41.479
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 243905,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=243905",
+              "year": 2006,
+              "reportedDate": "2006-9-17",
+              "recordType": "Literature",
+              "coordinates": [
+                -71.3612,
+                41.479
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": null,
+          "photoStatus": "unmatched"
+        }
+      ]
+    },
+    {
+      "id": "ri-ff0235f9f017f7e0",
+      "name": "Atlantic Ocean, Rhode Island, Misquamicutt State Beach",
+      "kind": "Coastal",
+      "state": "RI",
+      "county": "Washington",
+      "coordinates": [
+        -71.80278,
+        41.32361
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "lionfish",
+          "scientificName": "Pterois volitans/miles",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1339593,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1339593",
+              "year": 2016,
+              "reportedDate": "2016-8-18",
+              "recordType": "NAS sighting report",
+              "coordinates": [
+                -71.80278,
+                41.32361
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": null,
+          "photoStatus": "unmatched"
+        }
+      ]
+    },
+    {
+      "id": "ri-1daf1e030061c351",
+      "name": "Atlantic Ocean, Rhode Island, Narragansett Bay (East Passage), southern end of Conanicut Island at Fort Wetherill, Jamestown",
+      "kind": "Coastal",
+      "state": "RI",
+      "county": "Newport",
+      "coordinates": [
+        -71.3577,
+        41.4765
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "lionfish",
+          "scientificName": "Pterois volitans/miles",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 167798,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=167798",
+              "year": 2006,
+              "reportedDate": "2006-9-17",
+              "recordType": "Personal communication",
+              "coordinates": [
+                -71.3577,
+                41.4765
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": null,
+          "photoStatus": "unmatched"
+        }
+      ]
+    },
+    {
+      "id": "ri-506f23ef7f762305",
+      "name": "Atlantic Ocean, Rhode Island, Narragansett, offshore",
+      "kind": "Coastal",
+      "state": "RI",
+      "county": "Washington",
+      "coordinates": [
+        -71.4517,
+        41.4133
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "lionfish",
+          "scientificName": "Pterois volitans/miles",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 237952,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=237952",
+              "year": 2005,
+              "reportedDate": "2005-9-3",
+              "recordType": "Personal communication",
+              "coordinates": [
+                -71.4517,
+                41.4133
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": null,
+          "photoStatus": "unmatched"
+        }
+      ]
+    },
+    {
+      "id": "ri-161b39540bcb2e51",
+      "name": "Atlantic Ocean, Rhode Island, offshore",
+      "kind": "Coastal",
+      "state": "RI",
+      "county": "",
+      "coordinates": [
+        -71.331482,
+        41.343825
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "lionfish",
+          "scientificName": "Pterois volitans/miles",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 241259,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=241259",
+              "year": 2006,
+              "reportedDate": "2006-9-22",
+              "recordType": "Personal communication",
+              "coordinates": [
+                -71.331482,
+                41.343825
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": null,
+          "photoStatus": "unmatched"
+        }
+      ]
+    },
+    {
+      "id": "ri-7a09543b9315a6be",
+      "name": "Buckshorn Brook 1.3 mi. S of Rice City [trib. to Moosup River].",
+      "kind": "River",
+      "state": "RI",
+      "county": "Kent",
+      "coordinates": [
+        -71.7575,
+        41.69556
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Largemouth Bass",
+          "scientificName": "Micropterus nigricans",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 612949,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=612949",
+              "year": 1979,
+              "reportedDate": "1979-8-5",
+              "recordType": "Specimen",
+              "coordinates": [
+                -71.7575,
+                41.69556
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-17819306.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/17819306",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ri-7022b8be8582e6ce",
+      "name": "Mashapoag Pond, Cranston",
+      "kind": "Lake",
+      "state": "RI",
+      "county": "Providence",
+      "coordinates": [
+        -71.4333333333333,
+        41.7833333333333
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Black Crappie",
+          "scientificName": "Pomoxis nigromaculatus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 42512,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=42512",
+              "year": 1991,
+              "reportedDate": "1991-7-8",
+              "recordType": "Specimen",
+              "coordinates": [
+                -71.4333333333333,
+                41.7833333333333
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-383733517.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/383733517",
+            "label": "(c) Quinn, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ri-fca69010f6ac44a9",
+      "name": "Mashapoag Pond, Cranston.",
+      "kind": "Lake",
+      "state": "RI",
+      "county": "Providence",
+      "coordinates": [
+        -71.43333,
+        41.79167
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Black Crappie",
+          "scientificName": "Pomoxis nigromaculatus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 613395,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=613395",
+              "year": 1991,
+              "reportedDate": "1991-7-8",
+              "recordType": "Specimen",
+              "coordinates": [
+                -71.43333,
+                41.79167
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-383733517.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/383733517",
+            "label": "(c) Quinn, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Bluegill",
+          "scientificName": "Lepomis macrochirus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 611846,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=611846",
+              "year": 1991,
+              "reportedDate": "1991-7-8",
+              "recordType": "Specimen",
+              "coordinates": [
+                -71.43333,
+                41.79167
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-339074.png",
+            "sourceUrl": "https://www.inaturalist.org/photos/339074",
+            "label": "(c) Kristiina Hurme, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Largemouth Bass",
+          "scientificName": "Micropterus nigricans",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 613137,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=613137",
+              "year": 1991,
+              "reportedDate": "1991-7-8",
+              "recordType": "Specimen",
+              "coordinates": [
+                -71.43333,
+                41.79167
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-17819306.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/17819306",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ri-c7d0598be3bfb9c1",
+      "name": "Moosup River 0.6 mi. SE of Rice City.",
+      "kind": "River",
+      "state": "RI",
+      "county": "Kent",
+      "coordinates": [
+        -71.76222,
+        41.70639
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Largemouth Bass",
+          "scientificName": "Micropterus nigricans",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 612948,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=612948",
+              "year": 1979,
+              "reportedDate": "1979-8-5",
+              "recordType": "Specimen",
+              "coordinates": [
+                -71.76222,
+                41.70639
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-17819306.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/17819306",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ri-e42f7ef4148993f4",
+      "name": "Mountaindale Reservoir, Providence, Woonasquatucket R. drainage",
+      "kind": "Reservoir",
+      "state": "RI",
+      "county": "Providence",
+      "coordinates": [
+        -71.5366666666667,
+        41.8933333333333
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Black Crappie",
+          "scientificName": "Pomoxis nigromaculatus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 42513,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=42513",
+              "year": 1996,
+              "reportedDate": "1996-6-15",
+              "recordType": "Specimen",
+              "coordinates": [
+                -71.5366666666667,
+                41.8933333333333
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-383733517.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/383733517",
+            "label": "(c) Quinn, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ri-728f4b35aae1ee50",
+      "name": "Mountaindale Reservoir, Providence. Woonasquatucket R. drainage.",
+      "kind": "Reservoir",
+      "state": "RI",
+      "county": "Providence",
+      "coordinates": [
+        -71.53694,
+        41.88278
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Black Crappie",
+          "scientificName": "Pomoxis nigromaculatus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 613397,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=613397",
+              "year": 1996,
+              "reportedDate": "1996-6-15",
+              "recordType": "Specimen",
+              "coordinates": [
+                -71.53694,
+                41.88278
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-383733517.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/383733517",
+            "label": "(c) Quinn, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Bluegill",
+          "scientificName": "Lepomis macrochirus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 611833,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=611833",
+              "year": 1996,
+              "reportedDate": "1996-6-15",
+              "recordType": "Specimen",
+              "coordinates": [
+                -71.53694,
+                41.88278
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-339074.png",
+            "sourceUrl": "https://www.inaturalist.org/photos/339074",
+            "label": "(c) Kristiina Hurme, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Largemouth Bass",
+          "scientificName": "Micropterus nigricans",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 612966,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=612966",
+              "year": 1996,
+              "reportedDate": "1996-6-15",
+              "recordType": "Specimen",
+              "coordinates": [
+                -71.53694,
+                41.88278
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-17819306.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/17819306",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ri-013921f260e1573e",
+      "name": "Quidnick Reservoir at sampling station F10G",
+      "kind": "Reservoir",
+      "state": "RI",
+      "county": "Kent",
+      "coordinates": [
+        -71.682,
+        41.68
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Largemouth Bass",
+          "scientificName": "Micropterus nigricans",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 875212,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=875212",
+              "year": 1994,
+              "reportedDate": "1994-7-27",
+              "recordType": "Literature",
+              "coordinates": [
+                -71.682,
+                41.68
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-17819306.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/17819306",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Smallmouth Bass",
+          "scientificName": "Micropterus dolomieu",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 876369,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=876369",
+              "year": 1994,
+              "reportedDate": "1994-7-27",
+              "recordType": "Literature",
+              "coordinates": [
+                -71.682,
+                41.68
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-738532394.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/738532394",
+            "label": "(c) Jaime McGuigan, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ri-9fc58c1d228d1223",
+      "name": "Quidnick Reservoir at sampling station F12G",
+      "kind": "Reservoir",
+      "state": "RI",
+      "county": "Kent",
+      "coordinates": [
+        -71.682,
+        41.68
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Smallmouth Bass",
+          "scientificName": "Micropterus dolomieu",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 876059,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=876059",
+              "year": 1994,
+              "reportedDate": "1994-7-27",
+              "recordType": "Literature",
+              "coordinates": [
+                -71.682,
+                41.68
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 876101,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=876101",
+              "year": 1994,
+              "reportedDate": "1994-7-27",
+              "recordType": "Literature",
+              "coordinates": [
+                -71.682,
+                41.68
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-738532394.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/738532394",
+            "label": "(c) Jaime McGuigan, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ri-78058acb858722e5",
+      "name": "Quidnick Reservoir at sampling station F13G",
+      "kind": "Reservoir",
+      "state": "RI",
+      "county": "Kent",
+      "coordinates": [
+        -71.682,
+        41.68
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Largemouth Bass",
+          "scientificName": "Micropterus nigricans",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 875223,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=875223",
+              "year": 1994,
+              "reportedDate": "1994-7-27",
+              "recordType": "Literature",
+              "coordinates": [
+                -71.682,
+                41.68
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-17819306.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/17819306",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Smallmouth Bass",
+          "scientificName": "Micropterus dolomieu",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 876341,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=876341",
+              "year": 1994,
+              "reportedDate": "1994-7-27",
+              "recordType": "Literature",
+              "coordinates": [
+                -71.682,
+                41.68
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-738532394.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/738532394",
+            "label": "(c) Jaime McGuigan, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ri-7a2d934dc3386809",
+      "name": "Quidnick Reservoir at sampling station F15M",
+      "kind": "Reservoir",
+      "state": "RI",
+      "county": "Kent",
+      "coordinates": [
+        -71.682,
+        41.68
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Largemouth Bass",
+          "scientificName": "Micropterus nigricans",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 875334,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=875334",
+              "year": 1994,
+              "reportedDate": "1994-7-27",
+              "recordType": "Literature",
+              "coordinates": [
+                -71.682,
+                41.68
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-17819306.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/17819306",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ri-3a89ee6aad80e1da",
+      "name": "Quidnick Reservoir at sampling station F15T",
+      "kind": "Reservoir",
+      "state": "RI",
+      "county": "Kent",
+      "coordinates": [
+        -71.682,
+        41.68
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Bluegill",
+          "scientificName": "Lepomis macrochirus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 874040,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=874040",
+              "year": 1994,
+              "reportedDate": "1994-7-27",
+              "recordType": "Literature",
+              "coordinates": [
+                -71.682,
+                41.68
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-339074.png",
+            "sourceUrl": "https://www.inaturalist.org/photos/339074",
+            "label": "(c) Kristiina Hurme, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Largemouth Bass",
+          "scientificName": "Micropterus nigricans",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 875301,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=875301",
+              "year": 1994,
+              "reportedDate": "1994-7-27",
+              "recordType": "Literature",
+              "coordinates": [
+                -71.682,
+                41.68
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-17819306.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/17819306",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Smallmouth Bass",
+          "scientificName": "Micropterus dolomieu",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 876406,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=876406",
+              "year": 1994,
+              "reportedDate": "1994-7-27",
+              "recordType": "Literature",
+              "coordinates": [
+                -71.682,
+                41.68
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-738532394.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/738532394",
+            "label": "(c) Jaime McGuigan, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ri-72905fd2454b3dfc",
+      "name": "Quidnick Reservoir at sampling station F1B",
+      "kind": "Reservoir",
+      "state": "RI",
+      "county": "Kent",
+      "coordinates": [
+        -71.682,
+        41.68
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Bluegill",
+          "scientificName": "Lepomis macrochirus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 874152,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=874152",
+              "year": 1994,
+              "reportedDate": "1994-7-27",
+              "recordType": "Literature",
+              "coordinates": [
+                -71.682,
+                41.68
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-339074.png",
+            "sourceUrl": "https://www.inaturalist.org/photos/339074",
+            "label": "(c) Kristiina Hurme, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Smallmouth Bass",
+          "scientificName": "Micropterus dolomieu",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 876275,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=876275",
+              "year": 1994,
+              "reportedDate": "1994-7-27",
+              "recordType": "Literature",
+              "coordinates": [
+                -71.682,
+                41.68
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-738532394.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/738532394",
+            "label": "(c) Jaime McGuigan, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ri-be306e0d8ac5eae6",
+      "name": "Quidnick Reservoir at sampling station F2B",
+      "kind": "Reservoir",
+      "state": "RI",
+      "county": "Kent",
+      "coordinates": [
+        -71.682,
+        41.68
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Bluegill",
+          "scientificName": "Lepomis macrochirus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 874192,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=874192",
+              "year": 1994,
+              "reportedDate": "1994-7-27",
+              "recordType": "Literature",
+              "coordinates": [
+                -71.682,
+                41.68
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-339074.png",
+            "sourceUrl": "https://www.inaturalist.org/photos/339074",
+            "label": "(c) Kristiina Hurme, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Largemouth Bass",
+          "scientificName": "Micropterus nigricans",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 875340,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=875340",
+              "year": 1994,
+              "reportedDate": "1994-7-27",
+              "recordType": "Literature",
+              "coordinates": [
+                -71.682,
+                41.68
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-17819306.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/17819306",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ri-633f070b6a18c096",
+      "name": "Quidnick Reservoir at sampling station F3S",
+      "kind": "Reservoir",
+      "state": "RI",
+      "county": "Kent",
+      "coordinates": [
+        -71.682,
+        41.68
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Bluegill",
+          "scientificName": "Lepomis macrochirus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 873720,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=873720",
+              "year": 1994,
+              "reportedDate": "1994-7-27",
+              "recordType": "Literature",
+              "coordinates": [
+                -71.682,
+                41.68
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-339074.png",
+            "sourceUrl": "https://www.inaturalist.org/photos/339074",
+            "label": "(c) Kristiina Hurme, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Largemouth Bass",
+          "scientificName": "Micropterus nigricans",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 875346,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=875346",
+              "year": 1994,
+              "reportedDate": "1994-7-27",
+              "recordType": "Literature",
+              "coordinates": [
+                -71.682,
+                41.68
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-17819306.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/17819306",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ri-84d309f97a7f6332",
+      "name": "Quidnick Reservoir at sampling station F4M",
+      "kind": "Reservoir",
+      "state": "RI",
+      "county": "Kent",
+      "coordinates": [
+        -71.682,
+        41.68
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Largemouth Bass",
+          "scientificName": "Micropterus nigricans",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 875241,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=875241",
+              "year": 1994,
+              "reportedDate": "1994-7-27",
+              "recordType": "Literature",
+              "coordinates": [
+                -71.682,
+                41.68
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-17819306.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/17819306",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ri-99f557e70775b68d",
+      "name": "Quidnick Reservoir at sampling station F4T",
+      "kind": "Reservoir",
+      "state": "RI",
+      "county": "Kent",
+      "coordinates": [
+        -71.682,
+        41.68
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Bluegill",
+          "scientificName": "Lepomis macrochirus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 873946,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=873946",
+              "year": 1994,
+              "reportedDate": "1994-7-27",
+              "recordType": "Literature",
+              "coordinates": [
+                -71.682,
+                41.68
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-339074.png",
+            "sourceUrl": "https://www.inaturalist.org/photos/339074",
+            "label": "(c) Kristiina Hurme, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Largemouth Bass",
+          "scientificName": "Micropterus nigricans",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 875135,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=875135",
+              "year": 1994,
+              "reportedDate": "1994-7-27",
+              "recordType": "Literature",
+              "coordinates": [
+                -71.682,
+                41.68
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-17819306.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/17819306",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Smallmouth Bass",
+          "scientificName": "Micropterus dolomieu",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 876403,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=876403",
+              "year": 1994,
+              "reportedDate": "1994-7-27",
+              "recordType": "Literature",
+              "coordinates": [
+                -71.682,
+                41.68
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-738532394.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/738532394",
+            "label": "(c) Jaime McGuigan, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ri-0bbbc4b4a578077f",
+      "name": "Quidnick Reservoir at sampling station F5T",
+      "kind": "Reservoir",
+      "state": "RI",
+      "county": "Kent",
+      "coordinates": [
+        -71.682,
+        41.68
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Largemouth Bass",
+          "scientificName": "Micropterus nigricans",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 875250,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=875250",
+              "year": 1994,
+              "reportedDate": "1994-7-27",
+              "recordType": "Literature",
+              "coordinates": [
+                -71.682,
+                41.68
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-17819306.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/17819306",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Smallmouth Bass",
+          "scientificName": "Micropterus dolomieu",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 876408,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=876408",
+              "year": 1994,
+              "reportedDate": "1994-7-27",
+              "recordType": "Literature",
+              "coordinates": [
+                -71.682,
+                41.68
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-738532394.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/738532394",
+            "label": "(c) Jaime McGuigan, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ri-7017cce15295139f",
+      "name": "Quidnick Reservoir at sampling station F6M",
+      "kind": "Reservoir",
+      "state": "RI",
+      "county": "Kent",
+      "coordinates": [
+        -71.682,
+        41.68
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Largemouth Bass",
+          "scientificName": "Micropterus nigricans",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 875251,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=875251",
+              "year": 1994,
+              "reportedDate": "1994-7-27",
+              "recordType": "Literature",
+              "coordinates": [
+                -71.682,
+                41.68
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-17819306.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/17819306",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ri-d574e537bac016ad",
+      "name": "Wood River @ Alton RI",
+      "kind": "River",
+      "state": "RI",
+      "county": "Washington",
+      "coordinates": [
+        -71.7164,
+        41.4502
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Largemouth Bass",
+          "scientificName": "Micropterus nigricans",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 612985,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=612985",
+              "year": 2009,
+              "reportedDate": "2009-7-10",
+              "recordType": "Specimen",
+              "coordinates": [
+                -71.7164,
+                41.4502
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-17819306.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/17819306",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ri-89eb1b3d189189c7",
+      "name": "Worden Pond",
+      "kind": "Lake",
+      "state": "RI",
+      "county": "Washington",
+      "coordinates": [
+        -71.5782,
+        41.43698
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Redear Sunfish",
+          "scientificName": "Lepomis microlophus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1405653,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1405653",
+              "year": 1971,
+              "reportedDate": "1971-9-29",
+              "recordType": "Specimen",
+              "coordinates": [
+                -71.5782,
+                41.43698
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-213531154.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/213531154",
+            "label": "(c) Tom Kennedy, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    }
+  ],
+  "photosUpdatedAt": "2026-09-22T23:42:06.589Z",
+  "photoCoverage": {
+    "fishTypes": 6,
+    "withPhotos": 5,
+    "withoutPhotos": 1
+  }
+}

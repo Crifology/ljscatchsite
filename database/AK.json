@@ -1,0 +1,897 @@
+{
+  "schemaVersion": 1,
+  "state": {
+    "code": "AK",
+    "name": "Alaska"
+  },
+  "generatedAt": "2026-09-22T22:55:13.946Z",
+  "coverage": {
+    "scope": "Introduced fish reported as established in USGS NAS; historical records, not a complete species inventory.",
+    "locationMethod": "Original reported water locality and public coordinates; names are not canonical waterbody identifiers.",
+    "status": "complete",
+    "complete": true,
+    "queries": [
+      "https://nas.er.usgs.gov/api/v2/occurrence/search?group=Fishes&state=AK&spatialAcc=Accurate&status=established&limit=1000&offset=0"
+    ],
+    "error": null,
+    "sourceRecords": 25,
+    "acceptedRecords": 20,
+    "rejectedRecords": 5
+  },
+  "sources": [
+    {
+      "id": "usgs-nas",
+      "label": "USGS Nonindigenous Aquatic Species",
+      "license": "Public domain",
+      "url": "https://nas.er.usgs.gov/",
+      "documentation": "https://nas.er.usgs.gov/api/documentation.aspx"
+    }
+  ],
+  "counts": {
+    "waters": 18,
+    "species": 5,
+    "waterSpeciesPairs": 19,
+    "evidence": 20
+  },
+  "waters": [
+    {
+      "id": "ak-44b90836fb261c46",
+      "name": "Alexander Lake",
+      "kind": "Lake",
+      "state": "AK",
+      "county": "Matanuska-Susitna",
+      "coordinates": [
+        -150.90305,
+        61.74916
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Northern Pike",
+          "scientificName": "Esox lucius",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 273129,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=273129",
+              "year": 2010,
+              "reportedDate": "2010",
+              "recordType": "Literature",
+              "coordinates": [
+                -150.90305,
+                61.74916
+              ],
+              "coordinateSource": "GNIS"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1321949,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1321949",
+              "year": 1995,
+              "reportedDate": "1995-8-1",
+              "recordType": "Literature",
+              "coordinates": [
+                -150.90305,
+                61.74916
+              ],
+              "coordinateSource": "GNIS"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-738335554.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/738335554",
+            "label": "(c) Igor Balashov, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ak-2c32b79a2a5abc8e",
+      "name": "Bristol Bay; Sandy River mouth",
+      "kind": "Coastal",
+      "state": "AK",
+      "county": "Aleutians East",
+      "coordinates": [
+        -160.36806,
+        56.25
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "American Shad",
+          "scientificName": "Alosa sapidissima",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 613463,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=613463",
+              "year": 1986,
+              "reportedDate": "1986-8-19",
+              "recordType": "Literature",
+              "coordinates": [
+                -160.36806,
+                56.25
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-712289097.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/712289097",
+            "label": "(c) Noah How, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ak-62e1cceec50103c7",
+      "name": "Bristol Bay; Sandy River, mouth",
+      "kind": "Coastal",
+      "state": "AK",
+      "county": "Aleutians East",
+      "coordinates": [
+        -160.36806,
+        56.25
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "American Shad",
+          "scientificName": "Alosa sapidissima",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 613462,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=613462",
+              "year": 1986,
+              "reportedDate": "1986-8-19",
+              "recordType": "Literature",
+              "coordinates": [
+                -160.36806,
+                56.25
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-712289097.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/712289097",
+            "label": "(c) Noah How, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ak-fab2fd978fcb04a0",
+      "name": "Bulchitna Lake, southeast of Skwentna along the Susitna River",
+      "kind": "Lake",
+      "state": "AK",
+      "county": "Matanuska-Susitna",
+      "coordinates": [
+        -150.93,
+        61.935833
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Northern Pike",
+          "scientificName": "Esox lucius",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 156740,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=156740",
+              "year": 1980,
+              "reportedDate": "1980",
+              "recordType": "Literature",
+              "coordinates": [
+                -150.93,
+                61.935833
+              ],
+              "coordinateSource": "GNIS"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-738335554.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/738335554",
+            "label": "(c) Igor Balashov, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ak-04535f0994e6f682",
+      "name": "Chelatna Lake",
+      "kind": "Lake",
+      "state": "AK",
+      "county": "Matanuska-Susitna",
+      "coordinates": [
+        -151.45244,
+        62.47111
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Northern Pike",
+          "scientificName": "Esox lucius",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1651149,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1651149",
+              "year": 2018,
+              "reportedDate": "2018-7-4",
+              "recordType": "Literature",
+              "coordinates": [
+                -151.45244,
+                62.47111
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-738335554.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/738335554",
+            "label": "(c) Igor Balashov, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ak-9c9e969d714c383f",
+      "name": "Cheney Lake, Anchorage; a 24 acre pond",
+      "kind": "Lake",
+      "state": "AK",
+      "county": "Anchorage",
+      "coordinates": [
+        -149.758,
+        61.2028
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Northern Pike",
+          "scientificName": "Esox lucius",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 164442,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=164442",
+              "year": 2005,
+              "reportedDate": "2005",
+              "recordType": "Literature",
+              "coordinates": [
+                -149.758,
+                61.2028
+              ],
+              "coordinateSource": "GNIS"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-738335554.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/738335554",
+            "label": "(c) Igor Balashov, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ak-f13b85b9a930a318",
+      "name": "Connors Lake",
+      "kind": "Lake",
+      "state": "AK",
+      "county": "Anchorage",
+      "coordinates": [
+        -149.9319444,
+        61.1669444
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Alaska Blackfish",
+          "scientificName": "Dallia pectoralis",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 276640,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=276640",
+              "year": 1973,
+              "reportedDate": "1973",
+              "recordType": "Literature",
+              "coordinates": [
+                -149.9319444,
+                61.1669444
+              ],
+              "coordinateSource": "GNIS"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-527316077.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/527316077",
+            "label": "(c) Matt Bowser, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ak-f17d704e11cc4598",
+      "name": "Lost Lake, about 48km NW from Big Delta, next to Birch Lake",
+      "kind": "Lake",
+      "state": "AK",
+      "county": "Fairbanks North Star",
+      "coordinates": [
+        -146.68842,
+        64.302567
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Rainbow Trout",
+          "scientificName": "Oncorhynchus mykiss",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 26194,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=26194",
+              "year": 1952,
+              "reportedDate": "1952",
+              "recordType": "Literature",
+              "coordinates": [
+                -146.68842,
+                64.302567
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-3059776.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/3059776",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ak-3b5a1c48af777cfb",
+      "name": "Lower Fire Lake",
+      "kind": "Lake",
+      "state": "AK",
+      "county": "Anchorage",
+      "coordinates": [
+        -149.5441667,
+        61.3552778
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Alaska Blackfish",
+          "scientificName": "Dallia pectoralis",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 276637,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=276637",
+              "year": 1973,
+              "reportedDate": "1973",
+              "recordType": "Literature",
+              "coordinates": [
+                -149.5441667,
+                61.3552778
+              ],
+              "coordinateSource": "GNIS"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-527316077.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/527316077",
+            "label": "(c) Matt Bowser, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ak-bd9fc19fbc47d513",
+      "name": "Matsu Valley: Meadow Lakes area; Frog Lake",
+      "kind": "Lake",
+      "state": "AK",
+      "county": "Matanuska-Susitna Borough",
+      "coordinates": [
+        -149.71899,
+        61.61362
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Brook Trout",
+          "scientificName": "Salvelinus fontinalis",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1419601,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1419601",
+              "year": 1990,
+              "reportedDate": "1990-6-22",
+              "recordType": "Specimen",
+              "coordinates": [
+                -149.71899,
+                61.61362
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-373910434.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/373910434",
+            "label": "(c) Bruce Deagle, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ak-fc81ad7e3ed726ca",
+      "name": "Meadow Lake",
+      "kind": "Lake",
+      "state": "AK",
+      "county": "Anchorage",
+      "coordinates": [
+        -149.957607,
+        61.166434
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Alaska Blackfish",
+          "scientificName": "Dallia pectoralis",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 276639,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=276639",
+              "year": 1973,
+              "reportedDate": "1973",
+              "recordType": "Literature",
+              "coordinates": [
+                -149.957607,
+                61.166434
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-527316077.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/527316077",
+            "label": "(c) Matt Bowser, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ak-81a6ac8df4edcb6e",
+      "name": "Pacific Ocean near Thorne Bay, Ketchikan, AK",
+      "kind": "Coastal",
+      "state": "AK",
+      "county": "Prince of Wales-Outer Ketchikan",
+      "coordinates": [
+        -132.508,
+        55.6686
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "American Shad",
+          "scientificName": "Alosa sapidissima",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 165450,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=165450",
+              "year": 2002,
+              "reportedDate": "2002",
+              "recordType": "Literature",
+              "coordinates": [
+                -132.508,
+                55.6686
+              ],
+              "coordinateSource": "GNIS"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-712289097.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/712289097",
+            "label": "(c) Noah How, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Brook Trout",
+          "scientificName": "Salvelinus fontinalis",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 165335,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=165335",
+              "year": 2002,
+              "reportedDate": "2002",
+              "recordType": "Literature",
+              "coordinates": [
+                -132.508,
+                55.6686
+              ],
+              "coordinateSource": "GNIS"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-373910434.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/373910434",
+            "label": "(c) Bruce Deagle, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ak-cf6fc3cf35a5e662",
+      "name": "Saint Paul Island; Ice House Lake",
+      "kind": "Lake",
+      "state": "AK",
+      "county": "Aleutians West",
+      "coordinates": [
+        -170.26666,
+        57.16667
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Alaska Blackfish",
+          "scientificName": "Dallia pectoralis",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 564725,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=564725",
+              "year": 1963,
+              "reportedDate": "1963-7-19",
+              "recordType": "Specimen",
+              "coordinates": [
+                -170.26666,
+                57.16667
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-527316077.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/527316077",
+            "label": "(c) Matt Bowser, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ak-812ba5e7c48507f2",
+      "name": "Situk River",
+      "kind": "River",
+      "state": "AK",
+      "county": "Yakutat",
+      "coordinates": [
+        -139.727,
+        59.5469
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "American Shad",
+          "scientificName": "Alosa sapidissima",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 165458,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=165458",
+              "year": 2002,
+              "reportedDate": "2002",
+              "recordType": "Literature",
+              "coordinates": [
+                -139.727,
+                59.5469
+              ],
+              "coordinateSource": "GNIS"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-712289097.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/712289097",
+            "label": "(c) Noah How, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ak-3410704758c4fd90",
+      "name": "Spring Creek",
+      "kind": "River",
+      "state": "AK",
+      "county": "Kenai Peninsula",
+      "coordinates": [
+        -149.44389,
+        60.1058
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Alaska Blackfish",
+          "scientificName": "Dallia pectoralis",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 564724,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=564724",
+              "year": 2005,
+              "reportedDate": "2005-8-1",
+              "recordType": "Specimen",
+              "coordinates": [
+                -149.44389,
+                60.1058
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-527316077.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/527316077",
+            "label": "(c) Matt Bowser, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ak-5ba48b2f53690f3f",
+      "name": "Stikine River",
+      "kind": "River",
+      "state": "AK",
+      "county": "Wrangell-Petersburg",
+      "coordinates": [
+        -132.404,
+        56.5639
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "American Shad",
+          "scientificName": "Alosa sapidissima",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 160490,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=160490",
+              "year": 1942,
+              "reportedDate": "1942",
+              "recordType": "Literature",
+              "coordinates": [
+                -132.404,
+                56.5639
+              ],
+              "coordinateSource": "GNIS"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-712289097.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/712289097",
+            "label": "(c) Noah How, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ak-8dc1bcc84f807252",
+      "name": "Threemile Lake",
+      "kind": "Lake",
+      "state": "AK",
+      "county": "Matanuska-Susitna",
+      "coordinates": [
+        -149.76522,
+        61.49955
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Northern Pike",
+          "scientificName": "Esox lucius",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1651150,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1651150",
+              "year": 2018,
+              "reportedDate": "2018-6-4",
+              "recordType": "Literature",
+              "coordinates": [
+                -149.76522,
+                61.49955
+              ],
+              "coordinateSource": "GNIS"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-738335554.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/738335554",
+            "label": "(c) Igor Balashov, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "ak-221e6892ceadf5d8",
+      "name": "Toad Creek on Grace Lake, 30 miles NE Ketchikan, SE Alaska",
+      "kind": "Lake",
+      "state": "AK",
+      "county": "Prince of Wales-Hyder Census Area",
+      "coordinates": [
+        -132.92,
+        55.63
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Brook Trout",
+          "scientificName": "Salvelinus fontinalis",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1419689,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1419689",
+              "year": 1961,
+              "reportedDate": "1961-7-29",
+              "recordType": "Specimen",
+              "coordinates": [
+                -132.92,
+                55.63
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-373910434.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/373910434",
+            "label": "(c) Bruce Deagle, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    }
+  ],
+  "photosUpdatedAt": "2026-09-22T23:42:06.589Z",
+  "photoCoverage": {
+    "fishTypes": 5,
+    "withPhotos": 5,
+    "withoutPhotos": 0
+  }
+}

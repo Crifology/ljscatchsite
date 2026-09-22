@@ -38,25 +38,26 @@
 <script defer src="assets/tracker-network.js"></script>
 <script defer src="assets/water-explorer-providers.js"></script>
 <script defer src="assets/water-explorer-config.js"></script>
+<script defer src="assets/water-state-bounds.js"></script>
 <script defer src="assets/water-explorer-location.js"></script>
 <script defer src="assets/water-explorer-stocking.js"></script>
 <script defer src="assets/water-explorer.js"></script></head>
 <body>
     <header><div class="nav-container"><a class="logoMainPage" href="index.html"><img src="assets/photos/logo-horizontal-light-transparent.png" alt="LJ's Catch fishing logo"></a><input type="checkbox" id="menu-toggle" class="menu-checkbox"><label for="menu-toggle" class="menu-label" aria-label="Toggle navigation">&#9776;</label><div class="nav-actions"><nav aria-label="Primary navigation"><ul class="nav-links"><li><a class="home-link" href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li><li><a class="active" aria-current="page" href="trackerapp.html">Tracker App</a></li></ul></nav><a class="store-link" href="https://ljscatch.myshopify.com" target="_blank" rel="noopener noreferrer"><img src="assets/icons/shopify.svg" alt="" width="24" height="24">Visit Our Store</a></div></div></header>
     <main class="tracker-main">
-<div class="tracker-intro"><p class="eyebrow">LJ'S CATCH / WATER EXPLORER</p><h1>Find your next fishing water.</h1><p>Explore the United States. Zoom in, load the waters around you, then click a water pin to see a list of fish types, with each fish?s name and representative image.</p></div>
+<div class="tracker-intro"><p class="eyebrow">LJ'S CATCH / WATER EXPLORER</p><h1>Find your next fishing water.</h1><p>Explore fish reported in waters across the United States. Choose a fish type to find its waters, or click a pin to see all fish recorded there.</p></div>
 <div class="tracker-toolbar">
 <label>Explore<select id="region"><option value="us">Contiguous United States</option></select></label>
 <label>Water type<select id="water-type"><option value="">All waters</option><option value="Lake">Lakes &amp; ponds</option><option value="River">Rivers &amp; streams</option><option value="Reservoir">Reservoirs</option><option value="Coastal">Coastal waters</option></select></label>
-<label class="search-label">Filter loaded waters or fish<input id="search" type="search" placeholder="Lake name, bass, trout..."></label>
+<label class="search-label">Search fish types<input id="search" type="search" placeholder="Bass, trout, perch..."></label>
 <button id="refresh" type="button" disabled>Search this area</button><button id="reset-map" type="button">Region overview</button></div>
 <p id="status" role="status" aria-live="polite">Preparing the water explorer...</p>
 <p id="location-status" class="data-note" role="status" aria-live="polite">Finding your approximate state from your connection...</p>
 <p id="stocking-status" class="data-note" role="status" aria-live="polite"></p>
 <details class="stocking-summary" open><summary>State stocking information</summary><div id="stocking-summary" aria-live="polite">Loading state stocking summary...</div></details>
 <p id="map-status" role="status" aria-live="polite" hidden></p>
-<div class="tracker-layout"><div id="catch-map" aria-label="United States water explorer"></div><aside aria-label="Water guides"><p class="eyebrow">EXPLORE A WATER</p><h2>Water guides <span id="count">0</span></h2><p class="list-hint">Zoom in and search an area, then choose a water to see its fish. Fish-name filters search guides you have opened.</p><div id="water-list"></div></aside></div>
-<p class="data-note">Each pin represents a body of water. Species lists are compiled from available records across all dates; coverage varies by water. Images represent the fish species. River-segment matches are approximate.</p>
+<div class="tracker-layout"><div id="catch-map" aria-label="United States water explorer"></div><aside aria-label="Fish types"><p class="eyebrow">FISH IN THIS AREA</p><h2>Fish types <span id="count">0</span></h2><p class="list-hint">Up to 20 fish types in the visible map area. Choose a fish to filter water pins. Pan or zoom to update results.</p><div id="water-list"></div></aside></div>
+<p class="data-note">Pins represent mapped waters or reported water locations from the saved state databases. A lake or river may have multiple reported sites. Species lists are compiled from available records across all dates; coverage varies by water. Images represent the fish species. River-segment matches are approximate.</p>
 <p class="data-note">Free data: <a href="https://hydro.nationalmap.gov/arcgis/rest/services/nhd/MapServer" target="_blank" rel="noopener">USGS National Hydrography Dataset</a> &middot; <a href="https://nas.er.usgs.gov/" target="_blank" rel="noopener">USGS NAS (introduced fish)</a> &middot; <a href="https://www.inaturalist.org" target="_blank" rel="noopener">iNaturalist contributors</a>. <a href="TRACKER-SOURCES.md">Data sources and coverage</a> &middot; <a href="https://www.openstreetmap.org/fixthemap" target="_blank" rel="noopener">Report a map issue</a>.</p>
 <noscript>Enable JavaScript to explore the interactive map and water guides.</noscript>
 <p class="data-note">Your default state is estimated from your public connection IP by <a href="https://ipwhois.io/privacy" target="_blank" rel="noopener">IPWhois</a>. VPNs and mobile networks may show a different state. Change the Explore selection at any time. This app does not request GPS or store your IP address.</p>

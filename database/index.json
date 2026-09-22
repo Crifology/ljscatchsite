@@ -1,0 +1,865 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-22T23:06:52.968Z",
+  "sources": [
+    {
+      "id": "usgs-nas",
+      "label": "USGS Nonindigenous Aquatic Species",
+      "license": "Public domain",
+      "url": "https://nas.er.usgs.gov/",
+      "documentation": "https://nas.er.usgs.gov/api/documentation.aspx"
+    }
+  ],
+  "states": [
+    {
+      "code": "AL",
+      "name": "Alabama",
+      "file": "AL.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T22:55:12.079Z",
+      "waters": 576,
+      "species": 41,
+      "waterSpeciesPairs": 599,
+      "evidence": 937,
+      "photoCoverage": {
+        "fishTypes": 41,
+        "withPhotos": 40,
+        "withoutPhotos": 1
+      }
+    },
+    {
+      "code": "AK",
+      "name": "Alaska",
+      "file": "AK.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T22:55:13.946Z",
+      "waters": 18,
+      "species": 5,
+      "waterSpeciesPairs": 19,
+      "evidence": 20,
+      "photoCoverage": {
+        "fishTypes": 5,
+        "withPhotos": 5,
+        "withoutPhotos": 0
+      }
+    },
+    {
+      "code": "AZ",
+      "name": "Arizona",
+      "file": "AZ.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T22:55:19.086Z",
+      "waters": 401,
+      "species": 55,
+      "waterSpeciesPairs": 964,
+      "evidence": 1065,
+      "photoCoverage": {
+        "fishTypes": 55,
+        "withPhotos": 53,
+        "withoutPhotos": 2
+      }
+    },
+    {
+      "code": "AR",
+      "name": "Arkansas",
+      "file": "AR.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T22:55:21.203Z",
+      "waters": 551,
+      "species": 33,
+      "waterSpeciesPairs": 671,
+      "evidence": 747,
+      "photoCoverage": {
+        "fishTypes": 33,
+        "withPhotos": 31,
+        "withoutPhotos": 2
+      }
+    },
+    {
+      "code": "CA",
+      "name": "California",
+      "file": "CA.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T22:55:39.200Z",
+      "waters": 949,
+      "species": 83,
+      "waterSpeciesPairs": 1345,
+      "evidence": 1753,
+      "photoCoverage": {
+        "fishTypes": 83,
+        "withPhotos": 78,
+        "withoutPhotos": 5
+      }
+    },
+    {
+      "code": "CO",
+      "name": "Colorado",
+      "file": "CO.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T22:55:43.349Z",
+      "waters": 344,
+      "species": 59,
+      "waterSpeciesPairs": 936,
+      "evidence": 1130,
+      "photoCoverage": {
+        "fishTypes": 59,
+        "withPhotos": 58,
+        "withoutPhotos": 1
+      }
+    },
+    {
+      "code": "CT",
+      "name": "Connecticut",
+      "file": "CT.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T22:55:45.387Z",
+      "waters": 187,
+      "species": 20,
+      "waterSpeciesPairs": 368,
+      "evidence": 462,
+      "photoCoverage": {
+        "fishTypes": 20,
+        "withPhotos": 20,
+        "withoutPhotos": 0
+      }
+    },
+    {
+      "code": "DE",
+      "name": "Delaware",
+      "file": "DE.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T22:55:47.207Z",
+      "waters": 116,
+      "species": 20,
+      "waterSpeciesPairs": 142,
+      "evidence": 150,
+      "photoCoverage": {
+        "fishTypes": 20,
+        "withPhotos": 20,
+        "withoutPhotos": 0
+      }
+    },
+    {
+      "code": "FL",
+      "name": "Florida",
+      "file": "FL.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T22:57:05.829Z",
+      "waters": 4317,
+      "species": 76,
+      "waterSpeciesPairs": 5757,
+      "evidence": 10203,
+      "photoCoverage": {
+        "fishTypes": 76,
+        "withPhotos": 62,
+        "withoutPhotos": 14
+      }
+    },
+    {
+      "code": "GA",
+      "name": "Georgia",
+      "file": "GA.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T22:57:21.221Z",
+      "waters": 345,
+      "species": 49,
+      "waterSpeciesPairs": 394,
+      "evidence": 450,
+      "photoCoverage": {
+        "fishTypes": 49,
+        "withPhotos": 48,
+        "withoutPhotos": 1
+      }
+    },
+    {
+      "code": "HI",
+      "name": "Hawaii",
+      "file": "HI.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T22:57:23.368Z",
+      "waters": 58,
+      "species": 33,
+      "waterSpeciesPairs": 93,
+      "evidence": 153,
+      "photoCoverage": {
+        "fishTypes": 33,
+        "withPhotos": 26,
+        "withoutPhotos": 7
+      }
+    },
+    {
+      "code": "ID",
+      "name": "Idaho",
+      "file": "ID.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T22:57:28.673Z",
+      "waters": 322,
+      "species": 43,
+      "waterSpeciesPairs": 515,
+      "evidence": 1004,
+      "photoCoverage": {
+        "fishTypes": 43,
+        "withPhotos": 41,
+        "withoutPhotos": 2
+      }
+    },
+    {
+      "code": "IL",
+      "name": "Illinois",
+      "file": "IL.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T22:59:14.672Z",
+      "waters": 2153,
+      "species": 34,
+      "waterSpeciesPairs": 2618,
+      "evidence": 6929,
+      "photoCoverage": {
+        "fishTypes": 34,
+        "withPhotos": 29,
+        "withoutPhotos": 5
+      }
+    },
+    {
+      "code": "IN",
+      "name": "Indiana",
+      "file": "IN.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T22:59:16.750Z",
+      "waters": 229,
+      "species": 27,
+      "waterSpeciesPairs": 255,
+      "evidence": 300,
+      "photoCoverage": {
+        "fishTypes": 27,
+        "withPhotos": 25,
+        "withoutPhotos": 2
+      }
+    },
+    {
+      "code": "IA",
+      "name": "Iowa",
+      "file": "IA.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T22:59:21.257Z",
+      "waters": 236,
+      "species": 19,
+      "waterSpeciesPairs": 293,
+      "evidence": 515,
+      "photoCoverage": {
+        "fishTypes": 19,
+        "withPhotos": 18,
+        "withoutPhotos": 1
+      }
+    },
+    {
+      "code": "KS",
+      "name": "Kansas",
+      "file": "KS.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T22:59:25.721Z",
+      "waters": 656,
+      "species": 31,
+      "waterSpeciesPairs": 922,
+      "evidence": 1062,
+      "photoCoverage": {
+        "fishTypes": 31,
+        "withPhotos": 31,
+        "withoutPhotos": 0
+      }
+    },
+    {
+      "code": "KY",
+      "name": "Kentucky",
+      "file": "KY.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T22:59:28.058Z",
+      "waters": 387,
+      "species": 35,
+      "waterSpeciesPairs": 455,
+      "evidence": 550,
+      "photoCoverage": {
+        "fishTypes": 35,
+        "withPhotos": 33,
+        "withoutPhotos": 2
+      }
+    },
+    {
+      "code": "LA",
+      "name": "Louisiana",
+      "file": "LA.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T22:59:30.456Z",
+      "waters": 301,
+      "species": 20,
+      "waterSpeciesPairs": 305,
+      "evidence": 518,
+      "photoCoverage": {
+        "fishTypes": 20,
+        "withPhotos": 18,
+        "withoutPhotos": 2
+      }
+    },
+    {
+      "code": "ME",
+      "name": "Maine",
+      "file": "ME.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T22:59:32.805Z",
+      "waters": 607,
+      "species": 20,
+      "waterSpeciesPairs": 674,
+      "evidence": 768,
+      "photoCoverage": {
+        "fishTypes": 20,
+        "withPhotos": 20,
+        "withoutPhotos": 0
+      }
+    },
+    {
+      "code": "MD",
+      "name": "Maryland",
+      "file": "MD.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T22:59:37.840Z",
+      "waters": 835,
+      "species": 27,
+      "waterSpeciesPairs": 914,
+      "evidence": 1356,
+      "photoCoverage": {
+        "fishTypes": 27,
+        "withPhotos": 27,
+        "withoutPhotos": 0
+      }
+    },
+    {
+      "code": "MA",
+      "name": "Massachusetts",
+      "file": "MA.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T22:59:42.306Z",
+      "waters": 560,
+      "species": 26,
+      "waterSpeciesPairs": 962,
+      "evidence": 1012,
+      "photoCoverage": {
+        "fishTypes": 26,
+        "withPhotos": 25,
+        "withoutPhotos": 1
+      }
+    },
+    {
+      "code": "MI",
+      "name": "Michigan",
+      "file": "MI.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:00:01.109Z",
+      "waters": 1802,
+      "species": 31,
+      "waterSpeciesPairs": 2103,
+      "evidence": 3173,
+      "photoCoverage": {
+        "fishTypes": 31,
+        "withPhotos": 29,
+        "withoutPhotos": 2
+      }
+    },
+    {
+      "code": "MN",
+      "name": "Minnesota",
+      "file": "MN.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:00:27.965Z",
+      "waters": 348,
+      "species": 28,
+      "waterSpeciesPairs": 386,
+      "evidence": 1184,
+      "photoCoverage": {
+        "fishTypes": 28,
+        "withPhotos": 28,
+        "withoutPhotos": 0
+      }
+    },
+    {
+      "code": "MS",
+      "name": "Mississippi",
+      "file": "MS.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:00:30.257Z",
+      "waters": 243,
+      "species": 25,
+      "waterSpeciesPairs": 256,
+      "evidence": 496,
+      "photoCoverage": {
+        "fishTypes": 25,
+        "withPhotos": 23,
+        "withoutPhotos": 2
+      }
+    },
+    {
+      "code": "MO",
+      "name": "Missouri",
+      "file": "MO.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:00:50.334Z",
+      "waters": 671,
+      "species": 29,
+      "waterSpeciesPairs": 859,
+      "evidence": 1528,
+      "photoCoverage": {
+        "fishTypes": 29,
+        "withPhotos": 26,
+        "withoutPhotos": 3
+      }
+    },
+    {
+      "code": "MT",
+      "name": "Montana",
+      "file": "MT.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:01:24.857Z",
+      "waters": 2353,
+      "species": 43,
+      "waterSpeciesPairs": 3897,
+      "evidence": 7965,
+      "photoCoverage": {
+        "fishTypes": 43,
+        "withPhotos": 42,
+        "withoutPhotos": 1
+      }
+    },
+    {
+      "code": "NE",
+      "name": "Nebraska",
+      "file": "NE.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:01:38.251Z",
+      "waters": 1992,
+      "species": 36,
+      "waterSpeciesPairs": 2294,
+      "evidence": 2657,
+      "photoCoverage": {
+        "fishTypes": 36,
+        "withPhotos": 35,
+        "withoutPhotos": 1
+      }
+    },
+    {
+      "code": "NV",
+      "name": "Nevada",
+      "file": "NV.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:01:40.448Z",
+      "waters": 242,
+      "species": 51,
+      "waterSpeciesPairs": 359,
+      "evidence": 435,
+      "photoCoverage": {
+        "fishTypes": 51,
+        "withPhotos": 49,
+        "withoutPhotos": 2
+      }
+    },
+    {
+      "code": "NH",
+      "name": "New Hampshire",
+      "file": "NH.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:02:06.173Z",
+      "waters": 889,
+      "species": 27,
+      "waterSpeciesPairs": 1474,
+      "evidence": 5863,
+      "photoCoverage": {
+        "fishTypes": 27,
+        "withPhotos": 25,
+        "withoutPhotos": 2
+      }
+    },
+    {
+      "code": "NJ",
+      "name": "New Jersey",
+      "file": "NJ.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:02:11.074Z",
+      "waters": 348,
+      "species": 29,
+      "waterSpeciesPairs": 544,
+      "evidence": 634,
+      "photoCoverage": {
+        "fishTypes": 29,
+        "withPhotos": 27,
+        "withoutPhotos": 2
+      }
+    },
+    {
+      "code": "NM",
+      "name": "New Mexico",
+      "file": "NM.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:02:13.167Z",
+      "waters": 257,
+      "species": 32,
+      "waterSpeciesPairs": 289,
+      "evidence": 371,
+      "photoCoverage": {
+        "fishTypes": 32,
+        "withPhotos": 31,
+        "withoutPhotos": 1
+      }
+    },
+    {
+      "code": "NY",
+      "name": "New York",
+      "file": "NY.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:02:36.905Z",
+      "waters": 1635,
+      "species": 59,
+      "waterSpeciesPairs": 2018,
+      "evidence": 3277,
+      "photoCoverage": {
+        "fishTypes": 59,
+        "withPhotos": 57,
+        "withoutPhotos": 2
+      }
+    },
+    {
+      "code": "NC",
+      "name": "North Carolina",
+      "file": "NC.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:03:04.130Z",
+      "waters": 2904,
+      "species": 81,
+      "waterSpeciesPairs": 4516,
+      "evidence": 6261,
+      "photoCoverage": {
+        "fishTypes": 81,
+        "withPhotos": 79,
+        "withoutPhotos": 2
+      }
+    },
+    {
+      "code": "ND",
+      "name": "North Dakota",
+      "file": "ND.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:03:06.335Z",
+      "waters": 98,
+      "species": 23,
+      "waterSpeciesPairs": 179,
+      "evidence": 198,
+      "photoCoverage": {
+        "fishTypes": 23,
+        "withPhotos": 23,
+        "withoutPhotos": 0
+      }
+    },
+    {
+      "code": "OH",
+      "name": "Ohio",
+      "file": "OH.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:03:21.382Z",
+      "waters": 1490,
+      "species": 40,
+      "waterSpeciesPairs": 1822,
+      "evidence": 2159,
+      "photoCoverage": {
+        "fishTypes": 40,
+        "withPhotos": 40,
+        "withoutPhotos": 0
+      }
+    },
+    {
+      "code": "OK",
+      "name": "Oklahoma",
+      "file": "OK.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:03:36.222Z",
+      "waters": 364,
+      "species": 32,
+      "waterSpeciesPairs": 514,
+      "evidence": 698,
+      "photoCoverage": {
+        "fishTypes": 32,
+        "withPhotos": 32,
+        "withoutPhotos": 0
+      }
+    },
+    {
+      "code": "OR",
+      "name": "Oregon",
+      "file": "OR.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:03:51.751Z",
+      "waters": 504,
+      "species": 48,
+      "waterSpeciesPairs": 1118,
+      "evidence": 2510,
+      "photoCoverage": {
+        "fishTypes": 48,
+        "withPhotos": 43,
+        "withoutPhotos": 5
+      }
+    },
+    {
+      "code": "PA",
+      "name": "Pennsylvania",
+      "file": "PA.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:04:33.124Z",
+      "waters": 4293,
+      "species": 41,
+      "waterSpeciesPairs": 4814,
+      "evidence": 7712,
+      "photoCoverage": {
+        "fishTypes": 41,
+        "withPhotos": 41,
+        "withoutPhotos": 0
+      }
+    },
+    {
+      "code": "RI",
+      "name": "Rhode Island",
+      "file": "RI.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:04:35.192Z",
+      "waters": 25,
+      "species": 6,
+      "waterSpeciesPairs": 39,
+      "evidence": 41,
+      "photoCoverage": {
+        "fishTypes": 6,
+        "withPhotos": 5,
+        "withoutPhotos": 1
+      }
+    },
+    {
+      "code": "SC",
+      "name": "South Carolina",
+      "file": "SC.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:04:50.208Z",
+      "waters": 991,
+      "species": 35,
+      "waterSpeciesPairs": 1464,
+      "evidence": 3092,
+      "photoCoverage": {
+        "fishTypes": 35,
+        "withPhotos": 34,
+        "withoutPhotos": 1
+      }
+    },
+    {
+      "code": "SD",
+      "name": "South Dakota",
+      "file": "SD.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:04:52.449Z",
+      "waters": 257,
+      "species": 34,
+      "waterSpeciesPairs": 383,
+      "evidence": 438,
+      "photoCoverage": {
+        "fishTypes": 34,
+        "withPhotos": 34,
+        "withoutPhotos": 0
+      }
+    },
+    {
+      "code": "TN",
+      "name": "Tennessee",
+      "file": "TN.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:04:54.704Z",
+      "waters": 264,
+      "species": 34,
+      "waterSpeciesPairs": 289,
+      "evidence": 302,
+      "photoCoverage": {
+        "fishTypes": 34,
+        "withPhotos": 32,
+        "withoutPhotos": 2
+      }
+    },
+    {
+      "code": "TX",
+      "name": "Texas",
+      "file": "TX.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:05:17.323Z",
+      "waters": 1499,
+      "species": 75,
+      "waterSpeciesPairs": 2077,
+      "evidence": 3930,
+      "photoCoverage": {
+        "fishTypes": 75,
+        "withPhotos": 65,
+        "withoutPhotos": 10
+      }
+    },
+    {
+      "code": "UT",
+      "name": "Utah",
+      "file": "UT.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:05:19.900Z",
+      "waters": 299,
+      "species": 54,
+      "waterSpeciesPairs": 607,
+      "evidence": 683,
+      "photoCoverage": {
+        "fishTypes": 54,
+        "withPhotos": 52,
+        "withoutPhotos": 2
+      }
+    },
+    {
+      "code": "VT",
+      "name": "Vermont",
+      "file": "VT.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:05:22.258Z",
+      "waters": 282,
+      "species": 24,
+      "waterSpeciesPairs": 462,
+      "evidence": 501,
+      "photoCoverage": {
+        "fishTypes": 24,
+        "withPhotos": 24,
+        "withoutPhotos": 0
+      }
+    },
+    {
+      "code": "VA",
+      "name": "Virginia",
+      "file": "VA.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:05:40.706Z",
+      "waters": 1272,
+      "species": 49,
+      "waterSpeciesPairs": 1500,
+      "evidence": 3261,
+      "photoCoverage": {
+        "fishTypes": 49,
+        "withPhotos": 48,
+        "withoutPhotos": 1
+      }
+    },
+    {
+      "code": "WA",
+      "name": "Washington",
+      "file": "WA.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:05:45.719Z",
+      "waters": 590,
+      "species": 41,
+      "waterSpeciesPairs": 1706,
+      "evidence": 1874,
+      "photoCoverage": {
+        "fishTypes": 41,
+        "withPhotos": 40,
+        "withoutPhotos": 1
+      }
+    },
+    {
+      "code": "WV",
+      "name": "West Virginia",
+      "file": "WV.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:05:47.846Z",
+      "waters": 110,
+      "species": 28,
+      "waterSpeciesPairs": 147,
+      "evidence": 152,
+      "photoCoverage": {
+        "fishTypes": 28,
+        "withPhotos": 27,
+        "withoutPhotos": 1
+      }
+    },
+    {
+      "code": "WI",
+      "name": "Wisconsin",
+      "file": "WI.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:06:48.177Z",
+      "waters": 3617,
+      "species": 42,
+      "waterSpeciesPairs": 3838,
+      "evidence": 8565,
+      "photoCoverage": {
+        "fishTypes": 42,
+        "withPhotos": 40,
+        "withoutPhotos": 2
+      }
+    },
+    {
+      "code": "WY",
+      "name": "Wyoming",
+      "file": "WY.json",
+      "status": "complete",
+      "complete": true,
+      "generatedAt": "2026-09-22T23:06:52.678Z",
+      "waters": 123,
+      "species": 44,
+      "waterSpeciesPairs": 192,
+      "evidence": 308,
+      "photoCoverage": {
+        "fishTypes": 44,
+        "withPhotos": 40,
+        "withoutPhotos": 4
+      }
+    }
+  ]
+}

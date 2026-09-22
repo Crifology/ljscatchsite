@@ -118,5 +118,22 @@
     });
     return {species:[...merged.values()].sort((a,b)=>a.commonName.localeCompare(b.commonName)),limited,unavailable,loaded:true};
   }
-  return {waters,fish,speciesFrom,usgsSpecies,contains,lineDistance,extent};
+  async function areaFish(features,bbox,request,nasRequest) {
+    const [w,s,e,n]=bbox.split(',');
+    let observations, sightings;
+    const shared = address => {
+      if(!observations){
+        const url=new URL(address);
+        for(const [key,value] of Object.entries({swlng:w,swlat:s,nelng:e,nelat:n}))url.searchParams.set(key,value);
+        observations=Promise.resolve().then(()=>request(url.href));
+      }
+      return observations;
+    };
+    const nas = () => sightings ||= Promise.resolve().then(()=>nasRequest(bbox));
+    return Promise.all(features.map(async feature => {
+      try { return await fish(feature,shared,nasRequest ? nas : undefined); }
+      catch { return {loaded:false,species:[],error:'Fish sources unavailable. Select this water to retry.'}; }
+    }));
+  }
+  return {waters,fish,areaFish,speciesFrom,usgsSpecies,contains,lineDistance,extent};
 });

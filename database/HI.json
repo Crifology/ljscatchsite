@@ -1,0 +1,4356 @@
+{
+  "schemaVersion": 1,
+  "state": {
+    "code": "HI",
+    "name": "Hawaii"
+  },
+  "generatedAt": "2026-09-22T22:57:23.368Z",
+  "coverage": {
+    "scope": "Introduced fish reported as established in USGS NAS; historical records, not a complete species inventory.",
+    "locationMethod": "Original reported water locality and public coordinates; names are not canonical waterbody identifiers.",
+    "status": "complete",
+    "complete": true,
+    "queries": [
+      "https://nas.er.usgs.gov/api/v2/occurrence/search?group=Fishes&state=HI&spatialAcc=Accurate&status=established&limit=1000&offset=0"
+    ],
+    "error": null,
+    "sourceRecords": 223,
+    "acceptedRecords": 153,
+    "rejectedRecords": 70
+  },
+  "sources": [
+    {
+      "id": "usgs-nas",
+      "label": "USGS Nonindigenous Aquatic Species",
+      "license": "Public domain",
+      "url": "https://nas.er.usgs.gov/",
+      "documentation": "https://nas.er.usgs.gov/api/documentation.aspx"
+    }
+  ],
+  "counts": {
+    "waters": 58,
+    "species": 33,
+    "waterSpeciesPairs": 93,
+    "evidence": 153
+  },
+  "waters": [
+    {
+      "id": "hi-0e0c11ec9f826ce8",
+      "name": "a pond on the University of Hawaii campus",
+      "kind": "Lake",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.81516,
+        21.295482
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Jaguar Guapote",
+          "scientificName": "Parachromis managuensis",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 32719,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=32719",
+              "year": 1992,
+              "reportedDate": "1992",
+              "recordType": "Personal communication",
+              "coordinates": [
+                -157.81516,
+                21.295482
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-38856064.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/38856064",
+            "label": "(c) Brian Gratwicke, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-5e5ca661866bb407",
+      "name": "Baskerville Springs",
+      "kind": "River",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.815589,
+        21.41393
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "a bristlenosed catfish",
+          "scientificName": "Ancistrus cf. temminckii",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 32550,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=32550",
+              "year": 1999,
+              "reportedDate": "1999",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.815589,
+                21.41393
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": null,
+          "photoStatus": "unmatched"
+        }
+      ]
+    },
+    {
+      "id": "hi-ba123acec5f4449c",
+      "name": "Bridge pilings and bottom under original channel from Kuapa Pond at Marina Unit No. 1., Hawaii Kai, Oahu",
+      "kind": "Lake",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.722,
+        21.2883
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "blacktail snapper",
+          "scientificName": "Lutjanus fulvus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 162657,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=162657",
+              "year": 2002,
+              "reportedDate": "2002-2-30",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.722,
+                21.2883
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-456205954.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/456205954",
+            "label": "(c) Sawyer Baran, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-0c59c23c0dd1088a",
+      "name": "Drainage canal at Ala Moana Beach Park",
+      "kind": "River",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.849368,
+        21.291169
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "mangrove goby",
+          "scientificName": "Mugilogobius cavifrons",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 276628,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=276628",
+              "year": 1989,
+              "reportedDate": "1989-12-16",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.849368,
+                21.291169
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": null,
+          "photoStatus": "unavailable"
+        }
+      ]
+    },
+    {
+      "id": "hi-c8b410263e23e857",
+      "name": "Fuel dock, Ala Wai Yacht Harbor, Oahu",
+      "kind": "Coastal",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.844,
+        21.2849
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Blackchin Tilapia",
+          "scientificName": "Sarotherodon melanotheron",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 162188,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=162188",
+              "year": 1998,
+              "reportedDate": "1998-7-30",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.844,
+                21.2849
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-591750765.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/591750765",
+            "label": "(c) Thomas Irvine, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "blacktail snapper",
+          "scientificName": "Lutjanus fulvus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 162178,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=162178",
+              "year": 1998,
+              "reportedDate": "1998-7-30",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.844,
+                21.2849
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-456205954.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/456205954",
+            "label": "(c) Sawyer Baran, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-467b1c466dd71736",
+      "name": "Hawaii, Whittington Beach Park, small ditch/stream connected to fish pond on the NW side of the park",
+      "kind": "Lake",
+      "state": "HI",
+      "county": "Hawaii",
+      "coordinates": [
+        -155.54945,
+        19.08614
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Shortfin Molly",
+          "scientificName": "Poecilia mexicana",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1872902,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1872902",
+              "year": 2025,
+              "reportedDate": "2025-4-10",
+              "recordType": "NAS sighting report",
+              "coordinates": [
+                -155.54945,
+                19.08614
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-728668651.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/728668651",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-9cb75ccb09bed349",
+      "name": "Hilo, Reeds Bay",
+      "kind": "Coastal",
+      "state": "HI",
+      "county": "Hawaii",
+      "coordinates": [
+        -155.06256,
+        19.72559
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "kanda",
+          "scientificName": "Valamugil engeli",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702535,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702535",
+              "year": 2015,
+              "reportedDate": "2015-12-9",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.06256,
+                19.72559
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702537,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702537",
+              "year": 2016,
+              "reportedDate": "2016-1-12",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.06256,
+                19.72559
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702546,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702546",
+              "year": 2016,
+              "reportedDate": "2016-2-11",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.06256,
+                19.72559
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702547,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702547",
+              "year": 2016,
+              "reportedDate": "2016-3-3",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.06256,
+                19.72559
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702548,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702548",
+              "year": 2016,
+              "reportedDate": "2016-4-19",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.06256,
+                19.72559
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702549,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702549",
+              "year": 2016,
+              "reportedDate": "2016-5-19",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.06256,
+                19.72559
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702550,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702550",
+              "year": 2016,
+              "reportedDate": "2016-6-2",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.06256,
+                19.72559
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702551,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702551",
+              "year": 2016,
+              "reportedDate": "2016-7-7",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.06256,
+                19.72559
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702552,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702552",
+              "year": 2016,
+              "reportedDate": "2016-8-16",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.06256,
+                19.72559
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702553,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702553",
+              "year": 2016,
+              "reportedDate": "2016-10-15",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.06256,
+                19.72559
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702554,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702554",
+              "year": 2016,
+              "reportedDate": "2016-10-12",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.06256,
+                19.72559
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702555,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702555",
+              "year": 2016,
+              "reportedDate": "2016-11-22",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.06256,
+                19.72559
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702556,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702556",
+              "year": 2016,
+              "reportedDate": "2016-12-14",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.06256,
+                19.72559
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702557,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702557",
+              "year": 2017,
+              "reportedDate": "2017-1-4",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.06256,
+                19.72559
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702558,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702558",
+              "year": 2017,
+              "reportedDate": "2017-2-15",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.06256,
+                19.72559
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702559,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702559",
+              "year": 2017,
+              "reportedDate": "2017-3-8",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.06256,
+                19.72559
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702560,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702560",
+              "year": 2017,
+              "reportedDate": "2017-2-12",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.06256,
+                19.72559
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702561,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702561",
+              "year": 2017,
+              "reportedDate": "2017-5-10",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.06256,
+                19.72559
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702562,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702562",
+              "year": 2017,
+              "reportedDate": "2017-6-5",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.06256,
+                19.72559
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702563,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702563",
+              "year": 2017,
+              "reportedDate": "2017-7-6",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.06256,
+                19.72559
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702564,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702564",
+              "year": 2017,
+              "reportedDate": "2017-8-4",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.06256,
+                19.72559
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-590556526.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/590556526",
+            "label": "(c) Cricket Raspet, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-9676e67e4e31b30f",
+      "name": "Hobron Lane, Ala Wai Yacht Harbor, Oahu",
+      "kind": "Coastal",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.841,
+        21.2851
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Blackchin Tilapia",
+          "scientificName": "Sarotherodon melanotheron",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 162187,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=162187",
+              "year": 1998,
+              "reportedDate": "1998-7-23",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.841,
+                21.2851
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-591750765.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/591750765",
+            "label": "(c) Thomas Irvine, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Mozambique Tilapia",
+          "scientificName": "Oreochromis mossambicus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 162184,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=162184",
+              "year": 1998,
+              "reportedDate": "1998-7-23",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.841,
+                21.2851
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-8092181.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/8092181",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-7f8d499c9e68f912",
+      "name": "Island of Oahu, Lake Wilson (Wahiawa Reservoir) at the spillway dam in Wahiawa (UTM: 2377682N 4598206E)",
+      "kind": "Reservoir",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -158.05194,
+        21.50028
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Blackchin Tilapia",
+          "scientificName": "Sarotherodon melanotheron",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 550446,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=550446",
+              "year": 2002,
+              "reportedDate": "2002-1-18",
+              "recordType": "Specimen",
+              "coordinates": [
+                -158.05194,
+                21.50028
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-591750765.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/591750765",
+            "label": "(c) Thomas Irvine, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-62461a7eb86d2b9a",
+      "name": "Kipapa stream behind National Marine Fisheries Laboratory",
+      "kind": "River",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.99908,
+        21.4471
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Green Swordtail",
+          "scientificName": "Xiphophorus hellerii",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 283421,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=283421",
+              "year": 1976,
+              "reportedDate": "1976-7-31",
+              "recordType": "Specimen",
+              "coordinates": [
+                -157.99908,
+                21.4471
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-672136846.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/672136846",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-c975235b997440e5",
+      "name": "lower Kamo'oali'i (Kane'ohe) Stream",
+      "kind": "River",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.78721,
+        21.411024
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "suckermouth catfish",
+          "scientificName": "Hypostomus sp. (watwata group)",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 32837,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=32837",
+              "year": 1999,
+              "reportedDate": "1999-10-15",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.78721,
+                21.411024
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": null,
+          "photoStatus": "unmatched"
+        }
+      ]
+    },
+    {
+      "id": "hi-4a78d44715fa53f8",
+      "name": "lower Kawa Stream",
+      "kind": "River",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.782866,
+        21.409735
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "suckermouth catfish",
+          "scientificName": "Hypostomus sp. (watwata group)",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 32838,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=32838",
+              "year": 1999,
+              "reportedDate": "1999-10-15",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.782866,
+                21.409735
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": null,
+          "photoStatus": "unmatched"
+        }
+      ]
+    },
+    {
+      "id": "hi-64b9d7aa7cb5321e",
+      "name": "Manoa Stream on University of Hawaii Campus behind Jefferson Hall and adjacent to Japanese garden",
+      "kind": "River",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.81365,
+        21.29935
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "a bristlenosed catfish",
+          "scientificName": "Ancistrus cf. temminckii",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 547180,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=547180",
+              "year": 2002,
+              "reportedDate": "2002-1-21",
+              "recordType": "Specimen",
+              "coordinates": [
+                -157.81365,
+                21.29935
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": null,
+          "photoStatus": "unmatched"
+        },
+        {
+          "commonName": "Convict Cichlid",
+          "scientificName": "Archocentrus nigrofasciatus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 291558,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=291558",
+              "year": 2002,
+              "reportedDate": "2002-1-21",
+              "recordType": "Specimen",
+              "coordinates": [
+                -157.81365,
+                21.29935
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/commons-1344040.jpg",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Archocentrus_nigrofasciatus_female.jpg",
+            "label": "S. Olkowicz - User Hippocampus on pl.wikipedia � Archocentrus nigrofasciatus female.jpg",
+            "license": "CC BY 2.5",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-5fea8dc2fcd0937a",
+      "name": "Manoa Stream, Oahu, at Kaimuki High School",
+      "kind": "River",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.817488,
+        21.287835
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "suckermouth catfish",
+          "scientificName": "Hypostomus sp. (watwata group)",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 32832,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=32832",
+              "year": 1998,
+              "reportedDate": "1998-10-15",
+              "recordType": "Specimen",
+              "coordinates": [
+                -157.817488,
+                21.287835
+              ],
+              "coordinateSource": "Map derived"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 32833,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=32833",
+              "year": 1998,
+              "reportedDate": "1998-10-15",
+              "recordType": "Specimen",
+              "coordinates": [
+                -157.817488,
+                21.287835
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": null,
+          "photoStatus": "unmatched"
+        }
+      ]
+    },
+    {
+      "id": "hi-0052ca414a11f961",
+      "name": "Maunalua Bay, Oahu",
+      "kind": "Coastal",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.75,
+        21.275
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "blacktail snapper",
+          "scientificName": "Lutjanus fulvus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 162727,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=162727",
+              "year": 2002,
+              "reportedDate": "2002-2-30",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.75,
+                21.275
+              ],
+              "coordinateSource": "GNIS"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-456205954.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/456205954",
+            "label": "(c) Sawyer Baran, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "kanda",
+          "scientificName": "Valamugil engeli",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702498,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702498",
+              "year": 2015,
+              "reportedDate": "2015-9-22",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.75,
+                21.275
+              ],
+              "coordinateSource": "GNIS"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702499,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702499",
+              "year": 2015,
+              "reportedDate": "2015-10-26",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.75,
+                21.275
+              ],
+              "coordinateSource": "GNIS"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702500,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702500",
+              "year": 2015,
+              "reportedDate": "2015-11-23",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.75,
+                21.275
+              ],
+              "coordinateSource": "GNIS"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702501,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702501",
+              "year": 2015,
+              "reportedDate": "2015-12-23",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.75,
+                21.275
+              ],
+              "coordinateSource": "GNIS"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702502,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702502",
+              "year": 2016,
+              "reportedDate": "2016-1-23",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.75,
+                21.275
+              ],
+              "coordinateSource": "GNIS"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702503,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702503",
+              "year": 2016,
+              "reportedDate": "2016-2-23",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.75,
+                21.275
+              ],
+              "coordinateSource": "GNIS"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702505,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702505",
+              "year": 2016,
+              "reportedDate": "2016-3-17",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.75,
+                21.275
+              ],
+              "coordinateSource": "GNIS"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702506,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702506",
+              "year": 2016,
+              "reportedDate": "2016-4-25",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.75,
+                21.275
+              ],
+              "coordinateSource": "GNIS"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702507,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702507",
+              "year": 2016,
+              "reportedDate": "2016-5-16",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.75,
+                21.275
+              ],
+              "coordinateSource": "GNIS"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702509,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702509",
+              "year": 2016,
+              "reportedDate": "2016-6-29",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.75,
+                21.275
+              ],
+              "coordinateSource": "GNIS"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702510,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702510",
+              "year": 2016,
+              "reportedDate": "2016-7-7",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.75,
+                21.275
+              ],
+              "coordinateSource": "GNIS"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702512,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702512",
+              "year": 2016,
+              "reportedDate": "2016-8-7",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.75,
+                21.275
+              ],
+              "coordinateSource": "GNIS"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702514,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702514",
+              "year": 2016,
+              "reportedDate": "2016-9-2",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.75,
+                21.275
+              ],
+              "coordinateSource": "GNIS"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702516,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702516",
+              "year": 2016,
+              "reportedDate": "2016-10-20",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.75,
+                21.275
+              ],
+              "coordinateSource": "GNIS"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702518,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702518",
+              "year": 2016,
+              "reportedDate": "2016-11-22",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.75,
+                21.275
+              ],
+              "coordinateSource": "GNIS"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702519,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702519",
+              "year": 2016,
+              "reportedDate": "2016-12-13",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.75,
+                21.275
+              ],
+              "coordinateSource": "GNIS"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702521,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702521",
+              "year": 2017,
+              "reportedDate": "2017-1-19",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.75,
+                21.275
+              ],
+              "coordinateSource": "GNIS"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702522,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702522",
+              "year": 2017,
+              "reportedDate": "2017-2-24",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.75,
+                21.275
+              ],
+              "coordinateSource": "GNIS"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702523,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702523",
+              "year": 2017,
+              "reportedDate": "2017-3-30",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.75,
+                21.275
+              ],
+              "coordinateSource": "GNIS"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702525,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702525",
+              "year": 2017,
+              "reportedDate": "2017-4-19",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.75,
+                21.275
+              ],
+              "coordinateSource": "GNIS"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702526,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702526",
+              "year": 2017,
+              "reportedDate": "2017-5-17",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.75,
+                21.275
+              ],
+              "coordinateSource": "GNIS"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702528,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702528",
+              "year": 2017,
+              "reportedDate": "2017-6-28",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.75,
+                21.275
+              ],
+              "coordinateSource": "GNIS"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702529,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702529",
+              "year": 2017,
+              "reportedDate": "2017-7-28",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.75,
+                21.275
+              ],
+              "coordinateSource": "GNIS"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1702531,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1702531",
+              "year": 2017,
+              "reportedDate": "2017-8-17",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.75,
+                21.275
+              ],
+              "coordinateSource": "GNIS"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-590556526.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/590556526",
+            "label": "(c) Cricket Raspet, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-7799f09c81c008c2",
+      "name": "Oahu, artificial stream and pond on west side of Nuuanu Pali drive, adjacent to the Board of Water Supply building",
+      "kind": "Lake",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.81805,
+        21.35033
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Guppy",
+          "scientificName": "Poecilia reticulata",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 564711,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=564711",
+              "year": 2002,
+              "reportedDate": "2002-1-19",
+              "recordType": "Specimen",
+              "coordinates": [
+                -157.81805,
+                21.35033
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-330429036.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/330429036",
+            "label": "(c) Diego Gómez Hoyos, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-e34ca4b2436db52b",
+      "name": "Oahu, artificial stream and pond on west side of Nuuanu Pali drive, adjacent to the Board of Water Supply building.",
+      "kind": "Lake",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.81806,
+        21.35033
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Green Swordtail",
+          "scientificName": "Xiphophorus hellerii",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 278843,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=278843",
+              "year": 2002,
+              "reportedDate": "2002-1-19",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.81806,
+                21.35033
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-672136846.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/672136846",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Guppy",
+          "scientificName": "Poecilia reticulata",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 278841,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=278841",
+              "year": 2002,
+              "reportedDate": "2002-1-19",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.81806,
+                21.35033
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-330429036.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/330429036",
+            "label": "(c) Diego Gómez Hoyos, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-8bab99c750991dda",
+      "name": "Oahu, Kahawai stream immediately downstream from highway 72 bridge in Waimanalo (UTM: 2361235N 632403E)",
+      "kind": "River",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.72305,
+        21.34833
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "whitespotted clarias",
+          "scientificName": "Clarias fuscus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 550695,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=550695",
+              "year": 2002,
+              "reportedDate": "2002-1-22",
+              "recordType": "Specimen",
+              "coordinates": [
+                -157.72305,
+                21.34833
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-660134027.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/660134027",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-a6bcec48f8f12584",
+      "name": "Oahu, Kahawai Stream immediately downstream from Kalanianaole hwy (hwy 72) bridge in Waimanalo (UTM: 2361235N 632403E)",
+      "kind": "River",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.72305,
+        21.34833
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Blackchin Tilapia",
+          "scientificName": "Sarotherodon melanotheron",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 550422,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=550422",
+              "year": 2002,
+              "reportedDate": "2002-1-28",
+              "recordType": "Specimen",
+              "coordinates": [
+                -157.72305,
+                21.34833
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-591750765.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/591750765",
+            "label": "(c) Thomas Irvine, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Western Mosquitofish",
+          "scientificName": "Gambusia affinis",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 747942,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=747942",
+              "year": 2002,
+              "reportedDate": "2002-1-28",
+              "recordType": "Specimen",
+              "coordinates": [
+                -157.72305,
+                21.34833
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-4626418.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/4626418",
+            "label": "(c) Dominic, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "whitespotted clarias",
+          "scientificName": "Clarias fuscus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 550694,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=550694",
+              "year": 2002,
+              "reportedDate": "2002-1-28",
+              "recordType": "Specimen",
+              "coordinates": [
+                -157.72305,
+                21.34833
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-660134027.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/660134027",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-fa7d33fb62d81cf8",
+      "name": "Oahu, Kahawai Stream immediately downstream from Kalanianaole hwy (hwy 72) bridge in Waimanalo.",
+      "kind": "River",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.72306,
+        21.34833
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Green Swordtail",
+          "scientificName": "Xiphophorus hellerii",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 278844,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=278844",
+              "year": 2002,
+              "reportedDate": "2002-1-28",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.72306,
+                21.34833
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-672136846.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/672136846",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-2a007f0492ef8bf7",
+      "name": "Oahu, Kamooalii Stream in Kaneohe near footbridge at junction of Keneke and Kukane streets (UTM: 2367704N 0624196E)",
+      "kind": "River",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.80167,
+        21.40736
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Blackchin Tilapia",
+          "scientificName": "Sarotherodon melanotheron",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 550439,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=550439",
+              "year": 2002,
+              "reportedDate": "2002-1-28",
+              "recordType": "Specimen",
+              "coordinates": [
+                -157.80167,
+                21.40736
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-591750765.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/591750765",
+            "label": "(c) Thomas Irvine, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-9bebb1b4fb066cc5",
+      "name": "Oahu, Kamooalii Stream in Kaneohe, near footbridge at junction of Keneke and Kukane streets",
+      "kind": "River",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.802,
+        21.4074
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "a bristlenosed catfish",
+          "scientificName": "Ancistrus cf. temminckii",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 547181,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=547181",
+              "year": 2002,
+              "reportedDate": "2002-1-28",
+              "recordType": "Specimen",
+              "coordinates": [
+                -157.802,
+                21.4074
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 547182,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=547182",
+              "year": 2002,
+              "reportedDate": "2002-1-22",
+              "recordType": "Specimen",
+              "coordinates": [
+                -157.802,
+                21.4074
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": null,
+          "photoStatus": "unmatched"
+        },
+        {
+          "commonName": "Convict Cichlid",
+          "scientificName": "Archocentrus nigrofasciatus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 291554,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=291554",
+              "year": 2002,
+              "reportedDate": "2002-1-22",
+              "recordType": "Specimen",
+              "coordinates": [
+                -157.802,
+                21.4074
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 291555,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=291555",
+              "year": 2002,
+              "reportedDate": "2002-1-28",
+              "recordType": "Specimen",
+              "coordinates": [
+                -157.802,
+                21.4074
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/commons-1344040.jpg",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Archocentrus_nigrofasciatus_female.jpg",
+            "label": "S. Olkowicz - User Hippocampus on pl.wikipedia � Archocentrus nigrofasciatus female.jpg",
+            "license": "CC BY 2.5",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "suckermouth catfish",
+          "scientificName": "Hypostomus sp. (watwata group)",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 288609,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=288609",
+              "year": 2002,
+              "reportedDate": "2002-1-22",
+              "recordType": "Specimen",
+              "coordinates": [
+                -157.802,
+                21.4074
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": null,
+          "photoStatus": "unmatched"
+        }
+      ]
+    },
+    {
+      "id": "hi-314a75f33abc3e04",
+      "name": "Oahu, Kamooalii Stream in Kaneohe, near footbridge at junction of Keneke and Kukane streets (UTM: 2367704N 0624196E)",
+      "kind": "River",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.80167,
+        21.40736
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "banded jewelfish",
+          "scientificName": "Hemichromis elongatus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 164161,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=164161",
+              "year": 2002,
+              "reportedDate": "2002-1-22",
+              "recordType": "Specimen",
+              "coordinates": [
+                -157.80167,
+                21.40736
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-24295522.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/24295522",
+            "label": "(c) Robert Taylor, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Blackchin Tilapia",
+          "scientificName": "Sarotherodon melanotheron",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 550445,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=550445",
+              "year": 2002,
+              "reportedDate": "2002-1-22",
+              "recordType": "Specimen",
+              "coordinates": [
+                -157.80167,
+                21.40736
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-591750765.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/591750765",
+            "label": "(c) Thomas Irvine, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "whitespotted clarias",
+          "scientificName": "Clarias fuscus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 550696,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=550696",
+              "year": 2002,
+              "reportedDate": "2002-1-22",
+              "recordType": "Specimen",
+              "coordinates": [
+                -157.80167,
+                21.40736
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-660134027.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/660134027",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-e191f92f0aad1d53",
+      "name": "Oahu, Lake Wilson (Wahiawa Reservoir) near boat ramp at Wahiawa State FW park in Wahiawa",
+      "kind": "Reservoir",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -158.02616,
+        21.49056
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "suckermouth catfish",
+          "scientificName": "Hypostomus sp. (watwata group)",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 288608,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=288608",
+              "year": 2002,
+              "reportedDate": "2002-1-27",
+              "recordType": "Specimen",
+              "coordinates": [
+                -158.02616,
+                21.49056
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": null,
+          "photoStatus": "unmatched"
+        }
+      ]
+    },
+    {
+      "id": "hi-79893032c772027a",
+      "name": "Oahu, Lake Wilson (Wahiawa Reservoir) near boat ramp at Wahiawa State FW park in Wahiawa (UTM: 2376604N 0601012E)",
+      "kind": "Reservoir",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -158.02472,
+        21.4905
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "banded jewelfish",
+          "scientificName": "Hemichromis elongatus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 550131,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=550131",
+              "year": 2002,
+              "reportedDate": "2002-1-18",
+              "recordType": "Specimen",
+              "coordinates": [
+                -158.02472,
+                21.4905
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-24295522.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/24295522",
+            "label": "(c) Robert Taylor, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Blackchin Tilapia",
+          "scientificName": "Sarotherodon melanotheron",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 550454,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=550454",
+              "year": 2002,
+              "reportedDate": "2002-1-18",
+              "recordType": "Specimen",
+              "coordinates": [
+                -158.02472,
+                21.4905
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-591750765.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/591750765",
+            "label": "(c) Thomas Irvine, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Midas Cichlid",
+          "scientificName": "Amphilophus citrinellus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 550057,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=550057",
+              "year": 2002,
+              "reportedDate": "2002-1-18",
+              "recordType": "Specimen",
+              "coordinates": [
+                -158.02472,
+                21.4905
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-185311020.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/185311020",
+            "label": "(c) Ong Jyh Seng, some rights reserved (CC BY-SA)",
+            "license": "CC-BY-SA",
+            "licenseCode": "cc-by-sa",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-1db7fd865541ab62",
+      "name": "Oahu, Manoa Stream (UTM: 2355900N 622778E)",
+      "kind": "River",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.81639,
+        21.30222
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Pond Loach",
+          "scientificName": "Misgurnus anguillicaudatus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 564649,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=564649",
+              "year": 2002,
+              "reportedDate": "2002-1-22",
+              "recordType": "Specimen",
+              "coordinates": [
+                -157.81639,
+                21.30222
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-9049442.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/9049442",
+            "label": "(c) Lee Cain, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-841df20f359f397d",
+      "name": "Oahu, Manoa Stream on University of Hawaii Campus behind Jefferson Hall and adjacent to Japanese garden",
+      "kind": "River",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.81639,
+        21.30222
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Guppy",
+          "scientificName": "Poecilia reticulata",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 564712,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=564712",
+              "year": 2002,
+              "reportedDate": "2002-1-21",
+              "recordType": "Specimen",
+              "coordinates": [
+                -157.81639,
+                21.30222
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-330429036.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/330429036",
+            "label": "(c) Diego Gómez Hoyos, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-d2b181fffbd5655b",
+      "name": "Oahu, Pearl Harbor, Lower Halawa Stream, above Kamehameha Hwy bridge",
+      "kind": "Coastal",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.93648,
+        21.36457
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "fang-toothed blenny",
+          "scientificName": "Omobranchus ferox",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1704298,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1704298",
+              "year": 1998,
+              "reportedDate": "1998-5-11",
+              "recordType": "Specimen",
+              "coordinates": [
+                -157.93648,
+                21.36457
+              ],
+              "coordinateSource": "Map derived"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1704299,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1704299",
+              "year": 1998,
+              "reportedDate": "1998-5-15",
+              "recordType": "Specimen",
+              "coordinates": [
+                -157.93648,
+                21.36457
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": null,
+          "photoStatus": "unavailable"
+        }
+      ]
+    },
+    {
+      "id": "hi-499796b7a6c91f3c",
+      "name": "Oahu, Wahiawa Reservoir near boat ramp at Wahiawa State FW Park in Wahiawa (UTM: 2376604N 0601012E)",
+      "kind": "Reservoir",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -158.02472,
+        21.4905
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Blackchin Tilapia",
+          "scientificName": "Sarotherodon melanotheron",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 550415,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=550415",
+              "year": 2002,
+              "reportedDate": "2002-1-27",
+              "recordType": "Specimen",
+              "coordinates": [
+                -158.02472,
+                21.4905
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-591750765.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/591750765",
+            "label": "(c) Thomas Irvine, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Bluegill",
+          "scientificName": "Lepomis macrochirus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 611297,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=611297",
+              "year": 2002,
+              "reportedDate": "2002-1-27",
+              "recordType": "Specimen",
+              "coordinates": [
+                -158.02472,
+                21.4905
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-339074.png",
+            "sourceUrl": "https://www.inaturalist.org/photos/339074",
+            "label": "(c) Kristiina Hurme, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Threadfin Shad",
+          "scientificName": "Dorosoma petenense",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1334159,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1334159",
+              "year": 2002,
+              "reportedDate": "2002-1-27",
+              "recordType": "Specimen",
+              "coordinates": [
+                -158.02472,
+                21.4905
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-243842481.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/243842481",
+            "label": "(c) Sam Kieschnick, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-d90a5a684a4c7c9c",
+      "name": "Oahu, Waiawa stream at highway 99 (Kamehameha highway) bridge crossing (UTM: 2366391N 0605796E)",
+      "kind": "River",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.97917,
+        21.39664
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Guppy",
+          "scientificName": "Poecilia reticulata",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 564710,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=564710",
+              "year": 2002,
+              "reportedDate": "2002-1-21",
+              "recordType": "Specimen",
+              "coordinates": [
+                -157.97917,
+                21.39664
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-330429036.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/330429036",
+            "label": "(c) Diego Gómez Hoyos, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-ecb181204f867718",
+      "name": "Oahu, Waiawa stream at Highway 99 (Kamehameha highway) bridge crossing.",
+      "kind": "River",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.97917,
+        21.39664
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Guppy",
+          "scientificName": "Poecilia reticulata",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 278842,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=278842",
+              "year": 2002,
+              "reportedDate": "2002-1-21",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.97917,
+                21.39664
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-330429036.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/330429036",
+            "label": "(c) Diego Gómez Hoyos, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-19a75c8b8262b768",
+      "name": "Pacific Ocean, Hawaii, Hawaii Island, marine waters offshore",
+      "kind": "Coastal",
+      "state": "HI",
+      "county": "Hawaii",
+      "coordinates": [
+        -155.23544,
+        20.057221
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "blacktail snapper",
+          "scientificName": "Lutjanus fulvus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 164945,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=164945",
+              "year": 2005,
+              "reportedDate": "2005-1-22",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.23544,
+                20.057221
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-456205954.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/456205954",
+            "label": "(c) Sawyer Baran, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "bluestripe snapper",
+          "scientificName": "Lutjanus kasmira",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 164946,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=164946",
+              "year": 2005,
+              "reportedDate": "2005-1-22",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.23544,
+                20.057221
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-203393624.png",
+            "sourceUrl": "https://www.inaturalist.org/photos/203393624",
+            "label": "(c) Lexi Amico, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "kanda",
+          "scientificName": "Valamugil engeli",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 164952,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=164952",
+              "year": 2005,
+              "reportedDate": "2005-1-22",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.23544,
+                20.057221
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-590556526.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/590556526",
+            "label": "(c) Cricket Raspet, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "peacock hind",
+          "scientificName": "Cephalopholis argus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 32624,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=32624",
+              "year": 1956,
+              "reportedDate": "1956",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.23544,
+                20.057221
+              ],
+              "coordinateSource": "Map derived"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 32626,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=32626",
+              "year": 1984,
+              "reportedDate": "1984",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.23544,
+                20.057221
+              ],
+              "coordinateSource": "Map derived"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 164937,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=164937",
+              "year": 2005,
+              "reportedDate": "2005-1-22",
+              "recordType": "Literature",
+              "coordinates": [
+                -155.23544,
+                20.057221
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-335158096.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/335158096",
+            "label": "(c) Gergely Nigg, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-b51517b480e9ba6a",
+      "name": "Pacific Ocean, Hawaii, Oahu, Ala Wai Yacht Harbor, Hilton Lagoon discharge pipe",
+      "kind": "Lake",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.841,
+        21.2828
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Blackchin Tilapia",
+          "scientificName": "Sarotherodon melanotheron",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 162189,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=162189",
+              "year": 1998,
+              "reportedDate": "1998-7-30",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.841,
+                21.2828
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-591750765.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/591750765",
+            "label": "(c) Thomas Irvine, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "lemonpeel angel",
+          "scientificName": "Centropyge flavissima",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 162179,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=162179",
+              "year": 1998,
+              "reportedDate": "1998-7-30",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.841,
+                21.2828
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-385357003.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/385357003",
+            "label": "(c) Mike Bowie, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Mozambique Tilapia",
+          "scientificName": "Oreochromis mossambicus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 162185,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=162185",
+              "year": 1998,
+              "reportedDate": "1998-7-30",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.841,
+                21.2828
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-8092181.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/8092181",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-ace51ab04a468ae8",
+      "name": "Pacific Ocean, Hawaii, Oahu, He'eia Kea Harbor",
+      "kind": "Coastal",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.81305,
+        21.4463889
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "flaming angelfish",
+          "scientificName": "Centropyge loricula",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 165085,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=165085",
+              "year": 2005,
+              "reportedDate": "2005-1-22",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.81305,
+                21.4463889
+              ],
+              "coordinateSource": "GNIS"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-370210419.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/370210419",
+            "label": "(c) Debra Baker, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-badeddc502cd1e1b",
+      "name": "Pacific Ocean, Hawaii, Oahu, Kaneohe Bay",
+      "kind": "Coastal",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.826843,
+        21.47224
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Blackchin Tilapia",
+          "scientificName": "Sarotherodon melanotheron",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1711958,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1711958",
+              "year": 2017,
+              "reportedDate": "2017-5-15",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.826843,
+                21.47224
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-591750765.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/591750765",
+            "label": "(c) Thomas Irvine, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "blacktail snapper",
+          "scientificName": "Lutjanus fulvus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1711959,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1711959",
+              "year": 2017,
+              "reportedDate": "2017-5-15",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.826843,
+                21.47224
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-456205954.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/456205954",
+            "label": "(c) Sawyer Baran, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "kanda",
+          "scientificName": "Valamugil engeli",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1711952,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1711952",
+              "year": 2017,
+              "reportedDate": "2017-5-15",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.826843,
+                21.47224
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-590556526.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/590556526",
+            "label": "(c) Cricket Raspet, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "lemonpeel angel",
+          "scientificName": "Centropyge flavissima",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 154420,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=154420",
+              "year": 2001,
+              "reportedDate": "2001-12-31",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.826843,
+                21.47224
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-385357003.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/385357003",
+            "label": "(c) Mike Bowie, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Tasseled Blenny",
+          "scientificName": "Parablennius thysanius",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 159783,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=159783",
+              "year": 1990,
+              "reportedDate": "1990-4-16",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.826843,
+                21.47224
+              ],
+              "coordinateSource": "Map derived"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1711957,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1711957",
+              "year": 2017,
+              "reportedDate": "2017-5-15",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.826843,
+                21.47224
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-495271696.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/495271696",
+            "label": "(c) Srichakra Pranav Tamarapalli, some rights reserved (CC BY-SA)",
+            "license": "CC-BY-SA",
+            "licenseCode": "cc-by-sa",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "zebra blenny",
+          "scientificName": "Omobranchus obliquus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1711950,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1711950",
+              "year": 2017,
+              "reportedDate": "2017-5-15",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.826843,
+                21.47224
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-256447913.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/256447913",
+            "label": "(c) Chris Sulots, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-f8506f5f5085e329",
+      "name": "Pacific Ocean, Hawaii, Oahu, Manualua Bay, corner pocket (dive site)",
+      "kind": "Coastal",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.7465,
+        21.26405
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "bluestripe snapper",
+          "scientificName": "Lutjanus kasmira",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1633385,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1633385",
+              "year": 2009,
+              "reportedDate": "2009-11-17",
+              "recordType": "NAS sighting report",
+              "coordinates": [
+                -157.7465,
+                21.26405
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-203393624.png",
+            "sourceUrl": "https://www.inaturalist.org/photos/203393624",
+            "label": "(c) Lexi Amico, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-731d728eb3328b22",
+      "name": "Pacific Ocean, Hawaii, Oahu, marine waters offshore",
+      "kind": "Coastal",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.62908,
+        21.297052
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "bandedtail goatfish",
+          "scientificName": "Upeneus vittatus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 32661,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=32661",
+              "year": 1955,
+              "reportedDate": "1955",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.62908,
+                21.297052
+              ],
+              "coordinateSource": "Map derived"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 164951,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=164951",
+              "year": 1981,
+              "reportedDate": "1981-1-22",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.62908,
+                21.297052
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": null,
+          "photoStatus": "unavailable"
+        },
+        {
+          "commonName": "blacktail snapper",
+          "scientificName": "Lutjanus fulvus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 32847,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=32847",
+              "year": 1955,
+              "reportedDate": "1955-10-15",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.62908,
+                21.297052
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-456205954.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/456205954",
+            "label": "(c) Sawyer Baran, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "bluestripe snapper",
+          "scientificName": "Lutjanus kasmira",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 32658,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=32658",
+              "year": 1955,
+              "reportedDate": "1955",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.62908,
+                21.297052
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-203393624.png",
+            "sourceUrl": "https://www.inaturalist.org/photos/203393624",
+            "label": "(c) Lexi Amico, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "goldspot herring",
+          "scientificName": "Herklotsichthys quadrimaculatus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 164954,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=164954",
+              "year": 1972,
+              "reportedDate": "1972-1-22",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.62908,
+                21.297052
+              ],
+              "coordinateSource": "Map derived"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 165004,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=165004",
+              "year": 2005,
+              "reportedDate": "2005-1-22",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.62908,
+                21.297052
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-522243145.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/522243145",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "humpback snapper",
+          "scientificName": "Lutjanus gibbus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 32651,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=32651",
+              "year": 1958,
+              "reportedDate": "1958",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.62908,
+                21.297052
+              ],
+              "coordinateSource": "Map derived"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 32654,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=32654",
+              "year": 1984,
+              "reportedDate": "1984",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.62908,
+                21.297052
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-477520568.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/477520568",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "kanda",
+          "scientificName": "Valamugil engeli",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 32699,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=32699",
+              "year": 1955,
+              "reportedDate": "1955",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.62908,
+                21.297052
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-590556526.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/590556526",
+            "label": "(c) Cricket Raspet, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Marquesan sardine",
+          "scientificName": "Sardinella marquesensis",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 165007,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=165007",
+              "year": 2005,
+              "reportedDate": "2005-1-22",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.62908,
+                21.297052
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": null,
+          "photoStatus": "unavailable"
+        }
+      ]
+    },
+    {
+      "id": "hi-c3baca9ca1891a24",
+      "name": "Pacific Ocean, Hawaii, Oahu, Waianae park boat harbor",
+      "kind": "Coastal",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -158.19647,
+        21.44884
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "lemonpeel angel",
+          "scientificName": "Centropyge flavissima",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 609241,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=609241",
+              "year": 2013,
+              "reportedDate": "2013-8-31",
+              "recordType": "Personal communication",
+              "coordinates": [
+                -158.19647,
+                21.44884
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-385357003.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/385357003",
+            "label": "(c) Mike Bowie, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-60dc1de3518025c6",
+      "name": "Pacific Ocean, Maui, Molokini Island",
+      "kind": "Coastal",
+      "state": "HI",
+      "county": "Maui",
+      "coordinates": [
+        -156.4964,
+        20.6316
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Indo-Pacific Sergeant",
+          "scientificName": "Abudefduf vaigiensis",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1649526,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1649526",
+              "year": 1991,
+              "reportedDate": "1991-11-17",
+              "recordType": "Literature",
+              "coordinates": [
+                -156.4964,
+                20.6316
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-323527412.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/323527412",
+            "label": "(c) portioid, some rights reserved (CC BY), uploaded by portioid",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-36f4991a40c467af",
+      "name": "Pacific Ocean, Oahu, Kahe Point",
+      "kind": "Coastal",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -158.1306,
+        21.3542
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Indo-Pacific Sergeant",
+          "scientificName": "Abudefduf vaigiensis",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1649527,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1649527",
+              "year": 1991,
+              "reportedDate": "1991-11-17",
+              "recordType": "Literature",
+              "coordinates": [
+                -158.1306,
+                21.3542
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-323527412.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/323527412",
+            "label": "(c) portioid, some rights reserved (CC BY), uploaded by portioid",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-7aab9deddeb99441",
+      "name": "Pearl Harbor National Wildlife Refuge",
+      "kind": "Coastal",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.986,
+        21.3897
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Blackchin Tilapia",
+          "scientificName": "Sarotherodon melanotheron",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 164066,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=164066",
+              "year": 2005,
+              "reportedDate": "2005-2-30",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.986,
+                21.3897
+              ],
+              "coordinateSource": "GNIS"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-591750765.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/591750765",
+            "label": "(c) Thomas Irvine, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-473b48a66e3fa293",
+      "name": "Pearl Harbor, brackish seepages near Neal S. Blaisdell Park",
+      "kind": "Coastal",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.955375,
+        21.384032
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "mangrove goby",
+          "scientificName": "Mugilogobius cavifrons",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 276631,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=276631",
+              "year": 1992,
+              "reportedDate": "1992-12-29",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.955375,
+                21.384032
+              ],
+              "coordinateSource": "Map derived"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 276633,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=276633",
+              "year": 1991,
+              "reportedDate": "1991-6-15",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.955375,
+                21.384032
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": null,
+          "photoStatus": "unavailable"
+        }
+      ]
+    },
+    {
+      "id": "hi-bfc07bdd74e18390",
+      "name": "Pearl Harbor, Pouhala Marsh.",
+      "kind": "Coastal",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -158.010617,
+        21.380576
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "banded limia",
+          "scientificName": "Limia vittata",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 278644,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=278644",
+              "year": 1998,
+              "reportedDate": "1998-8-18",
+              "recordType": "Literature",
+              "coordinates": [
+                -158.010617,
+                21.380576
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": null,
+          "photoStatus": "unavailable"
+        },
+        {
+          "commonName": "mangrove goby",
+          "scientificName": "Mugilogobius cavifrons",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 276629,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=276629",
+              "year": 1998,
+              "reportedDate": "1998-8-18",
+              "recordType": "Literature",
+              "coordinates": [
+                -158.010617,
+                21.380576
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": null,
+          "photoStatus": "unavailable"
+        }
+      ]
+    },
+    {
+      "id": "hi-dcfb4564e2faa073",
+      "name": "Pearl Harbor, Waiawa wildlife refuge.",
+      "kind": "Coastal",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.985083,
+        21.385431
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "mangrove goby",
+          "scientificName": "Mugilogobius cavifrons",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 276636,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=276636",
+              "year": 1998,
+              "reportedDate": "1998-8-26",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.985083,
+                21.385431
+              ],
+              "coordinateSource": "Map derived"
+            }
+          ],
+          "photo": null,
+          "photoStatus": "unavailable"
+        }
+      ]
+    },
+    {
+      "id": "hi-53f8a8b013f1e9f3",
+      "name": "Pier 11, Honolulu Harbor, Oahu",
+      "kind": "Coastal",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.865,
+        21.3091
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "blacktail snapper",
+          "scientificName": "Lutjanus fulvus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 162173,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=162173",
+              "year": 1997,
+              "reportedDate": "1997-6-16",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.865,
+                21.3091
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-456205954.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/456205954",
+            "label": "(c) Sawyer Baran, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-f519ada5b7504729",
+      "name": "Pier 29, Honolulu Harbor, Oahu",
+      "kind": "Coastal",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.873,
+        21.3109
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "blacktail snapper",
+          "scientificName": "Lutjanus fulvus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 162174,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=162174",
+              "year": 1997,
+              "reportedDate": "1997-6-16",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.873,
+                21.3109
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-456205954.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/456205954",
+            "label": "(c) Sawyer Baran, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-538cb1198af606c5",
+      "name": "Pier 36, Honolulu Harbor, Oahu",
+      "kind": "Coastal",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.877,
+        21.3168
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Mozambique Tilapia",
+          "scientificName": "Oreochromis mossambicus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 162180,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=162180",
+              "year": 1997,
+              "reportedDate": "1997-7-30",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.877,
+                21.3168
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-8092181.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/8092181",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-e81e940fbd0c7389",
+      "name": "Pier 7-8 HECO Intake Basin, Honolulu Harbor, Oahu",
+      "kind": "Coastal",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.865,
+        21.306
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "blacktail snapper",
+          "scientificName": "Lutjanus fulvus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 162172,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=162172",
+              "year": 1997,
+              "reportedDate": "1997-6-16",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.865,
+                21.306
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-456205954.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/456205954",
+            "label": "(c) Sawyer Baran, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-16ad28782d8c8a49",
+      "name": "Pond A15 @ Anaeho'omalu Bay (pond complex)",
+      "kind": "Lake",
+      "state": "HI",
+      "county": "Hawaii",
+      "coordinates": [
+        -155.8947,
+        19.90911
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Guppy",
+          "scientificName": "Poecilia reticulata",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 564704,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=564704",
+              "year": 2011,
+              "reportedDate": "2011-1-11",
+              "recordType": "Specimen",
+              "coordinates": [
+                -155.8947,
+                19.90911
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 614105,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=614105",
+              "year": 2011,
+              "reportedDate": "2011-1-11",
+              "recordType": "Specimen",
+              "coordinates": [
+                -155.8947,
+                19.90911
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-330429036.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/330429036",
+            "label": "(c) Diego Gómez Hoyos, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-f526a54042413691",
+      "name": "Pond A17 @ Anaeho'omalu Bay (pond complex)",
+      "kind": "Lake",
+      "state": "HI",
+      "county": "Hawaii",
+      "coordinates": [
+        -155.8947,
+        19.90911
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Guppy",
+          "scientificName": "Poecilia reticulata",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 564708,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=564708",
+              "year": 2011,
+              "reportedDate": "2011-1-13",
+              "recordType": "Specimen",
+              "coordinates": [
+                -155.8947,
+                19.90911
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 614104,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=614104",
+              "year": 2011,
+              "reportedDate": "2011-1-13",
+              "recordType": "Specimen",
+              "coordinates": [
+                -155.8947,
+                19.90911
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-330429036.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/330429036",
+            "label": "(c) Diego Gómez Hoyos, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-6ab8ba12ea34ae08",
+      "name": "Pond A18 @ Anaeho'omalu Bay (pond complex)",
+      "kind": "Lake",
+      "state": "HI",
+      "county": "Hawaii",
+      "coordinates": [
+        -155.8947,
+        19.90911
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Guppy",
+          "scientificName": "Poecilia reticulata",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 564705,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=564705",
+              "year": 2011,
+              "reportedDate": "2011-1-13",
+              "recordType": "Specimen",
+              "coordinates": [
+                -155.8947,
+                19.90911
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 614103,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=614103",
+              "year": 2011,
+              "reportedDate": "2011-1-13",
+              "recordType": "Specimen",
+              "coordinates": [
+                -155.8947,
+                19.90911
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-330429036.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/330429036",
+            "label": "(c) Diego Gómez Hoyos, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-0afd56f0e84d3cec",
+      "name": "Pond AB12 at Anaeho'omalu Bay (pond complex)",
+      "kind": "Lake",
+      "state": "HI",
+      "county": "Hawaii",
+      "coordinates": [
+        -155.8947,
+        19.90911
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Guppy",
+          "scientificName": "Poecilia reticulata",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 564709,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=564709",
+              "year": 2011,
+              "reportedDate": "2011-1-11",
+              "recordType": "Specimen",
+              "coordinates": [
+                -155.8947,
+                19.90911
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 614106,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=614106",
+              "year": 2011,
+              "reportedDate": "2011-1-11",
+              "recordType": "Specimen",
+              "coordinates": [
+                -155.8947,
+                19.90911
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-330429036.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/330429036",
+            "label": "(c) Diego Gómez Hoyos, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Western Mosquitofish",
+          "scientificName": "Gambusia affinis",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 748060,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=748060",
+              "year": 2011,
+              "reportedDate": "2011-1-11",
+              "recordType": "Specimen",
+              "coordinates": [
+                -155.8947,
+                19.90911
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-4626418.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/4626418",
+            "label": "(c) Dominic, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-3709e1dd64f5fac8",
+      "name": "Pond AB5 @ Anaeho'omalu Bay (pond complex)",
+      "kind": "Lake",
+      "state": "HI",
+      "county": "Hawaii",
+      "coordinates": [
+        -155.8947,
+        19.90911
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Guppy",
+          "scientificName": "Poecilia reticulata",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 564707,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=564707",
+              "year": 2011,
+              "reportedDate": "2011-1-11",
+              "recordType": "Specimen",
+              "coordinates": [
+                -155.8947,
+                19.90911
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 624295,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=624295",
+              "year": 2011,
+              "reportedDate": "2011-1-11",
+              "recordType": "Specimen",
+              "coordinates": [
+                -155.8947,
+                19.90911
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-330429036.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/330429036",
+            "label": "(c) Diego Gómez Hoyos, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-c529d88bde16be9f",
+      "name": "Pond AB6 @ Anaeho'omalu Bay (pond complex)",
+      "kind": "Lake",
+      "state": "HI",
+      "county": "Hawaii",
+      "coordinates": [
+        -155.8947,
+        19.90911
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Guppy",
+          "scientificName": "Poecilia reticulata",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 564706,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=564706",
+              "year": 2011,
+              "reportedDate": "2011-1-11",
+              "recordType": "Specimen",
+              "coordinates": [
+                -155.8947,
+                19.90911
+              ],
+              "coordinateSource": "reported"
+            },
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 614107,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=614107",
+              "year": 2011,
+              "reportedDate": "2011-1-11",
+              "recordType": "Specimen",
+              "coordinates": [
+                -155.8947,
+                19.90911
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-330429036.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/330429036",
+            "label": "(c) Diego Gómez Hoyos, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-196375eaf1b658f4",
+      "name": "Sand Island Coast Guard Station, Honolulu Harbor, Oahu",
+      "kind": "Coastal",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.872,
+        21.3069
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "blacktail snapper",
+          "scientificName": "Lutjanus fulvus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 162175,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=162175",
+              "year": 1997,
+              "reportedDate": "1997-6-16",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.872,
+                21.3069
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-456205954.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/456205954",
+            "label": "(c) Sawyer Baran, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-7f44f170048f0c6d",
+      "name": "Sea Land dock, Honolulu Harbor, Oahu",
+      "kind": "Coastal",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.886,
+        21.3141
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "blacktail snapper",
+          "scientificName": "Lutjanus fulvus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 162176,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=162176",
+              "year": 1997,
+              "reportedDate": "1997-11-16",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.886,
+                21.3141
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-456205954.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/456205954",
+            "label": "(c) Sawyer Baran, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-613a549be82e17fb",
+      "name": "Wailuku River, at the 12 mile marker",
+      "kind": "River",
+      "state": "HI",
+      "county": "Hawaii",
+      "coordinates": [
+        -155.23582,
+        19.70902
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "White Cloud Mountain Minnow",
+          "scientificName": "Tanichthys albonubes",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 1697389,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1697389",
+              "year": 2009,
+              "reportedDate": "2009-11-20",
+              "recordType": "Personal communication",
+              "coordinates": [
+                -155.23582,
+                19.70902
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-85092650.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/85092650",
+            "label": "(c) Zinogre, some rights reserved (CC BY-SA), uploaded by Zinogre",
+            "license": "CC-BY-SA",
+            "licenseCode": "cc-by-sa",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    },
+    {
+      "id": "hi-a10737c7595622d2",
+      "name": "Wakiki Yacht Club, Ala Wai Yacht Harbor, Oahu",
+      "kind": "Coastal",
+      "state": "HI",
+      "county": "Honolulu",
+      "coordinates": [
+        -157.842,
+        21.2879
+      ],
+      "locationType": "reported-water-locality",
+      "coordinateAccuracy": "Accurate (USGS classification; not a measured error radius)",
+      "species": [
+        {
+          "commonName": "Blackchin Tilapia",
+          "scientificName": "Sarotherodon melanotheron",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 162186,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=162186",
+              "year": 1998,
+              "reportedDate": "1998-7-23",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.842,
+                21.2879
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-591750765.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/591750765",
+            "label": "(c) Thomas Irvine, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "blacktail snapper",
+          "scientificName": "Lutjanus fulvus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 162177,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=162177",
+              "year": 1998,
+              "reportedDate": "1998-7-23",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.842,
+                21.2879
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-456205954.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/456205954",
+            "label": "(c) Sawyer Baran, some rights reserved (CC BY)",
+            "license": "CC-BY",
+            "licenseCode": "cc-by",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        },
+        {
+          "commonName": "Mozambique Tilapia",
+          "scientificName": "Oreochromis mossambicus",
+          "status": "established",
+          "evidence": [
+            {
+              "sourceId": "usgs-nas",
+              "recordId": 162183,
+              "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=162183",
+              "year": 1998,
+              "reportedDate": "1998-7-23",
+              "recordType": "Literature",
+              "coordinates": [
+                -157.842,
+                21.2879
+              ],
+              "coordinateSource": "reported"
+            }
+          ],
+          "photo": {
+            "url": "/assets/fish-photos/inat-8092181.jpg",
+            "sourceUrl": "https://www.inaturalist.org/photos/8092181",
+            "label": "no rights reserved",
+            "license": "CC0",
+            "licenseCode": "cc0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
+        }
+      ]
+    }
+  ],
+  "photosUpdatedAt": "2026-09-22T23:42:06.589Z",
+  "photoCoverage": {
+    "fishTypes": 33,
+    "withPhotos": 26,
+    "withoutPhotos": 7
+  }
+}

@@ -74,18 +74,20 @@ class Element {
   showModal(){this.open=true;}
   close(){this.open=false;}
 }
-function harness({protocol='https:',fish,waters,location}={}) {
+function harness({protocol='https:',fish,waters,location,fetcher}={}) {
   const elements=new Map(),get=id=>{if(!elements.has(id))elements.set(id,new Element());return elements.get(id);};
   get('region').value='us';
   const calls={maps:0,removed:0,fish:0,waters:0};
-  const map={zoom:4,setView(c,z){this.zoom=z;return this;},getZoom(){return this.zoom;},closePopup(){this.popup=null;},removeLayer(){calls.removed++;},on(n,f){this[n]=f;return this;},hasLayer(p){return this.popup===p;},panTo(){},getBounds(){return {getWest:()=>-72,getEast:()=>-71,getSouth:()=>42,getNorth:()=>43};}};
+  const map={zoom:undefined,ready:false,invalidateSize(){calls.resized=true;},fitBounds(bounds,options){this.ready=true;this.fitted=bounds;calls.fitOptions=options;this.zoom=7;return this;},setView(c,z){this.ready=true;this.zoom=z;return this;},getZoom(){return this.zoom;},closePopup(){this.popup=null;},removeLayer(){calls.removed++;},on(n,f){this[n]=f;return this;},hasLayer(p){return this.popup===p;},panTo(){},getBounds(){if(!this.ready)throw Error('Set map center and zoom first');return {getWest:()=>-1,getEast:()=>1,getSouth:()=>-1,getNorth:()=>1};}};
   const layer=()=>({addTo(){return this;},on(){return this;},clearLayers(){},bindTooltip(){return this;}});
   const tiles={...layer(),on(n,f){this[n]=f;return this;}};
-  const L={map(){calls.maps++;return map;},layerGroup:layer,geoJSON:layer,marker:layer,tileLayer(u,o){calls.tiles={u,o};return tiles;},popup(){return {setLatLng(){return this;},setContent(c){this.content=c;return this;},openOn(m){m.popup=this;return this;}};}};
-  const context={document:{getElementById:get,createElement:()=>new Element()},window:{location:{protocol},L,WaterExplorerData:D,WaterExplorerConfig:{tileUrl:'https://tile.openstreetmap.org/{z}/{x}/{y}.png',tileAttribution:'OpenStreetMap'},TrackerNetwork:{request:()=>{}},WaterProviders:{waters:async()=>{calls.waters++;return waters?waters():{type:'FeatureCollection',features:[structuredClone(feature)],limited:false};},fish:async()=>{calls.fish++;return fish?fish():{species:P.speciesFrom([record()],feature),loaded:true,limited:false};}}}};
+  const L={map(){calls.maps++;return map;},layerGroup:layer,geoJSON:layer,marker:()=>({...layer(),on(event,fn){calls.pinClick=fn;return this;}}),tileLayer(u,o){calls.tiles={u,o};return tiles;},popup(){return {setLatLng(){return this;},setContent(c){this.content=c;return this;},openOn(m){m.popup=this;return this;}};}};
+  let scheduled;
+  const context={URLSearchParams,AbortSignal,setTimeout:fn=>{scheduled=fn;return 1;},clearTimeout:()=>{scheduled=null;},document:{getElementById:get,createElement:()=>new Element()},window:{location:{protocol},L,WaterExplorerData:D,WaterExplorerConfig:{tileUrl:'https://tile.openstreetmap.org/{z}/{x}/{y}.png',tileAttribution:'OpenStreetMap'},TrackerNetwork:{request:()=>{}},WaterProviders:{contains:P.contains,areaFish:async features=>features.map(()=>({species:P.speciesFrom([record()],feature),loaded:true,limited:false})),waters:async bbox=>{calls.bbox=bbox;calls.waters++;return waters?waters():{type:'FeatureCollection',features:[structuredClone(feature)],limited:false};},fish:async()=>{calls.fish++;return fish?fish():{species:P.speciesFrom([record()],feature),loaded:true,limited:false};}}}};
   if(location)context.window.WaterLocation=location;
+  if(fetcher)context.fetch=fetcher;
   vm.runInNewContext(fs.readFileSync('assets/water-explorer.js','utf8'),context);
-  return {get,map,calls,tiles};
+  return {get,map,calls,tiles,flush:()=>{const fn=scheduled;scheduled=null;return fn?.();}};
 }
 test('map starts nationwide without API queries; file previews do not request tiles',()=>{
   const h=harness();assert.equal(h.map.zoom,4);assert.equal(h.calls.waters,0);
@@ -93,11 +95,13 @@ test('map starts nationwide without API queries; file previews do not request ti
   h.tiles.tileerror();h.tiles.tileerror();assert.equal(h.calls.removed,1);
   const local=harness({protocol:'file:'});assert.equal(local.calls.maps,0);assert.match(local.get('map-status').textContent,/localhost/);
 });
-test('zoom gate, water selection, popup species, filter and region reset work together',async()=>{
-  const h=harness();await h.get('refresh').onclick();assert.equal(h.calls.waters,0);
+test('nationwide search loads fish before water selection and filters species',async()=>{
+  const h=harness();await h.get('refresh').onclick();assert.equal(h.calls.waters,1);
   h.map.zoom=10;await h.get('refresh').onclick();assert.equal(h.get('count').textContent,1);
+  h.calls.pinClick();await new Promise(setImmediate);
+  assert.ok(h.map.popup.content.children.some(n=>n.textContent==='1 fish types'));
   h.get('water-list').children[0].onclick();await new Promise(setImmediate);
-  assert.equal(h.calls.fish,1);assert.ok(h.map.popup.content.children.some(n=>n.textContent==='1 fish types'));
+  assert.equal(h.calls.fish,0);assert.equal(h.get('search').value,P.speciesFrom([record()],feature)[0].scientificName);
   h.get('search').value='absent';h.get('search').events.input();assert.equal(h.get('count').textContent,0);
   h.get('region').value='alaska';h.get('region').onchange();assert.equal(h.map.zoom,4);assert.equal(h.map.popup,null);
 });
@@ -115,4 +119,63 @@ test('default state lookup changes overview but never overrides user navigation'
   const moved=harness({location:{...location,detect:()=>new Promise(r=>finish=r)}});
   moved.map.movestart();finish('CA');await new Promise(setImmediate);
   assert.equal(moved.get('region').value,'us');assert.equal(moved.map.zoom,4);
+});
+
+
+test('fish sidebar deduplicates species, caps at 20, and restricts results to viewport',()=>{
+  const waters=Array.from({length:25},(_,i)=>({...feature,properties:{...feature.properties,id:String(i),pin:[i,42],species:[{commonName:`Fish ${String(i).padStart(2,'0')}`,scientificName:`Species ${i}`}]}}));
+  const result=D.fishResults(waters);
+  assert.equal(result.total,25);assert.equal(result.species.length,20);assert.equal(result.waters.length,25);
+  assert.equal(D.fishResults(waters,'','',[0,41,2,43]).species.length,3);
+  assert.equal(D.fishResults(waters,'Species 24').waters.length,1);
+  assert.equal(D.fishResults(waters,'','River').total,0);
+  const duplicate={...waters[0],properties:{...waters[0].properties,id:'other'}};
+  assert.equal(D.fishResults([waters[0],duplicate]).species[0].waters.length,2);
+});
+
+test('area fish shares two source requests across waters and preserves geometry matches',async()=>{
+  let observations=0,nas=0;
+  const result=await P.areaFish([feature,feature],'0,0,1,1',async()=>{observations++;return {results:[record()],total_results:1};},async()=>{nas++;return {results:[]};});
+  assert.equal(observations,1);assert.equal(nas,1);
+  assert.equal(result[0].species.length,1);assert.equal(result[1].species.length,1);
+});
+
+
+test('startup waits for IP state, fits bounds before fetching, and clamps the query to the state',async()=>{
+  const location=require('../assets/water-explorer-location.js');
+  let finish;
+  const h=harness({location:{...location,detect:()=>new Promise(resolve=>finish=resolve)}});
+  assert.equal(h.get('refresh').disabled,true);
+  await h.flush();await h.get('refresh').onclick();assert.equal(h.calls.waters,0);
+  finish('MA');await new Promise(setImmediate);
+  assert.deepEqual(JSON.parse(JSON.stringify(h.map.fitted)),[[location.states.MA.bounds[1],location.states.MA.bounds[0]],[location.states.MA.bounds[3],location.states.MA.bounds[2]]]);
+  assert.equal(h.calls.resized,true);assert.equal(h.calls.fitOptions.animate,false);
+  h.map.getBounds=()=>({getWest:()=>-80,getEast:()=>-60,getSouth:()=>35,getNorth:()=>50});
+  await h.flush();
+  assert.equal(h.calls.waters,1);assert.equal(h.calls.bbox,D.boundsQuery(location.states.MA.bounds));
+  assert.equal(h.get('count').textContent,0); // Fixture at 0,0 is outside Massachusetts.
+});
+
+test('IP failure releases startup and loads the fallback; moving outside a state makes no query',async()=>{
+  const location=require('../assets/water-explorer-location.js');
+  const h=harness({location:{...location,detect:async()=>{throw Error('offline');}}});
+  await new Promise(setImmediate);await h.flush();
+  assert.equal(h.calls.waters,1);assert.match(h.get('location-status').textContent,/could not be determined/);
+  h.get('region').value='MA';h.get('region').onchange();await h.flush();
+  assert.equal(h.calls.waters,1);assert.match(h.get('status').textContent,/selected state/);
+});
+
+
+test('complete saved database serves fish without waiting for live sources',async()=>{
+  const saved=structuredClone(feature);
+  saved.geometry={type:'Point',coordinates:[0,0]};
+  Object.assign(saved.properties,{loaded:true,database:true,species:P.speciesFrom([record()],feature)});
+  let query;
+  const h=harness({waters:async()=>{throw Error('offline');},fetcher:async url=>{
+    query=url;return {ok:true,json:async()=>({features:[saved],limited:false,unavailable:[],partial:[]})};
+  }});
+  await h.get('refresh').onclick();
+  assert.match(query,/api\/fish-database/);assert.equal(h.get('count').textContent,1);
+  assert.match(h.get('status').textContent,/1 saved water locations/);assert.equal(h.calls.waters,0);
+  h.calls.pinClick();assert.ok(h.map.popup.content.children.some(n=>n.textContent==='1 fish types'));
 });

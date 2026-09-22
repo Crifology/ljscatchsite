@@ -1,6 +1,6 @@
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
-const {createFishService}=require('../server.cjs');
+const {createFishService,createServer}=require('../server.cjs');
 const bounds=new URLSearchParams({swlng:'-72',swlat:'42',nelng:'-71',nelat:'43'});
 function service(options={}) {
   let budget={day:'2026-09-22',count:0},calls=0;
@@ -33,4 +33,19 @@ test('429 Retry-After stops queued requests; failures cannot exhaust the daily b
 test('protected and noncommercial observations are removed before browser delivery',async()=>{
   const s=service({fetcher:async()=>({ok:true,json:async()=>({total_results:4,results:[{id:1,license_code:'cc-by',private_location:'secret'},{id:2,license_code:'cc-by',obscured:true},{id:3,license_code:'cc-by-nc'},{id:4,license_code:'cc0',description:'unused narrative',geojson:{coordinates:[-71,42]}}]})})});
   const r=await s.request(bounds);assert.deepEqual(r.data.results.map(o=>o.id),[4]);assert.equal('description' in r.data.results[0],false);
+});
+
+test('HTTP host serves state JSON and the local fish endpoint without exposing cache files',async t=>{
+  const server=createServer({fishService:async()=>{throw Error('Must not call live provider');}});
+  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+  t.after(()=>new Promise(resolve=>server.close(resolve)));
+  const base=`http://127.0.0.1:${server.address().port}`;
+  const state=await fetch(`${base}/database/MA.json`);
+  assert.equal(state.status,200);assert.match(state.headers.get('content-type'),/application\/json/);
+  const data=await state.json();assert.equal(data.state.code,'MA');assert.ok(data.waters.length>0);
+  const result=await fetch(`${base}/api/fish-database?state=MA&bbox=-73.6,41,-69,43&q=trout`);
+  assert.equal(result.status,200);const body=await result.json();assert.ok(body.features.length>0);
+  assert.ok(body.features.every(f=>f.properties.database&&f.properties.state==='MA'));
+  assert.equal((await fetch(`${base}/.tracker-cache/database-import/MA-0.json`)).status,404);
+  assert.equal((await fetch(`${base}/scripts/import-fish-database.cjs`)).status,404);
 });

@@ -1,0 +1,339 @@
+{
+  "alosa sapidissima": {
+    "status": "unavailable",
+    "scientificName": "Alosa sapidissima",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Alosa+sapidissima%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "reason": "No exact-name reusable photograph found on Commons"
+  },
+  "amia calva": {
+    "scientificName": "Amia calva",
+    "status": "available",
+    "provider": "Wikimedia Commons",
+    "verifiedAt": "2026-09-22T23:28:58.902Z",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Amia+calva%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "sha256": "3a254f18740c9093c4f3cc239ee2a316f066f50b485b83a1f707a2f85676a17a",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Amia_calva_4.jpg/960px-Amia_calva_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "photo": {
+      "url": "/assets/fish-photos/commons-2699630.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Amia_calva_4.jpg",
+      "label": "Original uploader was Stan Shebs at commons.wikipedia � Amia calva 4.jpg",
+      "license": "CC BY-SA 3.0",
+      "licenseCode": "cc-by-sa",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "displayAllowed": true
+    }
+  },
+  "ammocrypta clara": {
+    "status": "unavailable",
+    "scientificName": "Ammocrypta clara",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Ammocrypta+clara%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "reason": "No exact-name reusable photograph found on Commons"
+  },
+  "ancistrus cf. temminckii": {
+    "status": "unavailable",
+    "scientificName": "Ancistrus cf. temminckii",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Ancistrus+cf.+temminckii%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "reason": "No exact-name reusable photograph found on Commons"
+  },
+  "anguilla rostrata": {
+    "scientificName": "Anguilla rostrata",
+    "status": "rejected",
+    "provider": "Wikimedia Commons",
+    "verifiedAt": "2026-09-22T23:29:04.865Z",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Anguilla+rostrata%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "sha256": "ec52a76f2dd1a10de7efd3bfab44b4cc574bc4989d9b64a7c38689ae2ebed47c",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Anguilla_rostrata_map.svg/960px-Anguilla_rostrata_map.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "photo": {
+      "url": "/assets/fish-photos/commons-87136061.png",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anguilla_rostrata_map.svg",
+      "label": "Cephas � Anguilla rostrata map.svg",
+      "license": "CC BY-SA 4.0",
+      "licenseCode": "cc-by-sa",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "displayAllowed": true
+    },
+    "reason": "Visual review: distribution map, not a fish photograph"
+  },
+  "aplodinotus grunniens": {
+    "scientificName": "Aplodinotus grunniens",
+    "status": "available",
+    "provider": "Wikimedia Commons",
+    "verifiedAt": "2026-09-22T23:29:07.335Z",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Aplodinotus+grunniens%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "sha256": "c9db599e1007c9485b7f1b9b58974c156b37b4ee059a6273665471e6dc8dc627",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Aplodinotus_grunniens%2C_Aufn._17.06.1959%2C_Inches.jpg/960px-Aplodinotus_grunniens%2C_Aufn._17.06.1959%2C_Inches.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "photo": {
+      "url": "/assets/fish-photos/commons-17333828.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aplodinotus_grunniens,_Aufn._17.06.1959,_Inches.jpg",
+      "label": "Prof. emerit. Dr. Hans Schneider ( Geyersberg ) � Aplodinotus grunniens, Aufn. 17.06.1959, Inches.jpg",
+      "license": "CC BY-SA 3.0",
+      "licenseCode": "cc-by-sa",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "displayAllowed": true
+    }
+  },
+  "archocentrus nigrofasciatus": {
+    "scientificName": "Archocentrus nigrofasciatus",
+    "status": "available",
+    "provider": "Wikimedia Commons",
+    "verifiedAt": "2026-09-22T23:29:09.261Z",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Archocentrus+nigrofasciatus%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "sha256": "e7734cdc8973453a9a8d44aa5d488d24cb8093e080d2e0edb281d09953de07f9",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Archocentrus_nigrofasciatus_female.jpg/960px-Archocentrus_nigrofasciatus_female.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "photo": {
+      "url": "/assets/fish-photos/commons-1344040.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Archocentrus_nigrofasciatus_female.jpg",
+      "label": "S. Olkowicz - User Hippocampus on pl.wikipedia � Archocentrus nigrofasciatus female.jpg",
+      "license": "CC BY 2.5",
+      "licenseCode": "cc-by",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+      "displayAllowed": true
+    }
+  },
+  "carassius auratus × cyprinus carpio": {
+    "status": "unavailable",
+    "scientificName": "Carassius auratus × Cyprinus carpio",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Carassius+auratus+%C3%97+Cyprinus+carpio%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "reason": "No exact-name reusable photograph found on Commons"
+  },
+  "carassius auratus": {
+    "status": "unavailable",
+    "scientificName": "Carassius auratus",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Carassius+auratus%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "reason": "No exact-name reusable photograph found on Commons"
+  },
+  "catostomus commersonii": {
+    "scientificName": "Catostomus commersonii",
+    "status": "available",
+    "provider": "Wikimedia Commons",
+    "verifiedAt": "2026-09-22T23:29:16.009Z",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Catostomus+commersonii%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "sha256": "7171b29abfdb836be4622cf7a5081f68cb2f6703757e8017c4a03bd34b40913b",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/White_Sucker%2C_Catostomus_commersonii.jpg/960px-White_Sucker%2C_Catostomus_commersonii.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "photo": {
+      "url": "/assets/fish-photos/commons-8024675.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:White_Sucker,_Catostomus_commersonii.jpg",
+      "label": "Brian Gratwicke � White Sucker, Catostomus commersonii.jpg",
+      "license": "CC BY 2.0",
+      "licenseCode": "cc-by",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "displayAllowed": true
+    }
+  },
+  "channa argus": {
+    "scientificName": "Channa argus",
+    "status": "available",
+    "provider": "Wikimedia Commons",
+    "verifiedAt": "2026-09-22T23:29:18.227Z",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Channa+argus%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "sha256": "e5bc2ff2b76584ee290acfc6403e6f023b4ac0ebbcdc400c2b555856134a9062",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Snakehead_-_Channa_argus.jpg/960px-Snakehead_-_Channa_argus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "photo": {
+      "url": "/assets/fish-photos/commons-8024703.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Snakehead_-_Channa_argus.jpg",
+      "label": "Brian Gratwicke � Snakehead - Channa argus.jpg",
+      "license": "CC BY 2.0",
+      "licenseCode": "cc-by",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "displayAllowed": true
+    }
+  },
+  "chasmistes brevirostris": {
+    "status": "unavailable",
+    "scientificName": "Chasmistes brevirostris",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Chasmistes+brevirostris%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "reason": "No exact-name reusable photograph found on Commons"
+  },
+  "cichlasoma urophthalma": {
+    "status": "unavailable",
+    "scientificName": "Cichlasoma urophthalma",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Cichlasoma+urophthalma%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "reason": "No exact-name reusable photograph found on Commons"
+  },
+  "cottus extensus": {
+    "status": "unavailable",
+    "scientificName": "Cottus extensus",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Cottus+extensus%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "reason": "No exact-name reusable photograph found on Commons"
+  },
+  "cynoscion xanthulus": {
+    "status": "unavailable",
+    "scientificName": "Cynoscion xanthulus",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Cynoscion+xanthulus%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "reason": "No exact-name reusable photograph found on Commons"
+  },
+  "hypostomus plecostomus": {
+    "scientificName": "Hypostomus plecostomus",
+    "status": "available",
+    "provider": "Wikimedia Commons",
+    "verifiedAt": "2026-09-22T23:43:25.057Z",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Hypostomus+plecostomus%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "sha256": "f2a0ff6c475d2e9798e7bd8e8123c918f50bb450323b9f6777e51213b6d67adf",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Hypostomus_plecostomus_-_Rapha%C3%ABl_Covain.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "photo": {
+      "url": "/assets/fish-photos/commons-63330109.png",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hypostomus_plecostomus_-_Rapha%C3%ABl_Covain.png",
+      "label": "Raphaël Covain, Natural History Museum of Geneva � Hypostomus plecostomus - Raphaël Covain.png",
+      "license": "CC BY-SA 4.0",
+      "licenseCode": "cc-by-sa",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "displayAllowed": true
+    }
+  },
+  "lepidomeda copei": {
+    "status": "unavailable",
+    "scientificName": "Lepidomeda copei",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Lepidomeda+copei%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "reason": "No exact-name reusable photograph found on Commons"
+  },
+  "limia vittata": {
+    "scientificName": "Limia vittata",
+    "status": "available",
+    "provider": "Wikimedia Commons",
+    "verifiedAt": "2026-09-22T23:43:39.648Z",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Limia+vittata%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "sha256": "bf49a3b5524739915e7ea847e169040ce3c9d9aafe3eef21cefedef25ba7702a",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/3/39/Limia_vittata.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "photo": {
+      "url": "/assets/fish-photos/commons-23915174.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Limia_vittata.jpg",
+      "label": "Cardet co6cs � Limia vittata.jpg",
+      "license": "CC BY-SA 3.0",
+      "licenseCode": "cc-by-sa",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "displayAllowed": true
+    }
+  },
+  "mugilogobius cavifrons": {
+    "status": "unavailable",
+    "scientificName": "Mugilogobius cavifrons",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Mugilogobius+cavifrons%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "reason": "No exact-name reusable photograph found on Commons"
+  },
+  "mylopharyngodon piceus": {
+    "scientificName": "Mylopharyngodon piceus",
+    "status": "available",
+    "provider": "Wikimedia Commons",
+    "verifiedAt": "2026-09-22T23:43:54.861Z",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Mylopharyngodon+piceus%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "sha256": "15079f0f26ebbc9a129c4789872ee7e72885240571cc00be60f2add296378280",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Mylopharyngodon_piceus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "photo": {
+      "url": "/assets/fish-photos/commons-1748619.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mylopharyngodon_piceus.jpg",
+      "label": "Leo Nico, (United States Geological Survey) (Original uploader was Zp at cs.wikipedia ) � Mylopharyngodon piceus.jpg",
+      "license": "Public domain",
+      "licenseCode": "public-domain",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "displayAllowed": true
+    }
+  },
+  "notropis girardi": {
+    "scientificName": "Notropis girardi",
+    "status": "available",
+    "provider": "Wikimedia Commons",
+    "verifiedAt": "2026-09-22T23:44:03.038Z",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Notropis+girardi%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "sha256": "903da53483f4e31b9c64edcdd3f54e06de01456f9ec8c260b363e346733669d3",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Notropis_girardi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "photo": {
+      "url": "/assets/fish-photos/commons-30012677.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Notropis_girardi.jpg",
+      "label": "USFWS � Notropis girardi.jpg",
+      "license": "Public domain",
+      "licenseCode": "public-domain",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "displayAllowed": true
+    }
+  },
+  "omobranchus ferox": {
+    "status": "unavailable",
+    "scientificName": "Omobranchus ferox",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Omobranchus+ferox%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "reason": "No exact-name reusable photograph found on Commons"
+  },
+  "percina tanasi": {
+    "scientificName": "Percina tanasi",
+    "status": "available",
+    "provider": "Wikimedia Commons",
+    "verifiedAt": "2026-09-22T23:44:17.838Z",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Percina+tanasi%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "sha256": "acb2794c9ec85199f7d7e09d275afd318886d66115dd01efcac69634dd897e97",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Percina_tanasi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "photo": {
+      "url": "/assets/fish-photos/commons-3758746.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Percina_tanasi.jpg",
+      "label": "US Fish and Wildlife Service � Percina tanasi.jpg",
+      "license": "Public domain",
+      "licenseCode": "public-domain",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "displayAllowed": true
+    }
+  },
+  "protemblemaria punctata": {
+    "status": "unavailable",
+    "scientificName": "Protemblemaria punctata",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Protemblemaria+punctata%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "reason": "No exact-name reusable photograph found on Commons"
+  },
+  "pterygoplichthys multiradiatus": {
+    "scientificName": "Pterygoplichthys multiradiatus",
+    "status": "available",
+    "provider": "Wikimedia Commons",
+    "verifiedAt": "2026-09-22T23:44:32.892Z",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Pterygoplichthys+multiradiatus%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "sha256": "ca12202362c32632474336eea425aa35c420774c3ade5eed883d49399c777742",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Pterygoplichthys_multiradiatus_in_Florida_US_ACE.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "photo": {
+      "url": "/assets/fish-photos/commons-9630445.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pterygoplichthys_multiradiatus_in_Florida_US_ACE.jpg",
+      "label": "Jan Hoover, U.S. Army Corps of Engineers � Pterygoplichthys multiradiatus in Florida US ACE.jpg",
+      "license": "Public domain",
+      "licenseCode": "public-domain",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "displayAllowed": true
+    }
+  },
+  "salmo letnica": {
+    "scientificName": "Salmo letnica",
+    "status": "available",
+    "provider": "Wikimedia Commons",
+    "verifiedAt": "2026-09-22T23:44:41.295Z",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Salmo+letnica%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "sha256": "bf8f64f3cf8be8ec54d130d4adafc17601914d3a861c2a6ddc0d914109c51fe4",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Stamp_of_Albania_-_1964_-_Colnect_342867_-_Ohrid_Trout_Salmo_letnica.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "photo": {
+      "url": "/assets/fish-photos/commons-98401974.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stamp_of_Albania_-_1964_-_Colnect_342867_-_Ohrid_Trout_Salmo_letnica.jpeg",
+      "label": "Post of Albania � Stamp of Albania - 1964 - Colnect 342867 - Ohrid Trout Salmo letnica.jpeg",
+      "license": "Public domain",
+      "licenseCode": "public-domain",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "displayAllowed": true
+    }
+  },
+  "sardinella marquesensis": {
+    "status": "unavailable",
+    "scientificName": "Sardinella marquesensis",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Sardinella+marquesensis%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "reason": "No exact-name reusable photograph found on Commons"
+  },
+  "siphateles bicolor": {
+    "status": "unavailable",
+    "scientificName": "Siphateles bicolor",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Siphateles+bicolor%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "reason": "No exact-name reusable photograph found on Commons"
+  },
+  "tilapia zillii": {
+    "status": "unavailable",
+    "scientificName": "Tilapia zillii",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Tilapia+zillii%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "reason": "No exact-name reusable photograph found on Commons"
+  },
+  "upeneus vittatus": {
+    "status": "unavailable",
+    "scientificName": "Upeneus vittatus",
+    "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Upeneus+vittatus%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+    "reason": "No exact-name reusable photograph found on Commons"
+  }
+}

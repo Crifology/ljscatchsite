@@ -1,12 +1,15 @@
 # Water explorer: data sources and usage
 
 Reviewed September 22, 2026. This replaces the former catch-report tracker.
-No paid API, API key, account, scraping, or private endpoint is required.
+No paid API, API key, account, or private endpoint is required. A reproducible
+USGS API importer now builds the saved databases documented in
+[database/README.md](database/README.md).
 
 ## What the map can establish
 
 Leaflet 1.9.4 renders a US map, with separate contiguous-US, Alaska, and Hawaii
-views. Waters load on demand at zoom 8 or closer. Clicking a water outline or pin
+views. IP-based state selection initializes the map before loading. Saved fish
+locations and live water lookups are available at every zoom level. Clicking a water outline or pin
 opens an alphabetical fish-type list, representative licensed species photos when available,
 and linked observation/photo credits.
 
@@ -191,10 +194,40 @@ no GPS prompt, city, coordinate or IP value is requested in the response. The
 provider necessarily receives the connection IP; its privacy link is visible on
 the page. The tracker does not store or log visitor IPs or location results.
 
-Only recognized US states/DC are accepted. Start at an approximate state overview;
-these static overview centers are not stocking coordinates. All states remain
+Only recognized US states/DC are accepted. Fish requests wait for state detection
+and map initialization. The state overview uses Leaflet fitBounds with padding,
+so zoom reflects both the state extent and the available map window. All states remain
 manually selectable. A late lookup never overrides map movement, a manual region
 choice or a search. On timeout (5 seconds), failure, quota response, or non-US
 result, keep the US overview and explain the manual selector. No automatic retries
 or quota bypass. VPN/mobile/ISP routing can place a user in the wrong state.
 A public test-IP request returned HTTP 200, valid state-only JSON, and CORS `*`.
+
+
+State framing and filtering use bundled, simplified boundaries from
+[PublicaMundi's US states GeoJSON](https://github.com/PublicaMundi/MappingAPI/blob/master/data/geojson/us-states.json).
+The map query intersects the visible window with the selected state's bounding
+box, then filters water pins against its approximate polygon. These simplified
+boundaries are not survey boundaries and can exclude locations along borders or
+coasts. Alaska is clipped to the map's supported -180 to 180 longitude range;
+the Hawaii overview covers the main islands. Boundary data is bundled locally,
+so startup does not require an additional boundary-service request.
+
+
+## Saved per-state fish databases
+
+The `database` folder contains one JSON file per US state and an `index.json`
+manifest. `scripts/import-fish-database.cjs` imports named-water, accurate,
+established-fish NAS records using paced, paginated requests. This user-requested
+offline import is separate from the small request budgets used by live map lookups.
+See [the database documentation](database/README.md) for provenance, schema,
+refresh instructions and the distinction between complete pagination and complete
+biological coverage.
+
+The map uses `/api/fish-database` as its primary source, with live services
+as a fallback for missing or incomplete imports. The local endpoint filters by source-assigned state, viewport,
+common/scientific fish-name search and water type, and discloses its 1,500-pin cap. A water pin
+from this database is a reported locality, not a canonical NHD water polygon.
+Multiple sites on the same lake or river can remain distinct pins. Evidence retains
+historical dates, original coordinates and source record URLs; saved pins remain
+available when live sources fail. The sidebar remains capped at 20 fish types.
