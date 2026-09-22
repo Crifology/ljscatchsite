@@ -1,0 +1,411 @@
+{
+  "name": "FishFig U.S. State Fish Stocking Aggregation (2026)",
+  "description": "Annual fish stocking counts by state, compiled from state fish & wildlife agency open data. U.S. government works have no copyright (17 USC 105) and are freely reusable.",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "version": "2026-08-28",
+  "generated": "2026-09-21",
+  "attribution": "FishFig (https://fishfig.com)",
+  "count": 50,
+  "stocking": [
+    {
+      "state": "AK",
+      "stateName": "Alaska",
+      "agency": "Alaska Department of Fish and Game (ADF&G)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Alaska Department of Fish and Game (ADF&G) stocking reports."
+    },
+    {
+      "state": "AL",
+      "stateName": "Alabama",
+      "agency": "Alabama Department of Conservation and Natural Resources (ADCNR)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Alabama Department of Conservation and Natural Resources (ADCNR) stocking reports."
+    },
+    {
+      "state": "AR",
+      "stateName": "Arkansas",
+      "agency": "Arkansas Game and Fish Commission (AGFC)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Arkansas Game and Fish Commission (AGFC) stocking reports."
+    },
+    {
+      "state": "AZ",
+      "stateName": "Arizona",
+      "agency": "Arizona Game and Fish Department (AZGFD)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Arizona Game and Fish Department (AZGFD) stocking reports."
+    },
+    {
+      "state": "CA",
+      "stateName": "California",
+      "agency": "California Department of Fish and Wildlife (CDFW)",
+      "annualCount": 800000,
+      "year": 2025,
+      "source": "California CDFW — Fish Planting Schedule (wildlife.ca.gov/Fishing/FGChart). Spring 2025 prep plants: ~800,000 trout statewide (CDFW, 2025)."
+    },
+    {
+      "state": "CO",
+      "stateName": "Colorado",
+      "agency": "Colorado Parks and Wildlife (CPW)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Colorado Parks and Wildlife (CPW) stocking reports."
+    },
+    {
+      "state": "CT",
+      "stateName": "Connecticut",
+      "agency": "Connecticut DEEP Energy & Environmental Protection",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Connecticut DEEP Energy & Environmental Protection stocking reports."
+    },
+    {
+      "state": "DE",
+      "stateName": "Delaware",
+      "agency": "Delaware DNREC Division of Fish and Wildlife",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Delaware DNREC Division of Fish and Wildlife stocking reports."
+    },
+    {
+      "state": "FL",
+      "stateName": "Florida",
+      "agency": "Florida Fish and Wildlife Conservation Commission (FWC)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Florida Fish and Wildlife Conservation Commission (FWC) stocking reports."
+    },
+    {
+      "state": "GA",
+      "stateName": "Georgia",
+      "agency": "Georgia Department of Natural Resources (GA DNR)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Georgia Department of Natural Resources (GA DNR) stocking reports."
+    },
+    {
+      "state": "HI",
+      "stateName": "Hawaii",
+      "agency": "Hawaii Department of Land and Natural Resources (DLNR)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Hawaii Department of Land and Natural Resources (DLNR) stocking reports."
+    },
+    {
+      "state": "IA",
+      "stateName": "Iowa",
+      "agency": "Iowa Department of Natural Resources (Iowa DNR)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Iowa Department of Natural Resources (Iowa DNR) stocking reports."
+    },
+    {
+      "state": "ID",
+      "stateName": "Idaho",
+      "agency": "Idaho Department of Fish and Game (IDFG)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Idaho Department of Fish and Game (IDFG) stocking reports."
+    },
+    {
+      "state": "IL",
+      "stateName": "Illinois",
+      "agency": "Illinois Department of Natural Resources (IDNR)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Illinois Department of Natural Resources (IDNR) stocking reports."
+    },
+    {
+      "state": "IN",
+      "stateName": "Indiana",
+      "agency": "Indiana Department of Natural Resources",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Indiana Department of Natural Resources stocking reports."
+    },
+    {
+      "state": "KS",
+      "stateName": "Kansas",
+      "agency": "Kansas Department of Wildlife and Parks (KDWP)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Kansas Department of Wildlife and Parks (KDWP) stocking reports."
+    },
+    {
+      "state": "KY",
+      "stateName": "Kentucky",
+      "agency": "Kentucky Department of Fish and Wildlife Resources (KDFWR)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Kentucky Department of Fish and Wildlife Resources (KDFWR) stocking reports."
+    },
+    {
+      "state": "LA",
+      "stateName": "Louisiana",
+      "agency": "Louisiana Department of Wildlife and Fisheries (LDWF)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Louisiana Department of Wildlife and Fisheries (LDWF) stocking reports."
+    },
+    {
+      "state": "MA",
+      "stateName": "Massachusetts",
+      "agency": "Massachusetts Division of Fisheries and Wildlife (MassWildlife)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Massachusetts Division of Fisheries and Wildlife (MassWildlife) stocking reports."
+    },
+    {
+      "state": "MD",
+      "stateName": "Maryland",
+      "agency": "Maryland Department of Natural Resources",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Maryland Department of Natural Resources stocking reports."
+    },
+    {
+      "state": "ME",
+      "stateName": "Maine",
+      "agency": "Maine Department of Inland Fisheries and Wildlife",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Maine Department of Inland Fisheries and Wildlife stocking reports."
+    },
+    {
+      "state": "MI",
+      "stateName": "Michigan",
+      "agency": "Michigan Department of Natural Resources (MDNR)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Michigan Department of Natural Resources (MDNR) stocking reports."
+    },
+    {
+      "state": "MN",
+      "stateName": "Minnesota",
+      "agency": "Minnesota Department of Natural Resources (MN DNR)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Minnesota Department of Natural Resources (MN DNR) stocking reports."
+    },
+    {
+      "state": "MO",
+      "stateName": "Missouri",
+      "agency": "Missouri Department of Conservation (MDC)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Missouri Department of Conservation (MDC) stocking reports."
+    },
+    {
+      "state": "MS",
+      "stateName": "Mississippi",
+      "agency": "Mississippi Department of Wildlife, Fisheries, and Parks (MDWFP)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Mississippi Department of Wildlife, Fisheries, and Parks (MDWFP) stocking reports."
+    },
+    {
+      "state": "MT",
+      "stateName": "Montana",
+      "agency": "Montana Fish, Wildlife & Parks (FWP)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Montana Fish, Wildlife & Parks (FWP) stocking reports."
+    },
+    {
+      "state": "NC",
+      "stateName": "North Carolina",
+      "agency": "North Carolina Wildlife Resources Commission (NCWRC)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see North Carolina Wildlife Resources Commission (NCWRC) stocking reports."
+    },
+    {
+      "state": "ND",
+      "stateName": "North Dakota",
+      "agency": "North Dakota Game and Fish Department",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see North Dakota Game and Fish Department stocking reports."
+    },
+    {
+      "state": "NE",
+      "stateName": "Nebraska",
+      "agency": "Nebraska Game and Parks Commission",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Nebraska Game and Parks Commission stocking reports."
+    },
+    {
+      "state": "NH",
+      "stateName": "New Hampshire",
+      "agency": "New Hampshire Fish and Game Department",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see New Hampshire Fish and Game Department stocking reports."
+    },
+    {
+      "state": "NJ",
+      "stateName": "New Jersey",
+      "agency": "New Jersey DEP Fish and Wildlife",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see New Jersey DEP Fish and Wildlife stocking reports."
+    },
+    {
+      "state": "NM",
+      "stateName": "New Mexico",
+      "agency": "New Mexico Department of Game and Fish (NMDGF)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see New Mexico Department of Game and Fish (NMDGF) stocking reports."
+    },
+    {
+      "state": "NV",
+      "stateName": "Nevada",
+      "agency": "Nevada Department of Wildlife (NDOW)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Nevada Department of Wildlife (NDOW) stocking reports."
+    },
+    {
+      "state": "NY",
+      "stateName": "New York",
+      "agency": "New York State Department of Environmental Conservation (DEC)",
+      "annualCount": 1873980,
+      "year": 2025,
+      "source": "New York State DEC — 2025 Spring Trout Stocking (dec.ny.gov/outdoor/7739.html); open dataset on data.ny.gov \"DEC Fish Stocking\"."
+    },
+    {
+      "state": "OH",
+      "stateName": "Ohio",
+      "agency": "Ohio Department of Natural Resources Division of Wildlife (ODNR)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Ohio Department of Natural Resources Division of Wildlife (ODNR) stocking reports."
+    },
+    {
+      "state": "OK",
+      "stateName": "Oklahoma",
+      "agency": "Oklahoma Department of Wildlife Conservation (ODWC)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Oklahoma Department of Wildlife Conservation (ODWC) stocking reports."
+    },
+    {
+      "state": "OR",
+      "stateName": "Oregon",
+      "agency": "Oregon Department of Fish and Wildlife (ODFW)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Oregon Department of Fish and Wildlife (ODFW) stocking reports."
+    },
+    {
+      "state": "PA",
+      "stateName": "Pennsylvania",
+      "agency": "Pennsylvania Fish and Boat Commission (PFBC)",
+      "annualCount": 3200000,
+      "year": 2026,
+      "source": "Pennsylvania Fish & Boat Commission — 2026 Trout Stocking (fishandboat.com; pa.gov newsroom, Apr 2026)."
+    },
+    {
+      "state": "RI",
+      "stateName": "Rhode Island",
+      "agency": "Rhode Island DEM Division of Fish and Wildlife",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Rhode Island DEM Division of Fish and Wildlife stocking reports."
+    },
+    {
+      "state": "SC",
+      "stateName": "South Carolina",
+      "agency": "South Carolina Department of Natural Resources (SCDNR)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see South Carolina Department of Natural Resources (SCDNR) stocking reports."
+    },
+    {
+      "state": "SD",
+      "stateName": "South Dakota",
+      "agency": "South Dakota Game, Fish and Parks (GFP)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see South Dakota Game, Fish and Parks (GFP) stocking reports."
+    },
+    {
+      "state": "TN",
+      "stateName": "Tennessee",
+      "agency": "Tennessee Wildlife Resources Agency (TWRA)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Tennessee Wildlife Resources Agency (TWRA) stocking reports."
+    },
+    {
+      "state": "TX",
+      "stateName": "Texas",
+      "agency": "Texas Parks and Wildlife Department (TPWD)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "Texas Parks and Wildlife Department (TPWD) — Inland Fisheries stocking reports."
+    },
+    {
+      "state": "UT",
+      "stateName": "Utah",
+      "agency": "Utah Division of Wildlife Resources (DWR)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Utah Division of Wildlife Resources (DWR) stocking reports."
+    },
+    {
+      "state": "VA",
+      "stateName": "Virginia",
+      "agency": "Virginia Department of Wildlife Resources (VA DWR)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Virginia Department of Wildlife Resources (VA DWR) stocking reports."
+    },
+    {
+      "state": "VT",
+      "stateName": "Vermont",
+      "agency": "Vermont Fish and Wildlife Department",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Vermont Fish and Wildlife Department stocking reports."
+    },
+    {
+      "state": "WA",
+      "stateName": "Washington",
+      "agency": "Washington Department of Fish and Wildlife (WDFW)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Washington Department of Fish and Wildlife (WDFW) stocking reports."
+    },
+    {
+      "state": "WI",
+      "stateName": "Wisconsin",
+      "agency": "Wisconsin Department of Natural Resources (WI DNR)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Wisconsin Department of Natural Resources (WI DNR) stocking reports."
+    },
+    {
+      "state": "WV",
+      "stateName": "West Virginia",
+      "agency": "West Virginia Division of Natural Resources (WVDNR)",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see West Virginia Division of Natural Resources (WVDNR) stocking reports."
+    },
+    {
+      "state": "WY",
+      "stateName": "Wyoming",
+      "agency": "Wyoming Game and Fish Department",
+      "annualCount": "verify locally",
+      "year": null,
+      "source": "verify locally — see Wyoming Game and Fish Department stocking reports."
+    }
+  ]
+}

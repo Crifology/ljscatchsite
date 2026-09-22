@@ -26,3 +26,30 @@ dialog::backdrop { background:#042b40aa; } dialog h2 { margin:.2rem 2rem .2rem 0
 #scientific-name { font-style:italic; } dialog figure { margin:1rem 0; } #fish-photo { background:#edf8f8; border-radius:10px; min-height:100px; display:grid; place-items:center; overflow:hidden; } #fish-photo img { display:block; width:100%; height:210px; object-fit:contain; }
 figcaption { font: .65rem/1.5 Arial,sans-serif; margin-top:.4rem; } dt { font-weight:bold; color:#126782; font-size:.8rem; } dd { margin:0 0 .7rem; font: .8rem/1.5 Arial,sans-serif; overflow-wrap:anywhere; }
 @media(max-width:800px) { .tracker-layout { grid-template-columns:1fr; } #catch-map { height:430px; } .tracker-layout aside { height:280px; } .tracker-main { padding:1.5rem .8rem; } .tracker-toolbar label { width:100%; } }
+
+/* Water explorer */
+.tracker-intro { max-width:900px; }
+.tracker-intro h1 { font-size:clamp(2rem,4vw,3rem); }
+.search-label { flex:1; min-width:200px; }
+.water-button { display:block; width:100%; text-align:left; margin-bottom:.6rem; }
+.water-button small { display:block; font: .7rem/1.5 Arial,sans-serif; margin-top:.3rem; }
+.list-hint,.empty-state { font:.78rem/1.6 Arial,sans-serif; margin-bottom:1rem; }
+.empty-state { border:1px dashed #84b9c4; border-radius:12px; padding:1rem; }
+.water-popup { font:14px/1.5 Arial,sans-serif; color:#244b5c; }
+.water-popup h3 { font-size:21px; margin:0 0 .5rem; color:#126782; }
+.water-popup h4 { margin:.8rem 0 .2rem; font-size:16px; }
+.water-popup p { margin:.5rem 0; }
+.species-card { border-top:1px solid #c0dcdf; padding:.5rem 0; }
+.species-card img { width:100%; height:150px; object-fit:contain; background:#edf8f8; border-radius:8px; }
+.species-card figure { margin:.7rem 0; }
+.species-card figcaption { font-size:11px; }
+.species-card .scientific-name { font-style:italic; margin:0 0 .5rem; }
+.photo-unavailable,.coverage-warning { padding:.6rem; background:#edf8f8; border-radius:8px; }
+.leaflet-popup-content { max-width:calc(100vw - 85px); }
+.leaflet-container a { text-underline-offset:2px; }
+.species-source { margin:.65rem 0; font:11px/1.5 Arial,sans-serif; }
+.species-source summary { cursor:pointer; color:#08657a; }
+.species-source[open] summary { margin-bottom:.4rem; }
+.stocking-summary { margin:1rem 0; padding:.8rem 1rem; border:1px solid #a9dfe0; border-radius:12px; background:#f3fafa; font:.75rem/1.6 Arial,sans-serif; }
+.stocking-summary > summary { cursor:pointer; color:#126782; font-weight:bold; }
+#stocking-summary { margin-top:.5rem; }

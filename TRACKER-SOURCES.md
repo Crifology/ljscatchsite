@@ -1,124 +1,200 @@
-# Tracker data sources and usage review
+# Water explorer: data sources and usage
 
-Reviewed September 21, 2026. This records the published permissions and technical
-limits checked for this implementation; it is not a guarantee about future terms
-or the accuracy/ownership of every third-party submission. Recheck before changing
-usage, adding a provider, or substantially increasing traffic.
+Reviewed September 22, 2026. This replaces the former catch-report tracker.
+No paid API, API key, account, scraping, or private endpoint is required.
 
-## Boston / Massachusetts update
+## What the map can establish
 
-The tracker defaults to Massachusetts locations within 50 km of 42.3601,
--71.0589 (downtown Boston), with statewide and nationwide options. iNaturalist
-uses verified Massachusetts place ID 2 plus a radius filter; returned place IDs
-and distances are checked too. USGS uses `state=MA` plus the radius check.
-The area is never silently widened when no reports match.
+Leaflet 1.9.4 renders a US map, with separate contiguous-US, Alaska, and Hawaii
+views. Waters load on demand at zoom 8 or closer. Clicking a water outline or pin
+opens an alphabetical fish-type list, representative licensed species photos when available,
+and linked observation/photo credits.
 
-The tested openly licensed Boston angling sample contained three records from
-July 2017, not recent catches. **Latest available (any date)** allows historical
-angling reports without changing the recent filters. USGS is skipped in archive
-mode to avoid unbounded historical queries. Last Month remains the default. No
-additional source with verified permitted reuse of recent Boston catch details
-was established in this review.
+**This is not an inventory of every fish living in every US water.** No free,
+complete nationwide waterbody-to-species inventory was verified. USGS NHD supplies
+geometry; USGS NAS adds introduced-fish population records. iNaturalist supplies historical observations,
+not proof of current residency. The iNaturalist scope is ray-finned fish
+(Actinopterygii, taxon 47178); the NAS supplement uses its Fishes group.
+An empty result means no eligible records matched, not that the water is fishless.
 
-### Nearest Massachusetts water
+## Connected sources
 
-Added the official [Massachusetts Water Features service](https://www.arcgis.com/home/item.html?id=b46543d768f7427ea5b3de583d0e8c13).
-Its item metadata explicitly permits public use of the service. The
-[MassGIS data-use policy](https://www.mass.gov/info-details/learn-about-massgis-data)
-permits redistribution and commercial integration. Display the requested credit:
-MassGIS (Bureau of Geographic Information), Commonwealth of Massachusetts EOTSS.
+### USGS National Hydrography Dataset
 
-On selection of a Massachusetts report, query layers 8 (water polygons) and 7
-(linear waters) within 1,000 metres of its already-public coordinate, capped at
-100 named features per layer. Water classification codes exclude islands,
-wetlands and facilities. The existing request queue provides pacing and caching.
-No API key, private service, scraper, proxy or Overpass dependency is used.
+- [Official REST service](https://hydro.nationalmap.gov/arcgis/rest/services/nhd/MapServer).
+- Layer 12: lake/pond, reservoir and estuary polygons (FTYPE 390, 436, 493).
+- Layer 9: river, sea/ocean and bay/inlet polygons (460, 445, 312).
+- Layer 6: river/stream centerline segments (460).
+- Each manual area search requests at most 60 features from each layer, using
+  the visible bounding box, WGS84 and GeoJSON. No automatic pagination or
+  nationwide geometry download. Named and unnamed waters are included.
+- Partial outages retain successful layers and disclose incomplete coverage.
+  Reaching a result cap prompts the user to zoom in. Adjacent river segments
+  remain separate features; the app does not claim they cover an entire river.
+- Pins lie on a returned boundary or centerline, preferably within the viewport.
+  They are water-selection markers, not catch locations or access points.
+- [USGS copyrights and credits](https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits):
+  USGS-produced data is US public domain; credit USGS and retain source links.
+  The service's responses support CORS; no proxy bypass is needed.
 
-Measure approximate ground distance to geometry, including polygon containment
-and holes, rather than centroids. Highlight the nearest returned named water;
-keep the catch pin at its reported coordinate. This is the **nearest named mapped
-water within 1 km**, not a verified catch site or coverage of unnamed waters.
-Offshore locations may have no result. A failed layer or truncated query returns
-an unavailable message instead of an unsupported nearest-water claim.
+### USGS Nonindigenous Aquatic Species (NAS) supplement
 
-Timestamped Massachusetts reports display in America/New_York time (EST/EDT).
-Date-only reports remain date-only; no time or catch date is invented.
+- [Documented NAS v2 API](https://nas.er.usgs.gov/api/documentation.aspx).
+  A live anonymous query succeeded without a key or payment. NAS covers introduced
+  species, not a complete inventory of native fish. It supplements iNaturalist.
+- The first-party `/api/usgs-fish?bbox=...` endpoint resolves up to three intersecting
+  HUC12 watersheds using the public [USGS WBD layer 6](https://hydro.nationalmap.gov/arcgis/rest/services/wbd/MapServer/6).
+  It requests at most 100 fish records per watershed, without date filters.
+  A watershed is only a search filter, never evidence that a fish lives in every
+  lake within it. The browser still matches coordinates to the selected water.
+- Require `group=Fishes`, `spatialAcc=Accurate`, and `status=established`, and check
+  those fields again in the returned data. Failed, eradicated, collected-only,
+  stocked-only, unknown-status, centroid and approximate records are excluded.
+  Established is the source's classification, not a guarantee of present residency.
+- Merge matching species by exact scientific name. Show the USGS introduced-population
+  label and retain both source credits when a species occurs in both feeds.
+  No individual catches or dates are added to the visitor's species list.
+- Retain species names, public coordinates, classification and record link only;
+  omit narrative comments and third-party references. USGS data attribution follows
+  its public-domain policy. Do not assume NAS photographs are public domain.
+  Existing licensed representative species photos are reused for matched species;
+  a USGS-only species without such an image shows the photo-unavailable state.
+- One shared server queue, at least 1.1 seconds between upstream requests, bounded
+  ten-request pending queue, one-hour cache and in-flight deduplication. A local
+  conservative cap allows 600 upstream requests per clock hour per process; this
+  is an app safeguard, not a claimed USGS quota. Honor Retry-After, back off at least
+  60 seconds after errors, and never automatically retry or download whole datasets.
+- Each water lookup makes one WBD call and at most three NAS calls. Truncated results,
+  skipped watersheds and partial source failures are disclosed. An unavailable source
+  is distinct from an empty result; successful data from the other source remains.
+- Verification: a Charles watershed test returned public fish records including old
+  failed and stocked introductions, demonstrating why status filtering matters.
+  The established-only Jamaica Pond lookup completed successfully with zero matches;
+  those excluded introductions were not added to its fish list.
 
-## Connected APIs
+### iNaturalist
 
-| Provider | What the tracker uses | Permission and restrictions | Coverage limitations |
-| --- | --- | --- | --- |
-| [iNaturalist v1](https://api.inaturalist.org/v1/docs/) | Public US Angling Lifelists observations; separately licensed representative species photos | [Terms](https://www.inaturalist.org/pages/terms), [API guidance](https://www.inaturalist.org/pages/api+recommended+practices). Allow only CC0, CC BY, CC BY-SA records/photos, retain contributor credit and original-source link. Exclude noncommercial, unlicensed, private and obscured records. | One community project's reports, not all US catches. Up to 200 candidate reports per window; limits are disclosed. Dates describe the observation, not upload time. |
-| [USGS NAS v2](https://nas.er.usgs.gov/api/documentation.aspx) | Optional introduced-fish sightings: species, observation date, reported water/site, public coordinates | API explicitly provides automated access and documents JSONP. [USGS copyrights and credits](https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits) identify USGS-produced data as US public domain and request credit. Credit USGS and link each original record. No third-party images, narrative comments, or reference text are copied. | Sightings, **not verified recreational catches**. 50 states + DC; accurate locations and actual occurrence years only. No exact times, so excluded from Last 24 Hours. Up to 400 candidates per calendar month; pagination limits are disclosed. |
+- [Public API documentation](https://api.inaturalist.org/v1/docs/),
+  [recommended practices](https://www.inaturalist.org/pages/api+recommended+practices),
+  [terms](https://www.inaturalist.org/pages/terms).
+- Clicking a water requests up to 200 candidate records, without a date window, inside its
+  geometry's bounding box. Only US, wild, research-grade, species-level fish
+  records are eligible. This is not restricted to the former angling project.
+- Match polygon records using point-in-polygon, including holes and multipolygons.
+  A bounding box alone never establishes a water match. Coordinates remain
+  uncertain; positional accuracy must be known and at most 100 m.
+- River centerlines use an approximate 30 m segment-distance threshold. Their
+  popup explicitly labels these as nearby observations, not confirmed inhabitants.
+- Unknown, private or obscured coordinates are excluded. No protected-location
+  reconstruction. No capture date is invented; the visitor sees an alphabetical species list without catch dates or individual
+  catch reports. Source credits remain available in expandable details.
+- Only CC0, CC BY and CC BY-SA observation records are displayed. NC and unlicensed
+  content is excluded because this site links to a commercial store.
+- Photos are independently filtered to those same reusable licenses. Use an
+  eligible default species photo as a representative image. Individual
+  observation/catch photos are not used as a fallback. Retain contributor credit, source-photo link and license link. Images are
+  displayed unchanged, with object-fit contain, not cropped or modified. No eligible
+  image yields an explicit unavailable message, never an unrelated fish image.
+- The candidate cap is disclosed. Species without qualifying observations,
+  out-of-water shore coordinates, coarse positions and older records beyond the
+  cap will be missing. Search filters only cover loaded waters and opened fish lists.
 
-USGS is opt-in because it broadens the meaning of a report. It is not presented as
-a second verified recreational-catch feed. The live September sample contained
-six dated fish sightings; this is a validation sample, not a promised report count.
+## Request policy and hosting
 
-The USGS API did not return a cross-origin fetch permission header in testing.
-The tracker uses the provider's **documented JSONP callback parameter** directly
-from its HTTPS endpoint. Only that exact host/path is accepted; there is no public
-CORS proxy, reverse-engineered endpoint, authentication bypass, or page scraper.
-As with any JSONP service, its script executes with the page's privileges; this is
-limited to the trusted USGS provider. JSONP does not expose HTTP status/Retry-After
-to JavaScript, so script errors/timeouts trigger a 60-second local cooldown.
+`node server.cjs` serves the website and `/api/fish-observations` on one origin.
+This first-party endpoint uses the documented API, not a CORS bypass: it provides
+one upstream IP, a shared cache, request pacing and a persisted daily budget.
+The browser contacts USGS directly and the first-party server for iNaturalist.
 
-## Other APIs researched, not connected
+- One server process; one upstream request at a time, spaced at least 1.1 seconds.
+- Shared five-minute response cache (100 entries) and in-flight deduplication.
+- Maximum 20 distinct pending requests; excess calls receive 429.
+- Hard limit of 9,000 upstream requests per UTC day, below iNaturalist's guidance
+  of roughly 10,000/day. Count every attempted request, including failures.
+- Budget survives restarts in `.tracker-cache/budget.json`; this folder is ignored
+  by Git and cannot be served by the static-file handler. Corrupt/unwritable budget
+  state fails closed. Keep this folder persistent in production.
+- Do not run multiple server workers or replicas against this file. Scaling needs
+  a shared atomic budget/cache/queue and a single egress IP before deployment.
+- Honor upstream Retry-After; minimum 60-second cooldown on failures. No automatic
+  retry, polling, authentication, arbitrary upstream URL or user-supplied key.
+- Request fields are rebuilt on the server to enforce US geography, fish taxon,
+  license and result limits. Private records are stripped before browser delivery.
+- Public client controls also cache/deduplicate, pace USGS requests and back off.
+  Local controls alone do not constitute a site-wide USGS traffic guarantee.
 
-| Source | Finding / reason |
-| --- | --- |
-| [NOAA WCGOP In-Season Salmon Reporting API](https://www.fisheries.noaa.gov/resource/data/west-coast-groundfish-observer-program-season-salmon-reporting) | A documented JSON/CSV API for expanded commercial discarded-salmon counts and weights, from 2015 through the current year. A real additional catch-data API, but regional commercial summaries do not satisfy individual recreational-catch pins or exact 24-hour timing. Not mixed into this map. |
-| [GBIF occurrence API](https://techdocs.gbif.org/en/openapi/v1/occurrence) | Biodiversity records can include scientific captures, specimens and sightings. [Dataset licensing](https://www.gbif.org/publishing-data) must be checked per dataset and [data-use terms](https://www.gbif.org/terms/data-user) followed. No additional timely US recreational catch dataset was verified; iNaturalist data can also be syndicated here, creating duplicates. Not connected just to inflate the source count. |
-| [Fish Translator API](https://fishtranslator.com/api-docs.html) | Documents a public catch feed and shareable catch cards. No sufficiently clear content-reuse license/terms or verified usable feed was established in this review. Public endpoint documentation alone does not establish rights to republish user content; not enabled. |
-| [Fishbrain](https://fishbrain.com/policies/terms-of-service/latest) | Terms prohibit automated extraction and third-party interaction without written consent. No scraping or private API calls. Requires a separate written data agreement. |
-| [FishAngler](https://www.fishangler.com/terms) | Terms require prior written consent for automated access and restrict reuse. No scraping or private API calls. Requires a separate written data agreement. |
-| [Global Fishing Watch](https://api-doc.globalfishingwatch.org/our-apis/documentation/) | Vessel activity, not individual species catches. API documentation also limits use to noncommercial purposes; unsuitable for this shop-linked site's current use. |
-| [Texas fishing reports](https://tpwd.texas.gov/fishboat/fish/recreational/fishreport.phtml) | The official page states weekly reporting is currently on hold. No scrape integration added. |
+## Mapping policy
 
-## Time-window behavior
+[Leaflet](https://leafletjs.com/reference.html) is the open-source rendering
+library. It does not supply water geometry, fish records or map tiles.
+[OpenStreetMap standard tiles](https://operations.osmfoundation.org/policies/tiles/)
+provide the background geography with visible attribution. Only ordinary
+interactive viewport tiles are requested; preserve HTTP caching and the real
+Referer. No offline download, bulk prefetch, cache busting, forged headers, proxy
+rotation or security bypass. A tile failure pauses that layer without retrying.
+Serve via HTTP(S), not file URLs. Tile settings are in `assets/water-explorer-config.js`.
 
-- Last 24 Hours: rolling 24 hours; requires an explicit timestamp and UTC offset.
-  Date-only and future records are excluded. NAS is not queried in this view.
-- Last Week: rolling 7 days for timestamps; current UTC date plus preceding six
-  dates for date-only records.
-- Last Month: rolling 30 days for timestamps; current UTC date plus preceding 29
-  dates for date-only records. This is not the previous calendar month.
-- No upload, indexing, publication, or fetch date is substituted for a catch date.
-- Filters are reapplied when cached results are rendered. An empty result means
-  no eligible reports in the selected feeds, not that nobody caught a fish.
+## Alternatives and verification
 
-## Request and display safeguards
+FishDatabase.com was considered, then dropped after the user requested a free
+alternative. Its published API offering requires a plan/key; no account was
+created. FishBase's noncommercial licensing was not used for this store-linked
+site. No Fishbrain or FishAngler scraping is included.
 
-- Five-minute in-memory response cache, in-flight request deduplication, and a
-  single request queue per provider per browser tab, spaced at least 1.1 seconds.
-- No background polling, bulk data downloads, or automatic retry loop.
-- Fetch responses honor readable Retry-After headers for 429/503; other failures
-  trigger a minimum 60-second cooldown. Errors remain distinct from empty feeds.
-- iNaturalist recommends about one request/second and around 10,000/day. These
-  local controls cannot enforce a site-wide daily budget across visitors/tabs.
-  At higher traffic, use a first-party cached backend with an aggregate request
-  budget and identifying User-Agent; contact providers if limits are insufficient.
-- Species photos are independently license-filtered, credited and linked to
-  their source. Exact scientific-name matching is required for USGS photo lookup.
-  No source photo means an explicit unavailable message, not an unrelated fish.
-- [OpenStreetMap standard tile policy](https://operations.osmfoundation.org/policies/tiles/):
-  visible attribution, ordinary interactive viewport requests, normal browser
-  cache and Referer. Serve over HTTP(S); no offline downloads, cache bypass or
-  bulk tile prefetch. The browser supplies its own User-Agent.
-- Removed automatic public Overpass lookups: its [usage guidance](https://dev.overpass-api.de/overpass-doc/en/preface/commons.html)
-  warns against relying on the shared public service as an app backend. USGS's
-  reported site/water is shown directly. Other exact water names are marked
-  unavailable unless the source provides them; nearby waters are not invented.
+Live checks on September 22, 2026 verified USGS and iNaturalist CORS responses.
+A Jamaica Pond geometry query followed by the fish adapter returned Pumpkinseed
+with one reusable representative photo. This is a sample, not a guaranteed
+species count. A wider Boston query also exercised a partial USGS outage.
+Unit tests cover polygon holes, river distance, licensing/privacy, caps, partial
+failures, popup selection, stale results, caching, daily budgets and Retry-After.
+A browser visual check was unavailable in the agent environment.
 
-No provider account, agreement, subscription, or paid service was created.
 
-## Local debugging and map access errors
+## Stocking JSON integration
 
-The VS Code launch configurations serve the site on loopback HTTP instead of
-opening local HTML files. `file:`/non-HTTP previews do not request OSM tiles.
-The page and Leaflet tile images use `strict-origin-when-cross-origin`, sending
-the actual website origin as Referer. Browser caching and provider attribution
-remain enabled. A tile failure pauses the layer without retrying, changing tile
-hosts, spoofing identity, or routing around a restriction. Deploying does not
-guarantee that a provider will lift an unrelated block. See the
-[OSM tile requirements](https://operations.osmfoundation.org/policies/tiles/).
+The supplied `stocking-2026.json` is the [FishFig State Fish Stocking Aggregation](https://fishfig.com/data/),
+version 2026-08-28, generated 2026-09-21, with CC BY 4.0 attribution metadata.
+All 50 records are state summaries: state, agency, annualCount, year and source.
+CA (800,000, 2025), NY (1,873,980, 2025), and PA (3,200,000, 2026) have numeric
+counts; the other 47 are unverified in the source. These are source-reported
+figures, not independently validated counts. Preserve source notes (including
+California's approximate spring figure) rather than presenting all as uniform
+full-year totals. The UI shows the selected state's summary and FishFig credit.
+
+The file contains no coordinates, individual water names or structured species.
+It therefore contributes state information, not new fish-presence pins. No event
+locations were invented from state centers. The earlier remote download was
+blocked by HTTP 403; the user-supplied local file is now the connected source.
+
+See [STOCKING-DATA.md](STOCKING-DATA.md) for the separate event import contract,
+source/rights fields, completed-status requirement and `STOCKING_DATA_FILE` option.
+When event data is available, matching searches up to ten viewport events per
+user action, with a 1 km maximum water distance, geometry containment, hole
+handling, and rejection of ties or incomplete candidate responses. Stocking
+species merge into existing map pins; additional matched waters receive pins.
+Photos are reused only from eligible existing species data. State totals are
+never fed into this location matcher. Existing API GET requests remain active.
+
+## Approximate default state from the visitor connection
+
+[IPWhois documentation](https://ipwhois.io/documentation) currently permits
+commercial use of its free HTTPS endpoint, without an API key. Its published free
+limit is 1,000 requests/day; browser CORS traffic is counted per domain. Review
+its [terms](https://ipwhois.io/terms) and [privacy policy](https://ipwhois.io/privacy)
+when deploying or changing the use. No subscription or account was created.
+
+The browser makes one request per page load directly to
+`https://ipwho.is/?fields=success,country_code,region_code`. This uses the visitor's
+public connection IP rather than the application server's location and does not
+trust arbitrary forwarded-IP headers. Request only success, country and state;
+no GPS prompt, city, coordinate or IP value is requested in the response. The
+provider necessarily receives the connection IP; its privacy link is visible on
+the page. The tracker does not store or log visitor IPs or location results.
+
+Only recognized US states/DC are accepted. Start at an approximate state overview;
+these static overview centers are not stocking coordinates. All states remain
+manually selectable. A late lookup never overrides map movement, a manual region
+choice or a search. On timeout (5 seconds), failure, quota response, or non-US
+result, keep the US overview and explain the manual selector. No automatic retries
+or quota bypass. VPN/mobile/ISP routing can place a user in the wrong state.
+A public test-IP request returned HTTP 200, valid state-only JSON, and CORS `*`.

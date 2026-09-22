@@ -26,7 +26,8 @@
   async function request(address, ttl = 300000) {
     const url = new URL(address);
     const massGIS = url.origin === 'https://services1.arcgis.com' && /^\/hGdibHYSPO59RG1h\/arcgis\/rest\/services\/Massachusetts_Water_Features\/FeatureServer\/(7|8)\/query$/.test(url.pathname);
-    if (url.protocol !== 'https:' || (!['api.inaturalist.org','nas.er.usgs.gov'].includes(url.hostname) && !massGIS)) throw new Error('Unsupported provider');
+    const hydro = url.origin === 'https://hydro.nationalmap.gov' && /^\/arcgis\/rest\/services\/nhd\/MapServer\/(6|9|12)\/query$/.test(url.pathname);
+    if (url.protocol !== 'https:' || (!['api.inaturalist.org','nas.er.usgs.gov'].includes(url.hostname) && !massGIS && !hydro)) throw new Error('Unsupported provider');
     const hit = cache.get(address);
     if (hit && Date.now() - hit.at < ttl) return hit.data;
     if (pending.has(address)) return pending.get(address);
@@ -39,7 +40,9 @@
         let data;
         if (url.hostname === 'nas.er.usgs.gov') data = await nasJSONP(url);
         else {
-          const response = await fetch(url.href, {signal:AbortSignal.timeout(20000), credentials:'omit'});
+          const target = url.hostname === 'api.inaturalist.org' && window.location?.protocol !== undefined
+            ? `/api/fish-observations${url.search}` : url.href;
+          const response = await fetch(target, {signal:AbortSignal.timeout(20000), credentials:'omit'});
           if (!response.ok) {
             if (response.status === 429 || response.status === 503) {
               const header = response.headers.get('Retry-After');
@@ -50,6 +53,7 @@
           }
           data = await response.json();
         }
+        if (cache.size >= 60) cache.delete(cache.keys().next().value);
         cache.set(address, {at:Date.now(), data});
         return data;
       } catch (error) {

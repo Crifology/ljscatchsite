@@ -1,62 +1,73 @@
-# ljscatchsite
-LJ's Catch Website
+# LJ's Catch Website
 
-Where our fishing adventures come to life!
+The Tracker App is now a Leaflet water explorer using free USGS water geometry
+plus USGS NAS introduced-fish records and iNaturalist fish observations. No API key, subscription or npm install is needed.
 
-Made through VS Code with assistance from Codex and Claude tools.
-HTML basic
+## Run locally
 
-Tracker App: open `trackerapp.html` through your normal static web host (or run
-`python -m http.server 8000` and visit http://localhost:8000/trackerapp.html).
-No API keys or build step are required. Internet access is required.
+Install Node.js 22 or newer, then run from this folder:
 
-In VS Code's Run and Debug menu, choose **LJ's Catch: Tracker (localhost)** and
-press F5. This starts a Python HTTP server bound only to `127.0.0.1:8000` and
-opens Edge at the tracker page. Python must be on PATH. A second launch option
-opens the homepage. Stop the local server using Tasks > Terminate Task when done.
-If port 8000 is already used by a preview server for this project, visit its URL
-directly instead of launching a second server.
+```powershell
+node server.cjs
+```
 
-Do not debug by opening `file://.../trackerapp.html`: local-file pages cannot send
-the web Referer required by OpenStreetMap. The tracker now pauses tile requests
-in that situation and explains how to open the localhost preview. It sends the
-real page origin using `strict-origin-when-cross-origin` on web previews and live
-hosts. A separate, persistent map error notice will not be overwritten by a
-successful fish-data fetch. On a tile error it stops requesting that layer rather
-than repeatedly retrying a block.
+Open http://127.0.0.1:8000/trackerapp.html. VS Code's existing **LJ's Catch:
+Tracker (localhost)** launch option now starts this Node server too. Stop any
+previous Python preview on port 8000 first. A Python/static-only host can display
+the map but cannot provide the shared fish-data endpoint.
 
-Going live may solve a missing-referrer problem but does not guarantee removal of
-a 403 from an IP restriction, hosting policy, extension, or provider restriction.
-For a remaining 403, identify the failed request's hostname in browser Network
-tools: `tile.openstreetmap.org` is the basemap, `unpkg.com` supplies Leaflet, and
-`api.inaturalist.org` / `nas.er.usgs.gov` supply fish reports. Preserve the real
-Referer through hosting configuration. Never spoof it, disable browser security,
-rotate proxies, or add cache-busting tile URLs to work around a provider block.
+## Use the tracker
 
-The tracker defaults to Boston-area Massachusetts locations within 50 km of
-downtown Boston, with Massachusetts and United States options. It has Last 24
-Hours, Last Week (7 days), Last Month (30 days), and Latest available (any date)
-filters. The archive is explicitly historical; it does not imply recent activity. iNaturalist supplies community angling reports. The optional USGS NAS
-source supplies clearly labeled introduced-fish sightings, not confirmed catches.
-Both use documented public APIs; no website scraping is implemented.
+The map defaults to an approximate US state from the visitor connection IP, with
+a US overview fallback. Choose any state manually. Zoom to level 8 or closer,
+then click **Search this area**. Click a water pin, outline or list entry to load
+fish species and representative photos. Fish-name filtering covers opened guides.
 
-The 24-hour view requires a real observation timestamp, so date-only USGS records
-are excluded. Each source has separate availability/count reporting. Requests are
-cached for five minutes, queued per provider, and backed off after failures.
-Contributor and photo credits appear in the detail window. Exact water/site names
-are shown when supplied by the source. Massachusetts reports also query the
-official MassGIS water service on selection. The nearest named mapped water
-within 1 km is highlighted and labeled as an estimate, never a confirmed catch
-site. Timestamped Massachusetts reports display in America/New_York time;
-date-only values remain date-only.
+Water boundaries come from USGS. iNaturalist covers ray-finned fish; USGS NAS supplements established introduced-fish populations.
+Lists show qualifying historical observations, not a complete current population
+inventory. Rivers represented by centerlines use a labeled nearby-record estimate.
+Some waters have no eligible observations or reusable photos. Read
+[TRACKER-SOURCES.md](TRACKER-SOURCES.md) for exact coverage and usage policies.
 
-Read [TRACKER-SOURCES.md](TRACKER-SOURCES.md) for the permission review, additional
-APIs researched, source limitations, date semantics, and hosting/traffic limits.
-Only one verified recreational angling feed is connected; USGS is an optional
-second observation API, not a claim of comprehensive live catch coverage.
+## Hosting
 
-Run the dependency-free checks with `node --test tests/tracker.test.cjs`.
-Files: `assets/tracker-data.js` contains provider adapters and time filtering;
-`assets/tracker-network.js` handles caching, request pacing and documented USGS
-JSONP; `assets/tracker-water.js` queries MassGIS and measures geometry distances;
-`assets/tracker.js` controls the map, list, and detail dialog.
+Deploy `server.cjs` with Node behind your HTTPS host, keeping the site and
+`/api/fish-observations` on the same origin. Configure `PORT` and `HOST` for your
+platform (defaults: 8000 and loopback). Run one process with a persistent
+`.tracker-cache` directory. The server enforces shared pacing, caching, cooldowns
+and a 9,000-request daily budget. Multiple replicas require a shared atomic
+budget/queue and one egress IP. Static-only hosting is insufficient for fish data.
+Do not expose `.tracker-cache`; the included static handler already denies it.
+
+The browser uses the real origin Referer for OSM tiles and pauses the tile layer
+on errors. Tile service attribution and configuration are in
+`assets/water-explorer-config.js`. No offline tile downloads are implemented.
+
+## Checks and files
+
+```powershell
+node --test --test-isolation=none tests/*.test.cjs
+```
+
+- `trackerapp.html`, `assets/tracker.css`: page and responsive styles.
+- `assets/water-explorer.js`: Leaflet map, water list and species popups.
+- `assets/water-explorer-providers.js`: free API adapters and geometry matching.
+- `assets/water-explorer-data.js`: validation and filters.
+- `assets/tracker-network.js`: browser cache, deduplication and pacing.
+- `server.cjs`: first-party fish endpoints and static host.
+- `usgs-fish-service.cjs`: bounded WBD watershed lookup and USGS NAS fish queries.
+
+The former `tracker.js`, `tracker-data.js` and `tracker-water.js` are retained
+for reference with their regression tests; `trackerapp.html` no longer loads them.
+
+## Stocking data and default state
+
+The supplied `stocking-2026.json` is connected as a state summary source. Choose
+a state to see its reported count and FishFig credit. It contains no water names,
+event coordinates or structured fish species, so it cannot create stocking pins.
+The event importer and nearest-water matcher are ready for a separate geolocated
+file; see [STOCKING-DATA.md](STOCKING-DATA.md). All current API feeds remain active.
+
+State estimation uses one HTTPS request to IPWhois per page load (no key), with
+manual override and no GPS or app-side IP storage. Its free domain-wide quota is
+1,000 requests/day; lookup failure leaves the US overview available.

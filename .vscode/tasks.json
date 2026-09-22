@@ -4,8 +4,8 @@
     {
       "label": "LJ's Catch: local web server",
       "type": "process",
-      "command": "python",
-      "args": ["-u", "-m", "http.server", "8000", "--bind", "127.0.0.1"],
+      "command": "node",
+      "args": ["server.cjs"],
       "options": { "cwd": "${workspaceFolder}" },
       "isBackground": true,
       "problemMatcher": {
