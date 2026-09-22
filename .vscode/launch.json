@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "LJ's Catch: Tracker (localhost)",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://127.0.0.1:8000/trackerapp.html",
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "LJ's Catch: local web server"
+    },
+    {
+      "name": "LJ's Catch: Website (localhost)",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://127.0.0.1:8000/index.html",
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "LJ's Catch: local web server"
+    }
+  ]
+}
