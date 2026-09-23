@@ -4,18 +4,18 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fishing Game | LJ's Catch</title>
   <link rel="stylesheet" href="game.css">
-  <script src="engine.js" defer></script><script src="game.js" defer></script>
+  <script src="engine.js" defer></script><script src="audio.js" defer></script><script src="game.js" defer></script>
 </head>
 <body>
   <header><a class="brand" href="../index.html"><img src="../assets/photos/logo-horizontal-light-transparent.png" alt="LJ's Catch"></a><nav aria-label="Primary navigation"><a href="../index.html">Home</a><a href="../about.html">About</a><a href="../gallery.html">Gallery</a><a href="../contact.html">Contact</a><a href="index.html" aria-current="page">Fishing Game</a><a href="../trackerapp.html">LJ's Fish Tracker</a></nav></header>
   <main>
     <div class="intro"><div><span class="eyebrow">LJ'S LITTLE LAKE</span><h1>One more cast.</h1><p>A quiet lake. A big bite. Bring your catch aboard.</p></div><div class="score"><span><b id="score">0</b> POINTS</span><span><b id="caught">0</b> CAUGHT</span></div></div>
     <section class="game" aria-label="Fishing game">
-      <div class="toolbar"><span id="phase">READY TO CAST</span><span id="angle">AIM 0°</span><button id="pause" type="button">Pause</button></div>
-      <canvas id="lake" width="1100" height="640" tabindex="0" aria-label="Fishing lake. Use left and right arrows to aim, space to cast and repeatedly tap space to reel. P pauses.">Your browser needs canvas support to play this game.</canvas>
-      <div class="feedback"><div><strong id="message" role="status" aria-live="polite">Your next catch is down there.</strong><span id="hint">Aim with ← → or A / D, then press Space to cast.</span></div><div class="meter-wrap"><label for="strength">LINE STRENGTH</label><meter id="strength" min="0" max="100" low="30" high="65" optimum="100" value="100">100%</meter><small id="progress">Hook a fish to start reeling</small></div></div>
+      <div class="toolbar"><span id="phase">READY TO CAST</span><span id="angle">AIM 0°</span><button id="sound" type="button" aria-pressed="false" aria-label="Mute sound effects">Sound on</button><button id="pause" type="button">Pause</button></div>
+      <canvas id="lake" width="1100" height="640" tabindex="0" aria-label="Fishing lake. Use left and right arrows to aim, space to cast and tap or hold space to reel, release to reduce tension. P pauses.">Your browser needs canvas support to play this game.</canvas>
+      <div class="feedback"><div><strong id="message" role="status" aria-live="polite">Your next catch is down there.</strong><span id="hint">Aim with ← → or A / D, then press Space to cast.</span></div><div class="meter-wrap"><label for="strength">LINE TENSION</label><meter id="strength" min="0" max="100" low="50" high="75" optimum="0" value="0">0%</meter><small id="progress">Hook a fish to start reeling</small></div></div>
     </section>
-    <div class="controls"><div class="aim"><button id="left" aria-label="Aim left">←</button><span>20° LEFT / RIGHT</span><button id="right" aria-label="Aim right">→</button></div><button class="cast" id="action">Cast line <kbd>SPACE</kbd></button><button id="reset">New game</button></div>
-    <div class="guide"><p><b>01 / Aim & cast</b>Steer the falling hook up to 20° in either direction. Touch a fish to hook it.</p><p><b>02 / Tap to reel</b>You get 3 seconds to react. Keep tapping Space; holding it won't count!</p><p><b>03 / Land a big one</b>Bluegill: 2 taps/sec · Trout: 3 · Bass: 4 · Pike: 5. Bigger fish earn more points.</p></div>
+    <div class="controls"><div class="aim"><button id="left" aria-label="Aim left">←</button><span>45° LEFT / RIGHT</span><button id="right" aria-label="Aim right">→</button></div><button class="cast" id="action">Cast line <kbd>SPACE</kbd></button><button id="reset">New game</button></div>
+    <div class="guide"><p><b>01 / Aim & cast</b>Aim the dotted line with the arrow keys up to 45° left or right, then press Space to drop the hook. Touch a fish to hook it.</p><p><b>02 / Tap or hold</b>Tap or hold Space (or the Reel button) to reel in. Long holds and rapid taps build tension; a full bar snaps the line.</p><p><b>03 / Land a big one</b>Release to let tension fall back to safety, then reel again. Bigger fish take longer to land and build more tension.</p></div>
   </main><footer>Made for a little fishing break. <a href="../index.html">Back to LJ's Catch ↗</a></footer>
 </body></html>

@@ -1,18 +1,24 @@
 (() => {
   'use strict';
-  const $=id=>document.getElementById(id), canvas=$('lake'),ctx=canvas.getContext('2d'),game=new FishingGame();
+  const $=id=>document.getElementById(id), canvas=$('lake'),ctx=canvas.getContext('2d'),game=new FishingGame(),sounds=new FishingAudio();
+  let soundState=game.state;
+  function soundSync(){
+    if(game.state!==soundState){const effect={casting:"cast",reeling:"bite",landed:"caught"}[game.state];if(effect)sounds.play(effect);else if(game.state==="lost")sounds.stop();soundState=game.state;}
+  }
+  function press(){if(!paused){sounds.unlock();const wasReeling=game.state==="reeling";game.press();soundSync();if(wasReeling&&game.state==="reeling")sounds.play("reel",game.tension);}}
   let paused=false,last=0,time=0;const held=new Set();
-  function pause(value=!paused){paused=value;held.clear();$('pause').textContent=paused?'Resume':'Pause';sync();}
-  function action(){if(!paused){game.action();sync();}}
+  function pause(value=!paused){paused=value;held.clear();game.release();sounds.stop();$('pause').textContent=paused?'Resume':'Pause';sync();}
+  function action(){if(!paused){sounds.unlock();const wasReeling=game.state==="reeling";game.action();soundSync();if(wasReeling&&game.state==="reeling")sounds.play("reel",game.tension);sync();}}
   function sync(){
+    $('sound').textContent=sounds.muted?'Sound off':'Sound on';$('sound').setAttribute('aria-pressed',String(sounds.muted));$('sound').setAttribute('aria-label',sounds.muted?'Unmute sound effects':'Mute sound effects');
     $('score').textContent=game.score;$('caught').textContent=game.caught;
     $('phase').textContent=paused?'PAUSED':game.state==='reeling'?'FISH ON!':game.state==='casting'?'HOOK IN THE WATER':game.state==='returning'?'RETRIEVING':'READY TO CAST';
     $('angle').textContent=`AIM ${Math.abs(Math.round(game.angle))}° ${game.angle<0?'LEFT':game.angle>0?'RIGHT':''}`;
     $('message').textContent=paused?'Taking a fishing break.':game.message;
-    $('hint').textContent=paused?'Press P or Resume when you’re ready.':game.state==='reeling'?`Tap ${game.target.rate} times per second. Keep the line strong!`:'← → / A D to aim · Space to cast or tap to reel · P to pause';
-    $('strength').value=game.strength;
-    $('progress').textContent=game.state==='reeling'?`${Math.round(game.progress*100)}% reeled in${game.elapsed<3?` · ${Math.ceil(3-game.elapsed)}s to get ready`:''}`:'Hook a fish to start reeling';
-    const actionLabel=game.state==='reeling'?'Reel! Tap! <kbd>SPACE</kbd>':'Cast line <kbd>SPACE</kbd>';
+    $('hint').textContent=paused?'Press P or Resume when you’re ready.':game.state==='reeling'?'Tap or hold Space to reel. Release to cool; a full bar snaps the line!':'Left / Right or A / D to aim up to 45° before casting; Space to drop; P to pause';
+    $('strength').value=game.tension;
+    $('progress').textContent=game.state==='reeling'?Math.round(game.progress*100)+'% reeled in | Tension '+Math.round(game.tension)+'%'+(game.tension>=70?' - Release now!':''):'Hook a fish to start reeling';
+    const actionLabel=game.state==='reeling'?'Tap / Hold <kbd>SPACE</kbd>':'Cast line <kbd>SPACE</kbd>';
     if($('action').innerHTML!==actionLabel)$('action').innerHTML=actionLabel;
     $('action').disabled=paused||['casting','returning'].includes(game.state);
   }
@@ -37,13 +43,16 @@
       ctx.setLineDash([5,9]);path([[575,143],[575+Math.sin(game.angle*Math.PI/180)*135,143+Math.cos(game.angle*Math.PI/180)*135]],'#fff4bc88',true);ctx.setLineDash([]);
     }
     ctx.fillStyle='#e2f5ec99';ctx.font='11px system-ui';ctx.fillText('THE LITTLE LAKE',25,35);ctx.fillText('DEEP WATER',25,607);
-    if(paused||['lost','landed'].includes(game.state)){ctx.fillStyle='#062e4566';ctx.fillRect(0,0,1100,640);ctx.fillStyle='#fff6d8';ctx.textAlign='center';ctx.font='bold 30px system-ui';ctx.fillText(paused?'PAUSED':game.state==='lost'?'YOU LOST THE FISH TRY AGAIN!':'NICE CATCH!',550,300);ctx.font='18px system-ui';ctx.fillText(paused?'Press P or Resume to return to the lake':'Press Space or Cast line for another cast',550,335);ctx.textAlign='left';}
+    if(paused||['lost','landed'].includes(game.state)){ctx.fillStyle='#062e4566';ctx.fillRect(0,0,1100,640);ctx.fillStyle='#fff6d8';ctx.textAlign='center';ctx.font='bold 30px system-ui';ctx.fillText(paused?'PAUSED':game.state==='lost'?'YOU LOST THE FISH TRY AGAIN!':'NICE CATCH!',550,300);ctx.font='18px system-ui';ctx.fillText(paused?'Press P or Resume to return to the lake':'Aim with arrow keys, then press Space to cast again',550,335);ctx.textAlign='left';}
   }
-  document.addEventListener('keydown',e=>{if(e.target.closest('a,button,input,textarea,select')&&e.code!=='KeyP')return;if(['Space','ArrowLeft','ArrowRight','KeyA','KeyD','KeyP'].includes(e.code)){e.preventDefault();if(e.repeat)return;if(e.code==='Space')action();else if(e.code==='KeyP')pause();else held.add(e.code);}});
-  document.addEventListener('keyup',e=>held.delete(e.code));
-  $('action').addEventListener('click',()=>{action();canvas.focus({preventScroll:true});});
-  $('pause').addEventListener('click',()=>pause());$('reset').addEventListener('click',()=>{game.reset();pause(false);canvas.focus({preventScroll:true});});
+  document.addEventListener('keydown',e=>{if(e.target.closest('a,button,input,textarea,select')&&e.code!=='KeyP'&&!(e.code==='Space'&&e.target===$('action')))return;if(['Space','ArrowLeft','ArrowRight','KeyA','KeyD','KeyP'].includes(e.code)){e.preventDefault();if(e.repeat)return;if(e.code==='Space')press();else if(e.code==='KeyP')pause();else held.add(e.code);}});
+  document.addEventListener('keyup',e=>{held.delete(e.code);if(e.code==='Space'){e.preventDefault();game.release();}});
+  $('action').addEventListener('pointerdown',e=>{if(e.button!==0||paused)return;e.preventDefault();$('action').setPointerCapture(e.pointerId);press();canvas.focus({preventScroll:true});});
+  for(const event of ['pointerup','pointercancel','lostpointercapture'])$('action').addEventListener(event,()=>game.release());
+  $('action').addEventListener('click',e=>{if(e.detail===0){action();canvas.focus({preventScroll:true});}});
+  $('sound').addEventListener('click',()=>{sounds.toggle();sync();});
+  $('pause').addEventListener('click',()=>pause());$('reset').addEventListener('click',()=>{game.reset();soundState=game.state;pause(false);canvas.focus({preventScroll:true});});
   for(const [id,key] of [['left','ArrowLeft'],['right','ArrowRight']]){const button=$(id);button.addEventListener('pointerdown',e=>{e.preventDefault();if(!paused){held.add(key);button.setPointerCapture(e.pointerId);}});for(const event of ['pointerup','pointercancel','lostpointercapture'])button.addEventListener(event,()=>held.delete(key));button.addEventListener('click',e=>{if(e.detail===0&&!paused)game.aim(id==='left'?-2:2);});}
   window.addEventListener('blur',()=>pause(true));document.addEventListener('visibilitychange',()=>{if(document.hidden)pause(true);});
-  function frame(now){const dt=Math.min((now-last)/1000||0,.04);last=now;if(!paused){time+=dt;game.aim(((held.has('ArrowRight')||held.has('KeyD')?1:0)-(held.has('ArrowLeft')||held.has('KeyA')?1:0))*35*dt);game.update(dt);}sync();draw();requestAnimationFrame(frame);}requestAnimationFrame(frame);
+  function frame(now){const dt=Math.min((now-last)/1000||0,.04);last=now;if(!paused){time+=dt;game.aim(((held.has('ArrowRight')||held.has('KeyD')?1:0)-(held.has('ArrowLeft')||held.has('KeyA')?1:0))*35*dt);game.update(dt);soundSync();if(game.state==='reeling'&&game.reelHeld)sounds.play('reel',game.tension);}sync();draw();requestAnimationFrame(frame);}requestAnimationFrame(frame);
 })();

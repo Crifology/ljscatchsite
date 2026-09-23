@@ -76,3 +76,11 @@ npx netlify build --offline
 The tests include direct serverless invocations for search, filtering, request
 validation and stocking summaries. OSM tile attribution and configuration are
 in `assets/water-explorer-config.js`; no offline tile downloads are implemented.
+
+## Fishing game audio
+
+`game/audio.js` synthesizes original cartoon cast, bite, reel and catch effects
+with Web Audio oscillators. No third-party recordings, samples, music, voices
+or stock libraries are included. Sound starts after a player interaction; the
+Sound button mutes it and remembers the preference. Pausing or leaving the
+window stops the effects. Browsers without Web Audio can still play silently.

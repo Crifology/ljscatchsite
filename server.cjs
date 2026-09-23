@@ -79,7 +79,7 @@ function createApp({staticFiles=true,fishService,usgsService=createUSGSService()
     if(!staticFiles){res.writeHead(404,{'Content-Type':'application/json','Cache-Control':'no-store'});return res.end(JSON.stringify({error:'Unknown API endpoint'}));}
     let name;try{name=decodeURIComponent(url.pathname==='/'?'/index.html':['/game','/game/'].includes(url.pathname)?'/game/index.html':url.pathname);}catch{res.writeHead(400);return res.end();}
     const file=path.resolve(ROOT,'.'+name),ext=path.extname(file).toLowerCase();
-    if(!file.startsWith(ROOT+path.sep)||name.split(/[\\/]/).some(p=>p.startsWith('.'))||!MIME[ext]||!(name.startsWith('/assets/')||/^\/game\/(?:index\.html|game\.css|game\.js|engine\.js)$/.test(name)||/^\/database\/(?:[A-Z]{2}|index)\.json$/.test(name)||/^\/[\w-]+\.(html|md)$/.test(name))) {res.writeHead(404);return res.end();}
+    if(!file.startsWith(ROOT+path.sep)||name.split(/[\\/]/).some(p=>p.startsWith('.'))||!MIME[ext]||!(name.startsWith('/assets/')||/^\/game\/(?:index\.html|game\.css|game\.js|engine\.js|audio\.js)$/.test(name)||/^\/database\/(?:[A-Z]{2}|index)\.json$/.test(name)||/^\/[\w-]+\.(html|md)$/.test(name))) {res.writeHead(404);return res.end();}
     fs.stat(file,(err,stat)=>{
       if(err||!stat.isFile()){res.writeHead(404);return res.end();}
       res.writeHead(200,{'Content-Type':MIME[ext],'Content-Length':stat.size,'Cache-Control':'public, max-age=60'});
