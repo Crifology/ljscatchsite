@@ -77,11 +77,15 @@ GeoJSON FeatureCollection with the existing popup-compatible `properties.species
 Fish-name filtering happens before a 1,500-pin response cap; `limited` and
 `matchingWaters` disclose truncation. Missing/partial state files are listed.
 The map shows the first 20 fish types alphabetically for the visible area.
-The endpoint reserves pins for those species before capping locations. Complete
-local database searches finish without waiting on live APIs; live sources are
-a fallback for unavailable or incomplete imports. Search matches common or
+The endpoint reserves pins for those species before capping locations. The tracker uses only this local endpoint for fish data. Missing or incomplete
+imports are disclosed without contacting live services. Pan and zoom update
+the viewport bounds and reload matching locations. Search matches common or
 scientific fish names, not water names. Popups retain all fish at a matching site.
 
 Individual files are also available at `/database/MA.json`, and the manifest at
 `/database/index.json`. Restart the server after replacing files to refresh its
 in-memory cache immediately; otherwise cache entries expire in five minutes.
+
+## Fish photos
+
+Reviewed local photos include source attribution and reuse terms. See [coverage and outstanding taxa](PHOTO-COVERAGE.md) and [photo provenance](PHOTOS.md).

@@ -21,7 +21,7 @@ Sources:
 - Wikimedia Commons alternatives retain each file's own license version and
   description-page attribution; their search metadata is in `photo-alternatives.json`.
 
-Only CC0, CC BY and CC BY-SA images are accepted. Noncommercial, no-derivatives,
+Only CC0, CC BY, CC BY-SA and explicitly marked public-domain images are accepted. Public-domain Commons files retain their source page and Public Domain Mark link. Noncommercial, no-derivatives,
 all-rights-reserved and unknown-license photos are excluded. Image rights are
 checked independently of occurrence-data rights. The downloaded source-provided
 images are unchanged; the website scales them for display. Retain the attribution,

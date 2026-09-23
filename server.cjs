@@ -69,6 +69,7 @@ function createServer({fishService,usgsService=createUSGSService(),stockingServi
     res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('Referrer-Policy','strict-origin-when-cross-origin');
     if(!['GET','HEAD'].includes(req.method)){res.writeHead(405);return res.end();}
     let url;try{url=new URL(req.url,'http://localhost');}catch{res.writeHead(400);return res.end();}
+    if(url.pathname==='/game'){res.writeHead(302,{Location:'/game/'});return res.end();}
     if(['/api/fish-observations','/api/usgs-fish','/api/stocking','/api/fish-database'].includes(url.pathname)) {
       if(req.method==='HEAD'){res.writeHead(405);return res.end();}
       try {
@@ -79,9 +80,9 @@ function createServer({fishService,usgsService=createUSGSService(),stockingServi
         res.writeHead(result.status);return res.end(JSON.stringify(result.data));
       } catch {res.writeHead(503,{'Content-Type':'application/json'});return res.end('{"error":"Fish service unavailable"}');}
     }
-    let name;try{name=decodeURIComponent(url.pathname==='/'?'/index.html':url.pathname);}catch{res.writeHead(400);return res.end();}
+    let name;try{name=decodeURIComponent(url.pathname==='/'?'/index.html':['/game','/game/'].includes(url.pathname)?'/game/index.html':url.pathname);}catch{res.writeHead(400);return res.end();}
     const file=path.resolve(ROOT,'.'+name),ext=path.extname(file).toLowerCase();
-    if(!file.startsWith(ROOT+path.sep)||name.split(/[\\/]/).some(p=>p.startsWith('.'))||!MIME[ext]||!(name.startsWith('/assets/')||/^\/database\/(?:[A-Z]{2}|index)\.json$/.test(name)||/^\/[\w-]+\.(html|md)$/.test(name))) {res.writeHead(404);return res.end();}
+    if(!file.startsWith(ROOT+path.sep)||name.split(/[\\/]/).some(p=>p.startsWith('.'))||!MIME[ext]||!(name.startsWith('/assets/')||/^\/game\/(?:index\.html|game\.css|game\.js|engine\.js)$/.test(name)||/^\/database\/(?:[A-Z]{2}|index)\.json$/.test(name)||/^\/[\w-]+\.(html|md)$/.test(name))) {res.writeHead(404);return res.end();}
     fs.stat(file,(err,stat)=>{
       if(err||!stat.isFile()){res.writeHead(404);return res.end();}
       res.writeHead(200,{'Content-Type':MIME[ext],'Content-Length':stat.size,'Cache-Control':'public, max-age=60'});

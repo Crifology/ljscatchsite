@@ -2938,10 +2938,22 @@
     },
     "hypostomus plecostomus": {
       "scientificName": "Hypostomus plecostomus",
-      "status": "unavailable",
-      "reason": "No CC0, CC BY or CC BY-SA photo found in eligible results",
-      "taxonId": 194623,
-      "query": "https://api.inaturalist.org/v1/taxa?q=Hypostomus+plecostomus&is_active=true&per_page=30"
+      "status": "available",
+      "provider": "Wikimedia Commons",
+      "verifiedAt": "2026-09-22T23:43:25.057Z",
+      "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Hypostomus+plecostomus%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+      "sha256": "f2a0ff6c475d2e9798e7bd8e8123c918f50bb450323b9f6777e51213b6d67adf",
+      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Hypostomus_plecostomus_-_Rapha%C3%ABl_Covain.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "photo": {
+        "url": "/assets/fish-photos/commons-63330109.png",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hypostomus_plecostomus_-_Rapha%C3%ABl_Covain.png",
+        "label": "Raphaël Covain, Natural History Museum of Geneva � Hypostomus plecostomus - Raphaël Covain.png",
+        "license": "CC BY-SA 4.0",
+        "licenseCode": "cc-by-sa",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "displayAllowed": true
+      },
+      "visuallyReviewedAt": "2026-09-23T04:35:11.840Z"
     },
     "hypostomus sp.": {
       "scientificName": "Hypostomus sp.",
@@ -3426,10 +3438,22 @@
     },
     "limia vittata": {
       "scientificName": "Limia vittata",
-      "status": "unavailable",
-      "reason": "No CC0, CC BY or CC BY-SA photo found in eligible results",
-      "taxonId": 1316858,
-      "query": "https://api.inaturalist.org/v1/taxa?q=Limia+vittata&is_active=true&per_page=30"
+      "status": "available",
+      "provider": "Wikimedia Commons",
+      "verifiedAt": "2026-09-22T23:43:39.648Z",
+      "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Limia+vittata%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+      "sha256": "bf49a3b5524739915e7ea847e169040ce3c9d9aafe3eef21cefedef25ba7702a",
+      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/3/39/Limia_vittata.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "photo": {
+        "url": "/assets/fish-photos/commons-23915174.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Limia_vittata.jpg",
+        "label": "Cardet co6cs � Limia vittata.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseCode": "cc-by-sa",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "displayAllowed": true
+      },
+      "visuallyReviewedAt": "2026-09-23T04:35:11.841Z"
     },
     "lota lota": {
       "scientificName": "Lota lota",
@@ -4289,10 +4313,22 @@
     },
     "mylopharyngodon piceus": {
       "scientificName": "Mylopharyngodon piceus",
-      "status": "unavailable",
-      "reason": "No CC0, CC BY or CC BY-SA photo found in eligible results",
-      "taxonId": 128426,
-      "query": "https://api.inaturalist.org/v1/taxa?q=Mylopharyngodon+piceus&is_active=true&per_page=30"
+      "status": "available",
+      "provider": "Wikimedia Commons",
+      "verifiedAt": "2026-09-22T23:43:54.861Z",
+      "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Mylopharyngodon+piceus%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+      "sha256": "15079f0f26ebbc9a129c4789872ee7e72885240571cc00be60f2add296378280",
+      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Mylopharyngodon_piceus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "photo": {
+        "url": "/assets/fish-photos/commons-1748619.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mylopharyngodon_piceus.jpg",
+        "label": "Leo Nico, (United States Geological Survey) (Original uploader was Zp at cs.wikipedia ) � Mylopharyngodon piceus.jpg",
+        "license": "Public domain",
+        "licenseCode": "public-domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "displayAllowed": true
+      },
+      "visuallyReviewedAt": "2026-09-23T04:35:11.841Z"
     },
     "neogobius melanostomus": {
       "scientificName": "Neogobius melanostomus",
@@ -4611,10 +4647,22 @@
     },
     "notropis girardi": {
       "scientificName": "Notropis girardi",
-      "status": "unavailable",
-      "reason": "No CC0, CC BY or CC BY-SA photo found in eligible results",
-      "taxonId": 107227,
-      "query": "https://api.inaturalist.org/v1/taxa?q=Notropis+girardi&is_active=true&per_page=30"
+      "status": "available",
+      "provider": "Wikimedia Commons",
+      "verifiedAt": "2026-09-22T23:44:03.038Z",
+      "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Notropis+girardi%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+      "sha256": "903da53483f4e31b9c64edcdd3f54e06de01456f9ec8c260b363e346733669d3",
+      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Notropis_girardi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "photo": {
+        "url": "/assets/fish-photos/commons-30012677.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Notropis_girardi.jpg",
+        "label": "USFWS � Notropis girardi.jpg",
+        "license": "Public domain",
+        "licenseCode": "public-domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "displayAllowed": true
+      },
+      "visuallyReviewedAt": "2026-09-23T04:35:11.841Z"
     },
     "notropis dorsalis": {
       "scientificName": "Notropis dorsalis",
@@ -5601,10 +5649,22 @@
     },
     "percina tanasi": {
       "scientificName": "Percina tanasi",
-      "status": "unavailable",
-      "reason": "No CC0, CC BY or CC BY-SA photo found in eligible results",
-      "taxonId": 109109,
-      "query": "https://api.inaturalist.org/v1/taxa?q=Percina+tanasi&is_active=true&per_page=30"
+      "status": "available",
+      "provider": "Wikimedia Commons",
+      "verifiedAt": "2026-09-22T23:44:17.838Z",
+      "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Percina+tanasi%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+      "sha256": "acb2794c9ec85199f7d7e09d275afd318886d66115dd01efcac69634dd897e97",
+      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Percina_tanasi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "photo": {
+        "url": "/assets/fish-photos/commons-3758746.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Percina_tanasi.jpg",
+        "label": "US Fish and Wildlife Service � Percina tanasi.jpg",
+        "license": "Public domain",
+        "licenseCode": "public-domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "displayAllowed": true
+      },
+      "visuallyReviewedAt": "2026-09-23T04:35:11.841Z"
     },
     "percopsis omiscomaycus": {
       "scientificName": "Percopsis omiscomaycus",
@@ -6041,10 +6101,22 @@
     },
     "pterygoplichthys multiradiatus": {
       "scientificName": "Pterygoplichthys multiradiatus",
-      "status": "unavailable",
-      "reason": "No CC0, CC BY or CC BY-SA photo found in eligible results",
-      "taxonId": 179472,
-      "query": "https://api.inaturalist.org/v1/taxa?q=Pterygoplichthys+multiradiatus&is_active=true&per_page=30"
+      "status": "available",
+      "provider": "Wikimedia Commons",
+      "verifiedAt": "2026-09-22T23:44:32.892Z",
+      "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Pterygoplichthys+multiradiatus%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
+      "sha256": "ca12202362c32632474336eea425aa35c420774c3ade5eed883d49399c777742",
+      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Pterygoplichthys_multiradiatus_in_Florida_US_ACE.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "photo": {
+        "url": "/assets/fish-photos/commons-9630445.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pterygoplichthys_multiradiatus_in_Florida_US_ACE.jpg",
+        "label": "Jan Hoover, U.S. Army Corps of Engineers � Pterygoplichthys multiradiatus in Florida US ACE.jpg",
+        "license": "Public domain",
+        "licenseCode": "public-domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "displayAllowed": true
+      },
+      "visuallyReviewedAt": "2026-09-23T04:35:11.841Z"
     },
     "pterygoplichthys sp.": {
       "scientificName": "Pterygoplichthys sp.",
@@ -6993,5 +7065,5 @@
       "visuallyReviewedAt": "2026-09-22T23:42:06.589Z"
     }
   },
-  "updatedAt": "2026-09-22T23:42:06.589Z"
+  "updatedAt": "2026-09-23T04:35:11.841Z"
 }

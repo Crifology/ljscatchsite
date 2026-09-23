@@ -1,4 +1,4 @@
 /* Keep the additional navigation item comfortable on tablets. */
 @media (min-width: 769px) { .nav-links { gap:clamp(.6rem, 1.8vw, 2rem); padding-left:0; } .nav-links a,.store-link { white-space:nowrap; } .nav-container { gap:1rem; } }
-@media (min-width:769px) and (max-width:1100px) { .nav-container { flex-wrap:wrap; justify-content:center; } .logoMainPage img { width:100px; height:100px; } }
+@media (min-width:769px) and (max-width:1250px) { .nav-container { flex-wrap:wrap; justify-content:center; } .logoMainPage img { width:100px; height:100px; } }
 @media (max-width:768px) { .nav-links a { color:#fff; } .nav-links a.active,.nav-links a:hover { color:#b9ffef; } .nav-links a.home-link { color:#ffe69a; } }

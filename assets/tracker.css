@@ -33,6 +33,9 @@ figcaption { font: .65rem/1.5 Arial,sans-serif; margin-top:.4rem; } dt { font-we
 .search-label { flex:1; min-width:200px; }
 .water-button { display:block; width:100%; text-align:left; margin-bottom:.6rem; }
 .water-button small { display:block; font: .7rem/1.5 Arial,sans-serif; margin-top:.3rem; }
+.fish-clear-control { position:sticky; top:-1rem; z-index:1; padding:.5rem 0; background:#f3fafa; }
+.fish-clear-control .water-button { margin:0; }
+.fish-clear-control button:disabled { opacity:.55; cursor:default; }
 .list-hint,.empty-state { font:.78rem/1.6 Arial,sans-serif; margin-bottom:1rem; }
 .empty-state { border:1px dashed #84b9c4; border-radius:12px; padding:1rem; }
 .water-popup { font:14px/1.5 Arial,sans-serif; color:#244b5c; }

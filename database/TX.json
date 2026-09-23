@@ -28536,8 +28536,16 @@
               "coordinateSource": "Map derived"
             }
           ],
-          "photo": null,
-          "photoStatus": "unavailable"
+          "photo": {
+            "url": "/assets/fish-photos/commons-63330109.png",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hypostomus_plecostomus_-_Rapha%C3%ABl_Covain.png",
+            "label": "Raphaël Covain, Natural History Museum of Geneva � Hypostomus plecostomus - Raphaël Covain.png",
+            "license": "CC BY-SA 4.0",
+            "licenseCode": "cc-by-sa",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
         }
       ]
     },
@@ -30859,8 +30867,16 @@
               "coordinateSource": "reported"
             }
           ],
-          "photo": null,
-          "photoStatus": "unavailable"
+          "photo": {
+            "url": "/assets/fish-photos/commons-63330109.png",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hypostomus_plecostomus_-_Rapha%C3%ABl_Covain.png",
+            "label": "Raphaël Covain, Natural History Museum of Geneva � Hypostomus plecostomus - Raphaël Covain.png",
+            "license": "CC BY-SA 4.0",
+            "licenseCode": "cc-by-sa",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
         }
       ]
     },
@@ -86430,8 +86446,16 @@
               "coordinateSource": "reported"
             }
           ],
-          "photo": null,
-          "photoStatus": "unavailable"
+          "photo": {
+            "url": "/assets/fish-photos/commons-9630445.jpg",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pterygoplichthys_multiradiatus_in_Florida_US_ACE.jpg",
+            "label": "Jan Hoover, U.S. Army Corps of Engineers � Pterygoplichthys multiradiatus in Florida US ACE.jpg",
+            "license": "Public domain",
+            "licenseCode": "public-domain",
+            "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
         }
       ]
     },
@@ -89636,8 +89660,16 @@
               "coordinateSource": "Map derived"
             }
           ],
-          "photo": null,
-          "photoStatus": "unavailable"
+          "photo": {
+            "url": "/assets/fish-photos/commons-63330109.png",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hypostomus_plecostomus_-_Rapha%C3%ABl_Covain.png",
+            "label": "Raphaël Covain, Natural History Museum of Geneva � Hypostomus plecostomus - Raphaël Covain.png",
+            "license": "CC BY-SA 4.0",
+            "licenseCode": "cc-by-sa",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
         }
       ]
     },
@@ -89833,8 +89865,16 @@
               "coordinateSource": "Map derived"
             }
           ],
-          "photo": null,
-          "photoStatus": "unavailable"
+          "photo": {
+            "url": "/assets/fish-photos/commons-63330109.png",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hypostomus_plecostomus_-_Rapha%C3%ABl_Covain.png",
+            "label": "Raphaël Covain, Natural History Museum of Geneva � Hypostomus plecostomus - Raphaël Covain.png",
+            "license": "CC BY-SA 4.0",
+            "licenseCode": "cc-by-sa",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
         }
       ]
     },
@@ -90596,8 +90636,16 @@
               "coordinateSource": "reported"
             }
           ],
-          "photo": null,
-          "photoStatus": "unavailable"
+          "photo": {
+            "url": "/assets/fish-photos/commons-9630445.jpg",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pterygoplichthys_multiradiatus_in_Florida_US_ACE.jpg",
+            "label": "Jan Hoover, U.S. Army Corps of Engineers � Pterygoplichthys multiradiatus in Florida US ACE.jpg",
+            "license": "Public domain",
+            "licenseCode": "public-domain",
+            "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
         }
       ]
     },
@@ -92330,8 +92378,16 @@
               "coordinateSource": "reported"
             }
           ],
-          "photo": null,
-          "photoStatus": "unavailable"
+          "photo": {
+            "url": "/assets/fish-photos/commons-63330109.png",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hypostomus_plecostomus_-_Rapha%C3%ABl_Covain.png",
+            "label": "Raphaël Covain, Natural History Museum of Geneva � Hypostomus plecostomus - Raphaël Covain.png",
+            "license": "CC BY-SA 4.0",
+            "licenseCode": "cc-by-sa",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
         }
       ]
     },
@@ -96098,8 +96154,16 @@
               "coordinateSource": "reported"
             }
           ],
-          "photo": null,
-          "photoStatus": "unavailable"
+          "photo": {
+            "url": "/assets/fish-photos/commons-9630445.jpg",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pterygoplichthys_multiradiatus_in_Florida_US_ACE.jpg",
+            "label": "Jan Hoover, U.S. Army Corps of Engineers � Pterygoplichthys multiradiatus in Florida US ACE.jpg",
+            "license": "Public domain",
+            "licenseCode": "public-domain",
+            "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
         }
       ]
     },
@@ -105715,10 +105779,10 @@
       ]
     }
   ],
-  "photosUpdatedAt": "2026-09-22T23:42:06.589Z",
+  "photosUpdatedAt": "2026-09-23T04:35:11.841Z",
   "photoCoverage": {
     "fishTypes": 75,
-    "withPhotos": 65,
-    "withoutPhotos": 10
+    "withPhotos": 67,
+    "withoutPhotos": 8
   }
 }

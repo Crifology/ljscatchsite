@@ -3,17 +3,10 @@
   const $ = id => document.getElementById(id);
   const D = window.WaterExplorerData, config = window.WaterExplorerConfig;
   window.WaterLocation?.populate($('region'),D.regions,tag=>document.createElement(tag));
-  let map, layers, request, features = [], revision = 0, busy = false, selection = 0;
-  let summaryRevision=0, reloadTimer, mapReady=false, locating=Boolean(window.WaterLocation), fitting=false, interacted=false;
-  const nasRequest = async bbox => {
-    const response=await fetch(`/api/usgs-fish?${new URLSearchParams({bbox})}`,{signal:AbortSignal.timeout(60000)});
-    if(!response.ok)throw Error("USGS fish service unavailable");
-    const data=await response.json();
-    if(!Array.isArray(data.results))throw Error("Invalid USGS response");
-    return data;
-  };
+  let map, layers, features = [], revision = 0, busy = false;
+  let reloadTimer, mapReady=false, fitting=false;
   function scheduleLoad() {
-    if(!mapReady || locating)return;
+    if(!mapReady)return;
     clearTimeout(reloadTimer);
     reloadTimer=setTimeout(()=>load(),450);
   }
@@ -68,31 +61,16 @@
     content.append(sources);
     return content;
   }
-  async function select(feature, location) {
-    const token = ++selection;
-    let popup;
+  function select(feature, location) {
     if (map) {
       const [lng,lat] = feature.properties.pin;
-      popup = window.L.popup({maxWidth:340,maxHeight:380,autoPan:false}).setLatLng(location || [lat,lng]).setContent(details(feature)).openOn(map);
+      window.L.popup({maxWidth:340,maxHeight:380,autoPan:false}).setLatLng(location || [lat,lng]).setContent(details(feature)).openOn(map);
     } else {
       $('water-details').replaceChildren(details(feature)); $('water-dialog').showModal();
     }
-    if (feature.properties.loaded) return;
-    try { Object.assign(feature.properties,await window.WaterProviders.fish(feature,window.TrackerNetwork.request,async bbox=>{
-      const response=await fetch(`/api/usgs-fish?${new URLSearchParams({bbox})}`,{signal:AbortSignal.timeout(60000)});
-      if(!response.ok)throw Error('USGS fish service unavailable');
-      const data=await response.json();
-      if(!Array.isArray(data.results))throw Error('Invalid USGS response');
-      return data;
-    }),{error:null}); }
-    catch { feature.properties.error = 'Fish types are unavailable. Close and select this water later to try again.'; }
-    for(const s of feature.properties.stockingSpecies||[])window.WaterStocking?.merge(feature,s);
-    if (token !== selection) return;
-    if (popup && map.hasLayer(popup)) popup.setContent(details(feature));
-    else if (!map) $('water-details').replaceChildren(details(feature));
-    render();
   }
   function render() {
+    $('clear-fish').disabled = !$('search').value.trim();
     const b=mapReady ? map.getBounds() : null;
     const result=D.fishResults(features,$('search').value,$('water-type').value,b ? [b.getWest(),b.getSouth(),b.getEast(),b.getNorth()] : null);
     const visible=result.waters;
@@ -118,30 +96,10 @@
     if(!result.species.length)$('water-list').append(node('p',busy ? 'Finding fish records for this area...' : 'No fish records match this view. Try another area or search.','empty-state'));
   }
 
-  function clear() { selection++; features = []; map?.closePopup(); if($('stocking-status'))$('stocking-status').textContent=''; render(); }
-  async function stockingSummary(){
-    if(!window.WaterStocking)return;
-    const token=++summaryRevision,region=$('region').value;
-    const state=region==='alaska'?'AK':region==='hawaii'?'HI':region;
-    const panel=$('stocking-summary');panel.textContent='Loading state stocking summary...';
-    try{
-      const r=await fetch(`/api/stocking?${new URLSearchParams({state})}`,{signal:AbortSignal.timeout(5000)});
-      if(!r.ok)throw Error('Summary unavailable');
-      const data=await r.json();if(token!==summaryRevision)return;
-      panel.replaceChildren();
-      if(data.summary){
-        const s=data.summary;
-        panel.append(node('strong',`${s.stateName} · ${s.annualCount===null?'Count not verified in source':`${s.annualCount.toLocaleString()} fish reported${s.year?` (${s.year})`:''}`}`));
-        panel.append(node('p',s.agency));
-        panel.append(node('p',s.source.replace(/\u00e2\u20ac\u201d/g,'—')));
-      }else panel.append(node('p',`${data.states} state summaries; ${data.reportedCounts} supplied counts. Select a state to view its stocking information.`));
-      panel.append(node('p','These are state summaries, not individual stocking locations. They cannot identify which fish were stocked in a particular lake or river.'));
-      panel.append(sourceLink({label:'FishFig · state stocking aggregation',license:'CC BY 4.0',licenseCode:'cc-by',url:'https://fishfig.com/data/'}));
-    }catch{if(token===summaryRevision)panel.textContent='State stocking summary unavailable. The other map sources remain available.';}
-  }
+  function clear() { features = []; map?.closePopup(); render(); }
   function overview() {
     if(!map)return;
-    locating=false; fitting=true; revision++;
+    fitting=true; revision++;
     const area = D.regions[$('region').value];
     try {
       map.invalidateSize({pan:false});
@@ -152,17 +110,15 @@
       mapReady=true;
     } finally { fitting=false; }
     clear();
-    $('refresh').disabled=!request;
-    if (request) scheduleLoad();
-    stockingSummary();
+    $('refresh').disabled=!mapReady;
+    scheduleLoad();
   }
   async function load() {
-    if (!request || !mapReady || locating) return;
+    if (!mapReady) return;
     if(busy){scheduleLoad();return;}
     const token = ++revision;
     busy = true; $('refresh').disabled = true; clear();
-    $('status').textContent = 'Finding water guides in this area…';
-    let localFeatures=[],databaseNote='';
+    $('status').textContent = 'Loading saved fish locations in this area...';
     try {
       const b=map.getBounds(),area=D.regions[$('region').value];
       const extent=[Math.max(-180,b.getWest()),Math.max(-85,b.getSouth()),Math.min(180,b.getEast()),Math.min(85,b.getNorth())];
@@ -170,64 +126,30 @@
       if(bounds[0]>=bounds[2] || bounds[1]>=bounds[3]){
         $('status').textContent='Move back into the selected state or choose another region.';return;
       }
-      const bbox = D.boundsQuery(bounds);
-      const inState=feature=>!area.geometry || window.WaterProviders.contains(feature.properties.pin,area.geometry);
-      try {
-        const params=new URLSearchParams({state:$('region').value,bbox,q:$('search').value,kind:$('water-type').value});
-        const stored=await fetch(`/api/fish-database?${params}`,{signal:AbortSignal.timeout(10000)});
-        if(!stored.ok)throw Error('Local database unavailable');
-        const database=await stored.json();
-        if(!Array.isArray(database.features))throw Error('Invalid local database');
-        if(token!==revision)return;
-        // The database already uses the source's state assignment, which is more
-        // reliable than our simplified state polygon near shores and borders.
-        localFeatures=database.features;
-        features=localFeatures;render();
-        databaseNote=`${localFeatures.length} saved water locations. ${database.limited?'Saved results capped; search a fish or zoom in for more. ':''}${database.unavailable?.length||database.partial?.length?'Some state imports are incomplete or unavailable. ':''}`;
-        $('status').textContent=`${databaseNote}Select a fish to filter pins, or a pin to see all its recorded fish.`;
-        // Complete local imports are the primary search source. Live services are
-        // a fallback, so their latency cannot hold up the next species search.
-        if(!database.unavailable?.length&&!database.partial?.length)return;
-        $('status').textContent+=' Checking live sources for incomplete imports...';
-      }catch{databaseNote='Saved database unavailable; using live sources. ';}
-      const response = await request(bbox), result = D.normalize(response);
-      if (token !== revision) return;
-      const liveFeatures=result.features.filter(inState);
-      features=[...localFeatures,...liveFeatures];
-      $('status').textContent='Finding fish records for these waters...';
-      const fish=await window.WaterProviders.areaFish(liveFeatures,bbox,window.TrackerNetwork.request,nasRequest);
+      const params=new URLSearchParams({state:$('region').value,bbox:D.boundsQuery(bounds),q:$('search').value,kind:$('water-type').value});
+      const response=await fetch(`/api/fish-database?${params}`,{signal:AbortSignal.timeout(10000)});
+      if(!response.ok)throw Error('Saved database unavailable');
+      const database=await response.json();
+      if(!Array.isArray(database.features))throw Error('Invalid saved database');
       if(token!==revision)return;
-      liveFeatures.forEach((feature,i)=>Object.assign(feature.properties,fish[i]));
-      render();
-      $('status').textContent = `${databaseNote}${features.filter(f=>f.properties.species.length).length} waters with fish records loaded. ${response.partial ? 'Some USGS layers are unavailable. ' : ''}${result.limited ? 'Coverage is limited; zoom in to see a smaller area. ' : ''}${fish.some(f=>f.limited)?'Fish records are capped; zoom in for more local results. ':''}${fish.some(f=>!f.loaded||f.unavailable?.length)?'Some fish sources are unavailable. ':''}Select a fish to filter pins, or a pin to see all its fish.`;
-      if(window.WaterStocking){
-        $('stocking-status').textContent='Checking stocking locations in this area...';
-        try{
-          const r=await fetch(`/api/stocking?${new URLSearchParams({bbox})}`,{signal:AbortSignal.timeout(10000)});
-          if(!r.ok)throw Error('Stocking event data is not available.');
-          const stock=await r.json();
-          if(token!==revision)return;
-          if(!Array.isArray(stock.events))throw Error('Stocking file could not be read.');
-          if(stock.aggregateOnly){$('stocking-status').textContent='Stocking file loaded: state summaries only. No location-level stocking entries are available to place on water pins.';return;}
-          const combined=await window.WaterStocking.attach(features,stock.events,request,window.WaterProviders,()=>token===revision);
-          if(token!==revision)return;
-          features=combined.features.filter(f=>f.properties.database||inState(f));render();
-          $('stocking-status').textContent=`${combined.matched} stocking entries matched to nearby waters; ${combined.unmatched} could not be matched reliably.${stock.limited?' Only the first 10 entries were checked; zoom in for a smaller area.':''}${stock.rejected?' Some source entries lack eligible event details.':''}`;
-        }catch(error){if(token===revision)$('stocking-status').textContent=error.message;}
-      }
-    } catch (error) {
-      if (token === revision) $('status').textContent = `${localFeatures.length?databaseNote:'Water guides unavailable. '}Live sources unavailable. ${error.message}`;
-    } finally { busy = false; render(); $('refresh').disabled = !request || !mapReady || locating; }
+      features=database.features;
+      $('status').textContent=`${features.length} saved water locations. ${database.limited?'Saved results capped; search a fish or zoom in for more. ':''}${database.unavailable?.length||database.partial?.length?'Some state imports are incomplete or unavailable. ':''}Select a fish to filter pins, or a pin to see all its recorded fish.`;
+    } catch {
+      if(token===revision)$('status').textContent='Saved fish database unavailable. Try Search this area again later.';
+    } finally { busy=false; render(); $('refresh').disabled=!mapReady; }
   }
   const filterChanged=()=>{revision++;render();scheduleLoad();};
-  $('search').addEventListener('input',filterChanged); $('water-type').onchange = filterChanged;
-  $('region').onchange = overview; $('reset-map').onclick = overview; $('refresh').onclick = load;
+  $('clear-fish').onclick = () => { $('search').value=''; map?.closePopup(); filterChanged(); };
+  $('search').addEventListener('input',filterChanged);
+  $('water-type').onchange = () => { $('search').value=''; filterChanged(); };
+  $('region').onchange = () => { $('search').value=''; overview(); };
+  $('reset-map').onclick = overview; $('refresh').onclick = load;
   $('close-dialog').onclick = () => $('water-dialog').close();
   const mapStatus = $('map-status');
   if (!['http:','https:'].includes(window.location.protocol)) {
     mapStatus.hidden = false; mapStatus.textContent = 'Open the localhost web preview to display the map. Run node server.cjs and visit http://localhost:8000/trackerapp.html.';
   } else if (window.L) {
-    map = window.L.map('catch-map',{scrollWheelZoom:false,minZoom:3,maxBounds:[[-85,-180],[85,180]],maxBoundsViscosity:1});
+    map = window.L.map('catch-map',{scrollWheelZoom:true,minZoom:3,maxBounds:[[-85,-180],[85,180]],maxBoundsViscosity:1});
     const tiles = window.L.tileLayer(config.tileUrl,{maxZoom:18,noWrap:true,referrerPolicy:'strict-origin-when-cross-origin',attribution:config.tileAttribution});
     let failed = false;
     tiles.on('tileerror',() => {
@@ -239,31 +161,12 @@
     map.setView(initial.center,initial.zoom,{animate:false});mapReady=true;
     layers = window.L.layerGroup().addTo(map); tiles.addTo(map);
     map.on('moveend',() => {
-      if(fitting || locating)return;
+      if(fitting)return;
       revision++; render(); scheduleLoad();
     });
   } else { mapStatus.hidden = false; mapStatus.textContent = 'The Leaflet map could not load. Check your connection and reload.'; }
-  if (map) {
-    request = bbox => window.WaterProviders.waters(bbox,window.TrackerNetwork.request);
-    $('status').textContent = locating ? 'Finding your state before loading fish...' : 'Loading fish in this area...';
-    if(!locating)overview();
-  } else $('status').textContent = 'The map must be available before searching for waters.';
-  $('refresh').disabled = !request || !mapReady || locating; $('reset-map').disabled = !map;
+  if (map) overview();
+  else $('status').textContent = 'The map must be available before searching for waters.';
+  $('refresh').disabled = !mapReady; $('reset-map').disabled = !map;
   render();
-  if(map && window.WaterLocation){
-    map.on('movestart',()=>{if(!fitting){interacted=true;locating=false;$('refresh').disabled=!request;}});
-    $('region').addEventListener('change',()=>{interacted=true;});
-    $('refresh').addEventListener('click',()=>{interacted=true;});
-    $('reset-map').addEventListener('click',()=>{interacted=true;});
-    (async()=>{try{return await window.WaterLocation.detect();}catch{return null;}})().then(code=>{
-      if(interacted){$('location-status').textContent='Using your selected map area.';return;}
-      if(code){
-        $('region').value=code;overview();
-        $('location-status').textContent=`Starting in ${D.regions[code].label}, estimated from your connection. You can choose another state.`;
-      }else {
-        overview();
-        $('location-status').textContent='Your state could not be determined. Showing the US overview; choose a state using Explore.';
-      }
-    });
-  }else if($('location-status'))$('location-status').textContent='Choose a state using Explore when the map is available.';
 })();

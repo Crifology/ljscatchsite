@@ -178,7 +178,8 @@
       "licenseCode": "cc-by-sa",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "displayAllowed": true
-    }
+    },
+    "visuallyReviewedAt": "2026-09-23T04:35:11.840Z"
   },
   "lepidomeda copei": {
     "status": "unavailable",
@@ -202,7 +203,8 @@
       "licenseCode": "cc-by-sa",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "displayAllowed": true
-    }
+    },
+    "visuallyReviewedAt": "2026-09-23T04:35:11.841Z"
   },
   "mugilogobius cavifrons": {
     "status": "unavailable",
@@ -226,7 +228,8 @@
       "licenseCode": "public-domain",
       "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
       "displayAllowed": true
-    }
+    },
+    "visuallyReviewedAt": "2026-09-23T04:35:11.841Z"
   },
   "notropis girardi": {
     "scientificName": "Notropis girardi",
@@ -244,7 +247,8 @@
       "licenseCode": "public-domain",
       "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
       "displayAllowed": true
-    }
+    },
+    "visuallyReviewedAt": "2026-09-23T04:35:11.841Z"
   },
   "omobranchus ferox": {
     "status": "unavailable",
@@ -268,7 +272,8 @@
       "licenseCode": "public-domain",
       "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
       "displayAllowed": true
-    }
+    },
+    "visuallyReviewedAt": "2026-09-23T04:35:11.841Z"
   },
   "protemblemaria punctata": {
     "status": "unavailable",
@@ -292,11 +297,12 @@
       "licenseCode": "public-domain",
       "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
       "displayAllowed": true
-    }
+    },
+    "visuallyReviewedAt": "2026-09-23T04:35:11.841Z"
   },
   "salmo letnica": {
     "scientificName": "Salmo letnica",
-    "status": "available",
+    "status": "rejected",
     "provider": "Wikimedia Commons",
     "verifiedAt": "2026-09-22T23:44:41.295Z",
     "query": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=%22Salmo+letnica%22&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=640",
@@ -310,7 +316,8 @@
       "licenseCode": "public-domain",
       "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
       "displayAllowed": true
-    }
+    },
+    "reason": "Postage stamp illustration, not a fish photograph"
   },
   "sardinella marquesensis": {
     "status": "unavailable",

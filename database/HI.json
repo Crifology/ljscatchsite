@@ -3484,8 +3484,16 @@
               "coordinateSource": "Map derived"
             }
           ],
-          "photo": null,
-          "photoStatus": "unavailable"
+          "photo": {
+            "url": "/assets/fish-photos/commons-23915174.jpg",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Limia_vittata.jpg",
+            "label": "Cardet co6cs � Limia vittata.jpg",
+            "license": "CC BY-SA 3.0",
+            "licenseCode": "cc-by-sa",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "displayAllowed": true
+          },
+          "photoStatus": "available"
         },
         {
           "commonName": "mangrove goby",
@@ -4347,10 +4355,10 @@
       ]
     }
   ],
-  "photosUpdatedAt": "2026-09-22T23:42:06.589Z",
+  "photosUpdatedAt": "2026-09-23T04:35:11.841Z",
   "photoCoverage": {
     "fishTypes": 33,
-    "withPhotos": 26,
-    "withoutPhotos": 7
+    "withPhotos": 27,
+    "withoutPhotos": 6
   }
 }

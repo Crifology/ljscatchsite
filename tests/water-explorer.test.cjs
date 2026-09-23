@@ -77,7 +77,7 @@ class Element {
 function harness({protocol='https:',fish,waters,location,fetcher}={}) {
   const elements=new Map(),get=id=>{if(!elements.has(id))elements.set(id,new Element());return elements.get(id);};
   get('region').value='us';
-  const calls={maps:0,removed:0,fish:0,waters:0};
+  const calls={maps:0,removed:0,fish:0,waters:0,database:0,urls:[]};
   const map={zoom:undefined,ready:false,invalidateSize(){calls.resized=true;},fitBounds(bounds,options){this.ready=true;this.fitted=bounds;calls.fitOptions=options;this.zoom=7;return this;},setView(c,z){this.ready=true;this.zoom=z;return this;},getZoom(){return this.zoom;},closePopup(){this.popup=null;},removeLayer(){calls.removed++;},on(n,f){this[n]=f;return this;},hasLayer(p){return this.popup===p;},panTo(){},getBounds(){if(!this.ready)throw Error('Set map center and zoom first');return {getWest:()=>-1,getEast:()=>1,getSouth:()=>-1,getNorth:()=>1};}};
   const layer=()=>({addTo(){return this;},on(){return this;},clearLayers(){},bindTooltip(){return this;}});
   const tiles={...layer(),on(n,f){this[n]=f;return this;}};
@@ -85,7 +85,13 @@ function harness({protocol='https:',fish,waters,location,fetcher}={}) {
   let scheduled;
   const context={URLSearchParams,AbortSignal,setTimeout:fn=>{scheduled=fn;return 1;},clearTimeout:()=>{scheduled=null;},document:{getElementById:get,createElement:()=>new Element()},window:{location:{protocol},L,WaterExplorerData:D,WaterExplorerConfig:{tileUrl:'https://tile.openstreetmap.org/{z}/{x}/{y}.png',tileAttribution:'OpenStreetMap'},TrackerNetwork:{request:()=>{}},WaterProviders:{contains:P.contains,areaFish:async features=>features.map(()=>({species:P.speciesFrom([record()],feature),loaded:true,limited:false})),waters:async bbox=>{calls.bbox=bbox;calls.waters++;return waters?waters():{type:'FeatureCollection',features:[structuredClone(feature)],limited:false};},fish:async()=>{calls.fish++;return fish?fish():{species:P.speciesFrom([record()],feature),loaded:true,limited:false};}}}};
   if(location)context.window.WaterLocation=location;
-  if(fetcher)context.fetch=fetcher;
+  context.fetch=async url=>{
+    calls.database++;calls.urls.push(url);calls.bbox=new URL(url,'https://local').searchParams.get('bbox');
+    if(fetcher)return fetcher(url);
+    const saved=structuredClone(feature);
+    Object.assign(saved.properties,{loaded:true,database:true,species:P.speciesFrom([record()],feature)});
+    return {ok:true,json:async()=>({features:[saved],limited:false})};
+  };
   vm.runInNewContext(fs.readFileSync('assets/water-explorer.js','utf8'),context);
   return {get,map,calls,tiles,flush:()=>{const fn=scheduled;scheduled=null;return fn?.();}};
 }
@@ -96,7 +102,7 @@ test('map starts nationwide without API queries; file previews do not request ti
   const local=harness({protocol:'file:'});assert.equal(local.calls.maps,0);assert.match(local.get('map-status').textContent,/localhost/);
 });
 test('nationwide search loads fish before water selection and filters species',async()=>{
-  const h=harness();await h.get('refresh').onclick();assert.equal(h.calls.waters,1);
+  const h=harness();await h.get('refresh').onclick();assert.equal(h.calls.database,1);
   h.map.zoom=10;await h.get('refresh').onclick();assert.equal(h.get('count').textContent,1);
   h.calls.pinClick();await new Promise(setImmediate);
   assert.ok(h.map.popup.content.children.some(n=>n.textContent==='1 fish types'));
@@ -106,22 +112,11 @@ test('nationwide search loads fish before water selection and filters species',a
   h.get('region').value='alaska';h.get('region').onchange();assert.equal(h.map.zoom,4);assert.equal(h.map.popup,null);
 });
 test('a late response after changing regions cannot repopulate the old area',async()=>{
-  let finish;const h=harness({waters:()=>new Promise(r=>finish=r)});h.map.zoom=10;
+  let finish;const h=harness({fetcher:()=>new Promise(r=>finish=r)});h.map.zoom=10;
   const pending=h.get('refresh').onclick();h.get('region').value='hawaii';h.get('region').onchange();
-  finish({type:'FeatureCollection',features:[feature],limited:false});await pending;
+  finish({ok:true,json:async()=>({features:[feature],limited:false})});await pending;
   assert.equal(h.get('count').textContent,0);assert.equal(h.get('refresh').disabled,false);
 });
-test('default state lookup changes overview but never overrides user navigation',async()=>{
-  const location=require('../assets/water-explorer-location.js');
-  const h=harness({location:{...location,detect:async()=> 'MA'}});
-  await new Promise(setImmediate);assert.equal(h.get('region').value,'MA');assert.equal(h.map.zoom,7);
-  let finish;
-  const moved=harness({location:{...location,detect:()=>new Promise(r=>finish=r)}});
-  moved.map.movestart();finish('CA');await new Promise(setImmediate);
-  assert.equal(moved.get('region').value,'us');assert.equal(moved.map.zoom,4);
-});
-
-
 test('fish sidebar deduplicates species, caps at 20, and restricts results to viewport',()=>{
   const waters=Array.from({length:25},(_,i)=>({...feature,properties:{...feature.properties,id:String(i),pin:[i,42],species:[{commonName:`Fish ${String(i).padStart(2,'0')}`,scientificName:`Species ${i}`}]}}));
   const result=D.fishResults(waters);
@@ -141,30 +136,38 @@ test('area fish shares two source requests across waters and preserves geometry 
 });
 
 
-test('startup waits for IP state, fits bounds before fetching, and clamps the query to the state',async()=>{
+test('state selection fits bounds and clamps database queries without detecting location',async()=>{
   const location=require('../assets/water-explorer-location.js');
-  let finish;
-  const h=harness({location:{...location,detect:()=>new Promise(resolve=>finish=resolve)}});
-  assert.equal(h.get('refresh').disabled,true);
-  await h.flush();await h.get('refresh').onclick();assert.equal(h.calls.waters,0);
-  finish('MA');await new Promise(setImmediate);
-  assert.deepEqual(JSON.parse(JSON.stringify(h.map.fitted)),[[location.states.MA.bounds[1],location.states.MA.bounds[0]],[location.states.MA.bounds[3],location.states.MA.bounds[2]]]);
-  assert.equal(h.calls.resized,true);assert.equal(h.calls.fitOptions.animate,false);
+  const h=harness({location:{...location,detect:()=>{throw Error('Must not locate');}}});
+  h.get('region').value='MA';h.get('region').onchange();
+  assert.equal(h.calls.fitOptions.animate,false);
   h.map.getBounds=()=>({getWest:()=>-80,getEast:()=>-60,getSouth:()=>35,getNorth:()=>50});
   await h.flush();
-  assert.equal(h.calls.waters,1);assert.equal(h.calls.bbox,D.boundsQuery(location.states.MA.bounds));
-  assert.equal(h.get('count').textContent,0); // Fixture at 0,0 is outside Massachusetts.
+  assert.equal(h.calls.bbox,D.boundsQuery(location.states.MA.bounds));
+  assert.equal(h.calls.database,1);assert.equal(h.calls.waters,0);
 });
 
-test('IP failure releases startup and loads the fallback; moving outside a state makes no query',async()=>{
-  const location=require('../assets/water-explorer-location.js');
-  const h=harness({location:{...location,detect:async()=>{throw Error('offline');}}});
-  await new Promise(setImmediate);await h.flush();
-  assert.equal(h.calls.waters,1);assert.match(h.get('location-status').textContent,/could not be determined/);
-  h.get('region').value='MA';h.get('region').onchange();await h.flush();
-  assert.equal(h.calls.waters,1);assert.match(h.get('status').textContent,/selected state/);
+test('pan and zoom reload the visible bounds and filter fish locations',async()=>{
+  const h=harness();await h.flush();assert.equal(h.get('count').textContent,1);
+  h.map.zoom=12;
+  h.map.getBounds=()=>({getWest:()=>10,getEast:()=>11,getSouth:()=>10,getNorth:()=>11});
+  h.map.moveend();await h.flush();
+  assert.equal(h.calls.bbox,'10.0000,10.0000,11.0000,11.0000');
+  assert.equal(h.get('count').textContent,0);assert.equal(h.calls.database,2);
 });
 
+for(const mode of ['partial','missing','empty','failure','invalid'])test(`database ${mode} never falls back to live services`,async()=>{
+  const h=harness({fetcher:async()=>{
+    if(mode==='failure')throw Error('offline');
+    return {ok:true,json:async()=>mode==='invalid'?{}:{features:[],partial:mode==='partial'?['MA']:[],unavailable:mode==='missing'?['MA']:[]}};
+  }});
+  await h.get('refresh').onclick();
+  assert.equal(h.calls.waters,0);assert.equal(h.calls.fish,0);
+  assert.equal(h.calls.urls.length,1);assert.match(h.calls.urls[0],/^\/api\/fish-database\?/);
+  assert.equal(h.get('count').textContent,0);
+  if(['failure','invalid'].includes(mode))assert.match(h.get('status').textContent,/database unavailable/);
+  if(['partial','missing'].includes(mode))assert.match(h.get('status').textContent,/incomplete or unavailable/);
+});
 
 test('complete saved database serves fish without waiting for live sources',async()=>{
   const saved=structuredClone(feature);
