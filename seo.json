@@ -1,0 +1,41 @@
+{
+  "siteUrl": "https://www.ljscatch.com",
+  "pages": [
+    {
+      "file": "index.html",
+      "path": "/",
+      "title": "LJ's Catch | Family Fishing & Outdoor Adventures",
+      "description": "Share the joy of family fishing with LJ's Catch. Explore lake-day photos, discover US fish records, and play a free fishing game."
+    },
+    {
+      "file": "about.html",
+      "path": "/about.html",
+      "title": "Our Fishing Story & Mission | LJ's Catch",
+      "description": "Meet LJ and discover the love of fishing behind LJ's Catch: lake days, sunfish, bass, and encouraging more families to give fishing a try."
+    },
+    {
+      "file": "gallery.html",
+      "path": "/gallery.html",
+      "title": "Fishing Photos & Lake-Day Memories | LJ's Catch",
+      "description": "Explore LJ's fishing photo gallery, from memorable catches to days by the water. Find inspiration for your own family fishing adventures."
+    },
+    {
+      "file": "contact.html",
+      "path": "/contact.html",
+      "title": "Contact LJ's Catch | Fishing Questions & Stories",
+      "description": "Contact LJ's Catch to share fishing stories, ask questions, or suggest ideas for the site. We would love to hear about your days on the water."
+    },
+    {
+      "file": "trackerapp.html",
+      "path": "/trackerapp.html",
+      "title": "US Fish Tracker | Explore Fish Species & Waters | LJ's Catch",
+      "description": "Explore saved US fish records by state, species, and map area. Discover recorded fish locations with LJ's Catch's interactive fish tracker."
+    },
+    {
+      "file": "game/index.html",
+      "path": "/game/",
+      "title": "Free Fishing Game | Cast, Reel & Catch Fish | LJ's Catch",
+      "description": "Play LJ's Catch's free browser fishing game. Aim your cast, hook a fish, and manage line tension to reel it in, with playful sounds and no download."
+    }
+  ]
+}
