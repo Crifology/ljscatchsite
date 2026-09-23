@@ -147,7 +147,7 @@
   $('close-dialog').onclick = () => $('water-dialog').close();
   const mapStatus = $('map-status');
   if (!['http:','https:'].includes(window.location.protocol)) {
-    mapStatus.hidden = false; mapStatus.textContent = 'Open the localhost web preview to display the map. Run node server.cjs and visit http://localhost:8000/trackerapp.html.';
+    mapStatus.hidden = false; mapStatus.textContent = 'Open the localhost web preview to display the map. Run npm run dev and visit http://localhost:8888/trackerapp.html.';
   } else if (window.L) {
     map = window.L.map('catch-map',{scrollWheelZoom:true,minZoom:3,maxBounds:[[-85,-180],[85,180]],maxBoundsViscosity:1});
     const tiles = window.L.tileLayer(config.tileUrl,{maxZoom:18,noWrap:true,referrerPolicy:'strict-origin-when-cross-origin',attribution:config.tileAttribution});

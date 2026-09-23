@@ -1,1 +1,6 @@
 .tracker-cache/
+
+node_modules/
+.netlify/
+dist/
+deno.lock

@@ -1,0 +1,21 @@
+{
+  "name": "ljs-catch-website",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "npm run build && netlify dev",
+    "build": "node scripts/build-site.cjs",
+    "test": "node --test --test-isolation=none tests/*.test.cjs",
+    "deploy:preview": "netlify deploy --build",
+    "deploy:prod": "netlify deploy --build --prod"
+  },
+  "dependencies": {
+    "serverless-http": "^4.0.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^27.8.1"
+  }
+}

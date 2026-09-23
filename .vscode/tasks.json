@@ -4,21 +4,36 @@
     {
       "label": "LJ's Catch: local web server",
       "type": "process",
-      "command": "node",
-      "args": ["server.cjs"],
-      "options": { "cwd": "${workspaceFolder}" },
+      "command": "npm.cmd",
+      "args": [
+        "run",
+        "dev"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
       "isBackground": true,
       "problemMatcher": {
         "owner": "lj-local-server",
-        "pattern": { "regexp": "^(.*):(\\d+): (.*)$", "file": 1, "line": 2, "message": 3 },
+        "pattern": {
+          "regexp": "^(.*):(\\d+): (.*)$",
+          "file": 1,
+          "line": 2,
+          "message": 3
+        },
         "background": {
           "activeOnStart": true,
           "beginsPattern": "^Starting",
-          "endsPattern": "^Serving HTTP on"
+          "endsPattern": ".*Local dev server ready:.*"
         }
       },
-      "presentation": { "reveal": "silent", "panel": "dedicated" },
-      "runOptions": { "instanceLimit": 1 }
+      "presentation": {
+        "reveal": "silent",
+        "panel": "dedicated"
+      },
+      "runOptions": {
+        "instanceLimit": 1
+      }
     }
   ]
 }

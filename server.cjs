@@ -1,4 +1,4 @@
-/* Dependency-free first-party host and shared iNaturalist request budget. Node 22+. */
+/* Request handler shared by Netlify Functions and HTTP regression tests. Node 22+. */
 const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
@@ -56,19 +56,15 @@ function createFishService({fetcher=fetch,now=Date.now,pause=ms=>new Promise(r=>
     try{return await task;}finally{pending.delete(key);}
   };
 }
-function createServer({fishService,usgsService=createUSGSService(),stockingService=createStockingService(),databaseService=createDatabaseService()}={}) {
-  if(!fishService) {
-    const folder=path.join(ROOT,'.tracker-cache'),file=path.join(folder,'budget.json');
-    fs.mkdirSync(folder,{recursive:true});
-    fishService=createFishService({
-      readBudget:()=>{if(!fs.existsSync(file))return {day:'',count:0};const b=JSON.parse(fs.readFileSync(file,'utf8'));if(!Number.isInteger(b.count)||b.count<0)throw Error('Invalid budget');return b;},
-      writeBudget:b=>{fs.writeFileSync(file+'.tmp',JSON.stringify(b));fs.renameSync(file+'.tmp',file);}
-    });
-  }
-  return http.createServer(async(req,res)=>{
+function createApp({staticFiles=true,fishService,usgsService=createUSGSService(),stockingService=createStockingService(),databaseService=createDatabaseService()}={}) {
+  // The tracker uses saved JSON. Legacy live observations require a durable,
+  // shared rate limiter before they can be enabled across function instances.
+  fishService ||= async()=>({status:503,data:{error:'Live observations are disabled; use the saved fish database'}});
+  return async(req,res)=>{
     res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('Referrer-Policy','strict-origin-when-cross-origin');
     if(!['GET','HEAD'].includes(req.method)){res.writeHead(405);return res.end();}
     let url;try{url=new URL(req.url,'http://localhost');}catch{res.writeHead(400);return res.end();}
+    url.pathname=url.pathname.replace(/^\/\.netlify\/functions\/api(?=\/|$)/,'/api');
     if(url.pathname==='/game'){res.writeHead(302,{Location:'/game/'});return res.end();}
     if(['/api/fish-observations','/api/usgs-fish','/api/stocking','/api/fish-database'].includes(url.pathname)) {
       if(req.method==='HEAD'){res.writeHead(405);return res.end();}
@@ -80,6 +76,7 @@ function createServer({fishService,usgsService=createUSGSService(),stockingServi
         res.writeHead(result.status);return res.end(JSON.stringify(result.data));
       } catch {res.writeHead(503,{'Content-Type':'application/json'});return res.end('{"error":"Fish service unavailable"}');}
     }
+    if(!staticFiles){res.writeHead(404,{'Content-Type':'application/json','Cache-Control':'no-store'});return res.end(JSON.stringify({error:'Unknown API endpoint'}));}
     let name;try{name=decodeURIComponent(url.pathname==='/'?'/index.html':['/game','/game/'].includes(url.pathname)?'/game/index.html':url.pathname);}catch{res.writeHead(400);return res.end();}
     const file=path.resolve(ROOT,'.'+name),ext=path.extname(file).toLowerCase();
     if(!file.startsWith(ROOT+path.sep)||name.split(/[\\/]/).some(p=>p.startsWith('.'))||!MIME[ext]||!(name.startsWith('/assets/')||/^\/game\/(?:index\.html|game\.css|game\.js|engine\.js)$/.test(name)||/^\/database\/(?:[A-Z]{2}|index)\.json$/.test(name)||/^\/[\w-]+\.(html|md)$/.test(name))) {res.writeHead(404);return res.end();}
@@ -89,7 +86,8 @@ function createServer({fishService,usgsService=createUSGSService(),stockingServi
       if(req.method==='HEAD')return res.end();
       const stream=fs.createReadStream(file);stream.on('error',()=>res.destroy());stream.pipe(res);
     });
-  });
+  };
 }
-if(require.main===module)createServer().listen(Number(process.env.PORT)||8000,process.env.HOST||'127.0.0.1',()=>console.log(`Serving HTTP on ${process.env.HOST||'127.0.0.1'} port ${Number(process.env.PORT)||8000}`));
-module.exports={createFishService,createServer};
+// Test helper only: importing this module never opens a listening socket.
+function createServer(options){return http.createServer(createApp(options));}
+module.exports={createFishService,createApp,createServer};
