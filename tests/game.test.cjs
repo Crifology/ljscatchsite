@@ -23,8 +23,18 @@ test('release cools tension without losing reel progress or the fish',()=>{
   g.update(.25);assert.ok(g.tension<heat);assert.equal(g.progress,progress);g.update(5);
   assert.equal(g.tension,0);assert.equal(g.state,'reeling');assert.equal(g.holdTime,0);
 });
-test('rapid taps snap the line before awarding a catch',()=>{
-  for(let type=0;type<4;type++){const g=hooked(type);for(let i=0;i<30&&g.state==='reeling';i++){g.press();g.release();g.update(.05);}assert.equal(g.state,'lost');assert.equal(g.score,0);assert.equal(g.caught,0);}
+test('rapid taps without enough cooling still snap the line before awarding a catch',()=>{
+  for(let type=0;type<4;type++){const g=hooked(type);for(let i=0;i<30&&g.state==='reeling';i++){g.press();g.release();g.update(.01);}assert.equal(g.state,'lost');assert.equal(g.score,0);assert.equal(g.caught,0);}
+});
+test('tap and hold tension builds at half the original rate for every species',()=>{
+  for(let type=0;type<4;type++){const g=hooked(type),heat=12+species[type].rate;g.press();assert.equal(g.tension,heat/2);g.update(.5);assert.equal(g.tension,(heat+heat*.5+9*.25)/2);}
+});
+test('hooked fish struggles smoothly on both sides and stays attached to the hook',()=>{
+  const g=hooked();let left=false,right=false,previous=g.hook().x;
+  for(let i=0;i<150;i++){g.update(.02);const h=g.hook();assert.equal(g.target.x,h.x);assert.equal(g.target.y,h.y);assert.ok(Math.abs(h.x-575)<=36);assert.ok(Math.abs(h.x-previous)<6);left ||= h.x<575;right ||= h.x>575;previous=h.x;}
+  assert.ok(left&&right);assert.equal(g.progress,0);assert.equal(g.tension,0);
+  g.depth=0;assert.equal(g.hook().x,575);
+  g.reset();assert.equal(g.hook().x,575);
 });
 test('paced taps can land every fish and award points once',()=>{
   for(let type=0;type<4;type++){const g=hooked(type);for(let i=0;i<100&&g.state==='reeling';i++){g.press();g.release();g.update(.6);}assert.equal(g.state,'landed');assert.equal(g.score,species[type].points);assert.equal(g.caught,1);g.action();assert.equal(g.score,species[type].points);assert.equal(g.tension,0);}
