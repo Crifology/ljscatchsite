@@ -9,11 +9,15 @@
     <meta property="og:title" content="Free Fishing Game | Cast, Reel &amp; Catch Fish | LJ's Catch">
     <meta property="og:description" content="Play LJ's Catch's free browser fishing game. Aim your cast, hook a fish, and manage line tension to reel it in, with playful sounds and no download.">
     <meta name="twitter:card" content="summary">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="game.css">
+  <link rel="stylesheet" href="../assets/navigation.css">
   <script src="engine.js" defer></script><script src="audio.js" defer></script><script src="game.js" defer></script>
 </head>
 <body>
-  <header><a class="brand" href="../index.html"><img src="../assets/photos/logo-horizontal-light-transparent.png" alt="LJ's Catch"></a><nav aria-label="Primary navigation"><a href="../index.html">Home</a><a href="../about.html">About</a><a href="../gallery.html">Gallery</a><a href="../contact.html">Contact</a><a href="index.html" aria-current="page">Fishing Game</a><a href="../trackerapp.html">LJ's Fish Tracker</a></nav></header>
+  <header class="site-header"><div class="nav-container"><a class="logoMainPage" href="../index.html"><img src="../assets/photos/logo-horizontal-light-transparent.png" alt="LJ's Catch fishing logo"></a><input type="checkbox" id="menu-toggle" class="menu-checkbox"><label for="menu-toggle" class="menu-label" aria-label="Toggle navigation">&#9776;</label><div class="nav-actions"><nav aria-label="Primary navigation"><ul class="nav-links"><li><a class="home-link" href="../index.html">Home</a></li><li><a href="../about.html">About</a></li><li><a href="../gallery.html">Gallery</a></li><li><a href="../contact.html">Contact</a></li><li><a class="active" href="index.html" aria-current="page">Fishing Game</a></li><li><a href="../trackerapp.html">LJ's Fish Tracker</a></li></ul></nav><a class="store-link" href="https://ljscatch.myshopify.com" target="_blank" rel="noopener noreferrer"><img src="../assets/icons/shopify.svg" alt="" width="24" height="24">Visit Our Store</a></div></div></header>
   <main>
     <div class="intro"><div><span class="eyebrow">LJ'S LITTLE LAKE</span><h1>One more cast.</h1><p>A quiet lake. A big bite. Bring your catch aboard.</p></div><div class="score"><span><b id="score">0</b> POINTS</span><span><b id="caught">0</b> CAUGHT</span></div></div>
     <section class="game" aria-label="Fishing game">
